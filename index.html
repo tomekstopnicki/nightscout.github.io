@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
+        
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Nightscout</title>
+        <title>Index - Nightscout</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -21,7 +21,7 @@
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href=".">Nightscout</a>
@@ -34,39 +34,66 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">Home</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Nightscout <b class="caret"></b></a>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">What is it? <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="." class="dropdown-item active">Index</a>
+</li>
                                     
 <li>
     <a href="nightscout/overview/" class="dropdown-item">Overview</a>
 </li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="nightscout/new_user/" class="nav-link">Install</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
                                     
 <li>
-    <a href="nightscout/new_user/" class="dropdown-item">Brand New NS</a>
+    <a href="update/update/" class="dropdown-item">Updating your site</a>
 </li>
                                     
 <li>
-    <a href="nightscout/update_user/" class="dropdown-item">Retrofit Existing NS</a>
+    <a href="update/migrate_heroku/" class="dropdown-item">Migrating to Atlas</a>
 </li>
                                     
 <li>
-    <a href="nightscout/troublehoot/" class="dropdown-item">Setup Troubleshooting</a>
+    <a href="update/migrate_azure/" class="dropdown-item">Migrating from Azure</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="nightscout/setup_variables/" class="dropdown-item">Configure your Nightscout</a>
 </li>
                                     
 <li>
-    <a href="nightscout/mlab_cleanup/" class="dropdown-item">NS Stopped Working</a>
+    <a href="nightscout/uploaders/" class="dropdown-item">Uploaders</a>
 </li>
                                     
 <li>
-    <a href="nightscout/remote-overrides/" class="dropdown-item">Remote Overrides</a>
+    <a href="nightscout/close_loop/" class="dropdown-item">Close the loop</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="nightscout/reports/" class="dropdown-item">Reports</a>
 </li>
                                     
 <li>
-    <a href="nightscout/ifttt/" class="dropdown-item">IFTTT</a>
+    <a href="nightscout/ifttt/" class="dropdown-item">IF This Then That</a>
 </li>
                                     
 <li>
@@ -76,18 +103,18 @@
 <li>
     <a href="nightscout/pushover/" class="dropdown-item">Remote Notifications</a>
 </li>
-                                    
-<li>
-    <a href="nightscout/reports/" class="dropdown-item">Reports</a>
-</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Troubleshoot <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="update/update/" class="dropdown-item">Updating your site</a>
+    <a href="nightscout/troublehoot/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/mlab_cleanup/" class="dropdown-item">Nightscout stopped working</a>
 </li>
                                 </ul>
                             </li>
@@ -133,14 +160,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#looking-to-install-nightscout" class="nav-link">Looking to install Nightscout?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#looking-to-update-to-latest-reelease" class="nav-link">Looking to update to latest reelease?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#development-history" class="nav-link">Development History</a>
               <ul class="nav flex-column">
               </ul>
@@ -156,6 +175,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
+<p><img alt="" src=".\img\cropped-Header2.png" /></p>
+<p></br></p>
 <h1 id="welcome-to-nightscout">Welcome to Nightscout<a class="headerlink" href="#welcome-to-nightscout" title="Permanent link">⌁</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">⌁</a></h2>
 <p>Nightscout (CGM in the Cloud) is an open source, DIY project cloud application, which you can install yourself using free hosting from various cloud service providers. Once installed, Nightscout acts as a central repository of blood glucose and insulin dosing data for a single person, allowing you to view the CGM graph and other data anywhere using a web browser.</p>
@@ -172,10 +193,6 @@
 </ul>
 <p><strong>You take full responsibility for building and running this system and do so at your own risk.</strong></p>
 </div>
-<h2 id="looking-to-install-nightscout">Looking to install Nightscout?<a class="headerlink" href="#looking-to-install-nightscout" title="Permanent link">⌁</a></h2>
-<p>Start with the <a href="/nightscout/overview/">Overview</a>.</p>
-<h2 id="looking-to-update-to-latest-reelease">Looking to update to latest reelease?<a class="headerlink" href="#looking-to-update-to-latest-reelease" title="Permanent link">⌁</a></h2>
-<p>Go to the <a href="/update/update/">Update instructions</a>.</p>
 <h2 id="development-history">Development History<a class="headerlink" href="#development-history" title="Permanent link">⌁</a></h2>
 <p>Nightscout has been developed as an open-source, shared project.</p>
 <h2 id="how-to-use-these-docs">How to Use These Docs<a class="headerlink" href="#how-to-use-these-docs" title="Permanent link">⌁</a></h2>
@@ -264,8 +281,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.1.2
-Build Date UTC : 2020-09-16 14:29:04.514861+00:00
--->

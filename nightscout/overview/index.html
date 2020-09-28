@@ -34,39 +34,66 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../.." class="nav-link">Home</a>
-                            </li>
                             <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Nightscout <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">What is it? <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">Index</a>
+</li>
                                     
 <li>
     <a href="./" class="dropdown-item active">Overview</a>
 </li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../new_user/" class="nav-link">Install</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../new_user/" class="dropdown-item">Brand New NS</a>
+    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
 </li>
                                     
 <li>
-    <a href="../update_user/" class="dropdown-item">Retrofit Existing NS</a>
+    <a href="../../update/migrate_heroku/" class="dropdown-item">Migrating to Atlas</a>
 </li>
                                     
 <li>
-    <a href="../troublehoot/" class="dropdown-item">Setup Troubleshooting</a>
+    <a href="../../update/migrate_azure/" class="dropdown-item">Migrating from Azure</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../setup_variables/" class="dropdown-item">Configure your Nightscout</a>
 </li>
                                     
 <li>
-    <a href="../mlab_cleanup/" class="dropdown-item">NS Stopped Working</a>
+    <a href="../uploaders/" class="dropdown-item">Uploaders</a>
 </li>
                                     
 <li>
-    <a href="../remote-overrides/" class="dropdown-item">Remote Overrides</a>
+    <a href="../close_loop/" class="dropdown-item">Close the loop</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../reports/" class="dropdown-item">Reports</a>
 </li>
                                     
 <li>
-    <a href="../ifttt/" class="dropdown-item">IFTTT</a>
+    <a href="../ifttt/" class="dropdown-item">IF This Then That</a>
 </li>
                                     
 <li>
@@ -76,18 +103,18 @@
 <li>
     <a href="../pushover/" class="dropdown-item">Remote Notifications</a>
 </li>
-                                    
-<li>
-    <a href="../reports/" class="dropdown-item">Reports</a>
-</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Troubleshoot <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
+    <a href="../troublehoot/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../mlab_cleanup/" class="dropdown-item">Nightscout stopped working</a>
 </li>
                                 </ul>
                             </li>
@@ -153,10 +180,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#loop-pill" class="nav-link">Loop pill</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -189,25 +212,7 @@
 <p><dd>Within your NS profile, you will enter in the scheduled basal for your Loop user.  This is not automatically updated when you update the Loop app or your pump; you will have to manually update your basal profile in your NS site if you change your basal profile in Loop and/or pump. (Note: The dev branch does now update NS with the basal schedule from Loop, but dev is considered generally less stable than the master branch).   If you don't update the NS basal profile, it doesn't cause any problems in Loop function...you simply won't have accurate VISUAL representation of high/low temp basals within NS. The dashed blue line represents the scheduled basal profile (as entered in your NS profile).  The solid blue lines indicate the actual basal amounts set for a given time...so as Loop sets temp basals higher or lower than your scheduled basal rate, the solid blue line will jump above or below your dashed blue line.  There is a slight delay (up to 2-5 minutes) in the rendering of basal changes on the blue lines, so if you want the accurate current basal rate, you can check the Loop pill.</dd>
 </br></p>
 <h2 id="predicted-bg"><dt>Predicted BG</dt><a class="headerlink" href="#predicted-bg" title="Permanent link">⌁</a></h2>
-<p><dd>The purple line to the right of the BG is Loop's predicted BG.  Watching the behavior of that purple line can help you understand why Loop is making decisions regarding high or low temps.  You can read more on that topic in the Algorithm section of these docs.</dd>
-</br></p>
-<h2 id="loop-pill"><dt>Loop pill</dt><a class="headerlink" href="#loop-pill" title="Permanent link">⌁</a></h2>
-<p><dd>The Loop pill is the little display box which when hovered over, or clicked, will provide additional information about recent Loop activities and status.  Information included is the last time Loop ran, the temp basal set, IOB, and COB.  Looking at the Loop pill is a quick method for assessing if you loop is currently active, as well.</br></p>
-<div class="admonition info">
-<p class="admonition-title">Loop Pill status indicator symbols</p>
-<p><font style='font-size: 1.2em;'>X</font> &nbsp;
-Error in Loop</p>
-<p><font style='font-size: 1.4em;'>ϕ</font> &nbsp;
-Recommending basal, but not enacting (open loop or pump suspended)</p>
-<p><font style='font-size: 2em;'>⌁</font> &nbsp;
-Enacted a new temp basal</p>
-<p><font style='font-size: 1.5em;'>↻</font> &nbsp;
-Loop is continuing with last temp basal, no change</p>
-<p><font style='font-size: 1.5em;'>⚠</font> &nbsp;
-Warning indicating Loop is either red or has failed to upload to Nightscout for a longer period of time.</p>
-</div>
-<p>Mouseover or Touch the Loop pill to view a tool tip containing one or more of the latest status messages. The most up-to-date NS also includes information in the Loop pill for the minimum and maximum predicted BG, eventual and predicted BG.</p>
-<p><img src="../img/loop_pill_message.png" width="750"></dd></p>
+<p><dd>The purple line to the right of the BG is Loop's predicted BG.  Watching the behavior of that purple line can help you understand why Loop is making decisions regarding high or low temps.  You can read more on that topic in the Algorithm section of these docs.</dd></p>
 </dl></div>
             </div>
         </div>
