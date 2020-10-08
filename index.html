@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Index - Nightscout</title>
+        <title>Nightscout - Nightscout</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -39,16 +39,26 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="." class="dropdown-item active">Index</a>
+    <a href="." class="dropdown-item active">Nightscout</a>
 </li>
                                     
 <li>
-    <a href="nightscout/overview/" class="dropdown-item">Overview</a>
+    <a href="nightscout/insights/" class="dropdown-item">How does it work?</a>
+</li>
+                                    
+<li>
+    <a href="uploader/uploaders/" class="dropdown-item">Uploaders</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="nightscout/new_user/" class="nav-link">Install</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="nightscout/new_user/" class="dropdown-item">New Nightscout</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
@@ -56,6 +66,10 @@
                                     
 <li>
     <a href="update/update/" class="dropdown-item">Updating your site</a>
+</li>
+                                    
+<li>
+    <a href="update/redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
@@ -76,7 +90,7 @@
 </li>
                                     
 <li>
-    <a href="nightscout/uploaders/" class="dropdown-item">Uploaders</a>
+    <a href="uploader/setup/" class="dropdown-item">Setup the uploader</a>
 </li>
                                     
 <li>
@@ -110,7 +124,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="nightscout/troublehoot/" class="dropdown-item">Troubleshooting</a>
+    <a href="troubleshoot/troublehoot/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
@@ -132,7 +146,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="nightscout/overview/" class="nav-link">
+                                <a rel="next" href="nightscout/insights/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -164,6 +178,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#what-does-it-cost" class="nav-link">What Does It Cost?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#what-do-i-need" class="nav-link">What Do I Need?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#how-to-use-these-docs" class="nav-link">How to Use These Docs</a>
               <ul class="nav flex-column">
               </ul>
@@ -178,12 +200,19 @@
 <p><img alt="" src=".\img\cropped-Header2.png" /></p>
 <p></br></p>
 <h1 id="welcome-to-nightscout">Welcome to Nightscout<a class="headerlink" href="#welcome-to-nightscout" title="Permanent link">⌁</a></h1>
+<p></br></p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">⌁</a></h2>
 <p>Nightscout (CGM in the Cloud) is an open source, DIY project cloud application, which you can install yourself using free hosting from various cloud service providers. Once installed, Nightscout acts as a central repository of blood glucose and insulin dosing data for a single person, allowing you to view the CGM graph and other data anywhere using a web browser.</p>
-<p>The CGM data is sent to Nightscout using an uploader application such as xDrip+ or Spike, running on a mobile phone carried by the person being monitored. The application you'll need for uploading the data depends on which CGM device you're using.</p>
+<p>The CGM data is sent to Nightscout using an uploader application such as xDrip+, Spike or Medtronic uploader, running on a mobile phone carried by the person being monitored, or directly from your Dexcom or CareLink account. The application you'll need for uploading the data depends on which CGM device you're using.</p>
 <p>In addition to viewing the data using a web browser, there are several applications available for mobile devices and smart watches, which allow you alternate ways to view the information.</p>
+<p></br></p>
+<p><img src="./img/nscloud.png" width="800px"></p>
+<p></br></p>
 <p>Once you have Nightscout up and running, you'll get a view that looks something like this:</p>
-<p><img src="img/nightscout.jpg" width="400"></p>
+<p></br></p>
+<p><img src="./img/nightscout.jpg" width="600px"></p>
+<p></br></p>
+<p></br></p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Please understand that this project:</p>
@@ -193,8 +222,18 @@
 </ul>
 <p><strong>You take full responsibility for building and running this system and do so at your own risk.</strong></p>
 </div>
+<p></br></p>
 <h2 id="development-history">Development History<a class="headerlink" href="#development-history" title="Permanent link">⌁</a></h2>
-<p>Nightscout has been developed as an open-source, shared project.</p>
+<p>Nightscout was developed by parents of children with Type 1 Diabetes and has continued to be developed, maintained, and supported by volunteers. When first implemented, Nightscout was a solution specifically for remote monitoring of Dexcom G4 CGM data. Today, there are Nightscout solutions available for many CGM sensors. The goal of the project is to allow remote monitoring of a T1D’s glucose level using existing monitoring devices.</p>
+<p></br></p>
+<h2 id="what-does-it-cost">What Does It Cost?<a class="headerlink" href="#what-does-it-cost" title="Permanent link">⌁</a></h2>
+<p>Cost varies based on the setup you will be using.</p>
+<p>The online services and accounts needed to run a Nightscout site are free for most users.</p>
+<p></br></p>
+<h2 id="what-do-i-need">What Do I Need?<a class="headerlink" href="#what-do-i-need" title="Permanent link">⌁</a></h2>
+<p>A CGM sensor: Dexcom, Medtronic, Libre (plus an additional transmitter) or Eversense.</p>
+<p>An <a href="uploader/uploaders/">uploader</a>: a mobile phone with the matching app.</p>
+<p></br></p>
 <h2 id="how-to-use-these-docs">How to Use These Docs<a class="headerlink" href="#how-to-use-these-docs" title="Permanent link">⌁</a></h2>
 <ul>
 <li>Use the navigation menu at the top of the screen to find the info you are looking for.</li>

@@ -39,16 +39,26 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../.." class="dropdown-item">Index</a>
+    <a href="../.." class="dropdown-item">Nightscout</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/overview/" class="dropdown-item">Overview</a>
+    <a href="../../nightscout/insights/" class="dropdown-item">How does it work?</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/uploaders/" class="dropdown-item">Uploaders</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../../nightscout/new_user/" class="nav-link">Install</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/new_user/" class="dropdown-item">New Nightscout</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
@@ -56,6 +66,10 @@
                                     
 <li>
     <a href="../update/" class="dropdown-item">Updating your site</a>
+</li>
+                                    
+<li>
+    <a href="../redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
@@ -76,7 +90,7 @@
 </li>
                                     
 <li>
-    <a href="../../nightscout/uploaders/" class="dropdown-item">Uploaders</a>
+    <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
 </li>
                                     
 <li>
@@ -110,7 +124,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../nightscout/troublehoot/" class="dropdown-item">Troubleshooting</a>
+    <a href="../../troubleshoot/troublehoot/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
@@ -127,7 +141,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../update/" class="nav-link">
+                                <a rel="prev" href="../redeploy/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -153,13 +167,266 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#atlas-migration-is-mandatory-for-heroku-users-with-mlab" class="nav-link">Atlas migration is mandatory for Heroku users with mLab.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#important-prerequisite" class="nav-link">Important Prerequisite</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#step-1-heroku" class="nav-link">Step 1: Heroku</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-2-atlas-account" class="nav-link">Step 2: Atlas account</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-3-mlab-migration" class="nav-link">Step 3: mLab migration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-4-connection-string" class="nav-link">Step 4: Connection string</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-5-update-nightscout" class="nav-link">Step 5: Update Nightscout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-6-delete-mlab-add-on-optional" class="nav-link">Step 6: Delete mLab add-on (optional)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Coming soon...</p>
-<p><a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ</a></p></div>
+<h1 id="atlas-migration-is-mandatory-for-heroku-users-with-mlab">Atlas migration is mandatory for Heroku users with mLab.<a class="headerlink" href="#atlas-migration-is-mandatory-for-heroku-users-with-mlab" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<div class="admonition warning">
+<p class="admonition-title">You must migrate your existing mLab MongoDB, where all your Nightscout data are stored, to MongoDB Atlas <strong>before November 2020</strong>.</p>
+<p>This is essential to keep your Nightscout functioning.</p>
+</div>
+<p></br> </p>
+<p>Read this:</p>
+<p><a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ</a></p>
+<p>To migrate your database you can use the video provided by mLab:</p>
+<p><a href="https://docs.mlab.com/how-to-migrate-nightscout-sandbox-heroku-addons-to-atlas/">https://docs.mlab.com/how-to-migrate-nightscout-sandbox-heroku-addons-to-atlas/</a></p>
+<p></br> </p>
+<p>Access your Heroku account from a computer. Do not change device/computer/browser during the upgrade!</p>
+<div class="admonition note">
+<p class="admonition-title">If you have issues with your current browser try another one.</p>
+</div>
+<p></br></p>
+<h1 id="important-prerequisite">Important Prerequisite<a class="headerlink" href="#important-prerequisite" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<p><a href=".\update.md"><strong>Update your Nightscout to latest release!</strong></a></p>
+<p></br></p>
+<h2 id="step-1-heroku">Step 1: Heroku<a class="headerlink" href="#step-1-heroku" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<p>Click this link to login in Heroku: <a href="https://id.heroku.com/login"><strong>https://id.heroku.com/login</strong></a></p>
+<p>Insert mail and password then click Log In</p>
+<p><img src="..\img\MigrateNS00.png" style="zoom:80%;" /></p>
+<p>Select your Nightscout app name  </p>
+<p><img src="..\img\MigrateNS01.png" style="zoom:80%;" /> </p>
+<p>Go to Settings</p>
+<p><img src="..\img\MigrateNS02.png" style="zoom:80%;" /> </p>
+<p>Click Reveal Config Vars</p>
+<p><img src="..\img\MigrateNS03.png" style="zoom:80%;" /> </p>
+<p>Scroll down until you’ll find a variable named <code>MONGO_CONNECTION</code> or <code>MONGODB_URI</code> or <code>MONGOLAB_URI</code> or similar. </p>
+<p>This variable has been automatically created at first Nightscout distribution on Heroku. We want to make a backup.</p>
+<p><img src="..\img\MigrateNS04.png" style="zoom:80%;" /> </p>
+<p>Copy the value of this variable, it will look like: <code>mongodb://heroku_user:password@database.mlab.com:port/heroku_user</code></p>
+<p>Scroll down Config Vars until you’ll see <code>KEY</code> and <code>VALUE</code></p>
+<p><img src="..\img\MigrateNS05.png" style="zoom:80%;" /> </p>
+<p>In <code>KEY</code> write <code>MONGO_TEMP</code> then paste in <code>VALUE</code> the text copied above, click Add</p>
+<p><img src="..\img\MigrateNS06.png" style="zoom:80%;" /> </p>
+<p>This new key will be inserted at the bottom of the list.</p>
+<p><img src="..\img\MigrateNS07.png" style="zoom:80%;" /> </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you want, open this <a href="../stringhelp.html">helper link</a> in another tab, paste this string in the first field then <code>Validate</code> it.</p>
+</div>
+<p>Another one…</p>
+<p>Scroll down Config Vars until you’ll see <code>KEY</code> and <code>VALUE</code></p>
+<p><img src="..\img\MigrateNS08.png" style="zoom:80%;" /> </p>
+<p>In <code>KEY</code> write <code>MONGO_CONNECTION</code> (leave the field <code>VALUE</code> empty) then click Add</p>
+<p><img src="..\img\MigrateNS09.png" style="zoom:80%;" /> </p>
+<p>This new key will be inserted at the bottom of the list.</p>
+<p><img src="..\img\MigrateNS10.png" style="zoom:80%;" /> </p>
+<p>We’ll use it later. </p>
+<p>Now scroll all the way up and select <code>Overview</code> (top left)</p>
+<p><img src="..\img\MigrateNS11.png" style="zoom:80%;" /> </p>
+<p>Click <code>mLab MongoDB</code></p>
+<p><img src="..\img\MigrateNS12.png" style="zoom:80%;" /> </p>
+<p>Another tab will open, from mLab. <strong>Leave it open</strong>. </p>
+<p><img src="..\img\MigrateNS62.png" style="zoom:80%;" /> </p>
+<p>Go back to Heroku and select <code>Settings</code></p>
+<p><img src="..\img\MigrateNS13.png" style="zoom:80%;" /> </p>
+<p></br></p>
+<h2 id="step-2-atlas-account">Step 2: Atlas account<a class="headerlink" href="#step-2-atlas-account" title="Permanent link">⌁</a></h2>
+<p>Now let’s create an Atlas account.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Do NOT close Heroku and mLab tabs, they MUST remain opened until the end of the migration.</strong></p>
+</div>
+<p>Open another tab at: <a href="https://www.mongodb.com/cloud/atlas">https://www.mongodb.com/cloud/atlas</a> and click <code>Start Free</code></p>
+<p><img src="..\img\MigrateNS15.png" style="zoom:80%;" /> </p>
+<p>Enter information then click <code>Get Started Free</code></p>
+<p><img src="..\img\MigrateNS16.png" style="zoom:80%;" /> </p>
+<p>Choose a name for your organization or leave default value.</p>
+<p>Click <code>Skip</code>.</p>
+<p><img src="..\img\MigrateNS17.png" style="zoom:80%;" /> </p>
+<p>Scroll down and click <code>Dismiss</code></p>
+<p><img src="..\img\MigrateNS18.png" style="zoom:80%;" /> </p>
+<p>Click your name, top right, and select <code>Organizations</code>.</p>
+<p><img src="..\img\MigrateNS19.png" style="zoom:80%;" /> </p>
+<p>Click on your organization name</p>
+<p><img src="..\img\MigrateNS20.png" style="zoom:80%;" /> </p>
+<p>Click <code>Settings</code>.</p>
+<p><img src="..\img\MigrateNS21.png" style="zoom:80%;" /> </p>
+<p></br></p>
+<h2 id="step-3-mlab-migration">Step 3: mLab migration<a class="headerlink" href="#step-3-mlab-migration" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<p>Check the mLab tab is still opened. If it’s on a login window, reopen it from Heroku.</p>
+<p>Scroll down to <code>Connect to mLab</code></p>
+<p><img src="..\img\MigrateNS22.png" style="zoom:80%;" /> </p>
+<p><img src="..\img\MigrateNS23.png" style="zoom:80%;" /> </p>
+<p><code>Authorize</code> Atlas to connect to mLab</p>
+<p><img src="..\img\MigrateNS24.png" style="zoom:80%;" /> </p>
+<p>The page will open on the connected mLab deployment</p>
+<p>On the right click <code>...</code> in actions and select <code>Configure Migration</code></p>
+<p><img src="..\img\MigrateNS25.png" style="zoom:80%;" /> </p>
+<p>Click on <code>Create or Select Target Project</code></p>
+<p><img src="..\img\MigrateNS26.png" style="zoom:80%;" /> </p>
+<p>Click the drop down menu below <code>Project</code> and select <code>Create New Project</code></p>
+<p><img src="..\img\MigrateNS27.png" style="zoom:80%;" /> </p>
+<p>Insert your project name (not important) and click <code>Confirm Project and Continue</code></p>
+<p><img src="..\img\MigrateNS28.png" style="zoom:80%;" />         </p>
+<p>Click <code>Import Database Users and Continue</code></p>
+<p><img src="..\img\MigrateNS29.png" style="zoom:80%;" /> </p>
+<p>Enable Allow all IP addresses and click <code>Allow All And Continue</code></p>
+<p><img src="..\img\MigrateNS30.png" style="zoom:80%;" /> </p>
+<p>Click the drop down menu below <code>Cluster</code> and select <code>Create most equivalent new cluster RECOMMENDED</code></p>
+<p><img src="..\img\MigrateNS31.png" style="zoom:80%;" /> </p>
+<p>Click <code>Confirm Target and Continue</code></p>
+<p><img src="..\img\MigrateNS32.png" style="zoom:80%;" /> </p>
+<p>Be patient</p>
+<p><img src="..\img\MigrateNS33.png" style="zoom:80%;" /> </p>
+<p>Click <code>Confirm Source and Target</code></p>
+<p><img src="..\img\MigrateNS34.png" style="zoom:80%;" /> </p>
+<p>Click <code>Confirm and Continue</code></p>
+<p><img src="..\img\MigrateNS35.png" style="zoom:80%;" /> </p>
+<p>Click <code>Begin Test Run</code></p>
+<p><img src="..\img\MigrateNS36.png" style="zoom:80%;" /> </p>
+<p>Wait for the test to finish (be patient)</p>
+<p><img src="..\img\MigrateNS37.png" style="zoom:80%;" /> </p>
+<p>When available, click <code>Test Connectivity</code></p>
+<p><img src="..\img\MigrateNS38.png" style="zoom:80%;" /> </p>
+<div class="admonition warning">
+<p class="admonition-title">Next step is critical</p>
+<p>Copy the new Atlas string and paste it in a Notepad to avoid losing it.</p>
+</div>
+<p>Click on the <code>Copy</code> button.</p>
+<p><img src="..\img\MigrateNS39.png" style="zoom:80%;" /> </p>
+<div class="admonition warning">
+<p class="admonition-title">Don’t lose it</p>
+<p>We’ll need it in Heroku later!</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you opened the helper link above, paste this string in the second field and <code>Validate</code> it.</p>
+</div>
+<p><img src="..\img\MigrateNS40.png" style="zoom:80%;" /> </p>
+<p>Click <code>Confirm And Continue</code></p>
+<p><img src="..\img\MigrateNS41.png" style="zoom:80%;" /> </p>
+<div class="admonition warning">
+<p class="admonition-title">Don’t click anything on the next step without reading!</p>
+</div>
+<p>Click the drop-down menu on the side of <code>Confirm and Continue</code> and select <code>Confirm and Close</code>!</p>
+<p><img src="..\img\MigrateNS42.png" style="zoom:80%;" /> </p>
+<p>Here we are, we’ll now migrate mLab to Atlas</p>
+<p>Click <code>Review Process and Begin</code></p>
+<p><img src="..\img\MigrateNS43.png" style="zoom:80%;" /> </p>
+<p>Select <code>I understand …</code> and click <code>Begin Migration</code></p>
+<p><img src="..\img\MigrateNS44.png" style="zoom:80%;" /> </p>
+<p>Done! Click <code>Start Using Atlas</code></p>
+<p><img src="..\img\MigrateNS45.png" style="zoom:80%;" /> </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Last chance to copy the string...</p>
+</div>
+<p>Click <code>I’m Done</code></p>
+<p><img src="..\img\MigrateNS46.png" style="zoom:80%;" /> </p>
+<p>Select both <code>I understand …</code> and <code>I am not using …</code> then click <code>Confirm and Close</code></p>
+<p><img src="..\img\MigrateNS47.png" style="zoom:80%;" /> </p>
+<p>Your window will update, database has been migrated to Atlas</p>
+<p><img src="..\img\MigrateNS48.png" style="zoom:80%;" /> </p>
+<p></br></p>
+<h2 id="step-4-connection-string">Step 4: Connection string<a class="headerlink" href="#step-4-connection-string" title="Permanent link">⌁</a></h2>
+<p>Go back to Settings in Heroku</p>
+<p><img src="..\img\MigrateNS49.png" style="zoom:80%;" /> </p>
+<p>Click <code>Reveal Config Vars</code></p>
+<p><img src="..\img\MigrateNS50.png" style="zoom:80%;" /> </p>
+<p>Scroll down to <code>MONGO_TEMP</code>.</p>
+<p><img src="..\img\MigrateNS51.png" style="zoom:80%;" /> </p>
+<p>Copy the contents of your Notepad in a line below your Atlas string.</p>
+<p><img src="..\img\MigrateNS52.png" style="zoom:80%;" /> </p>
+<div class="admonition warning">
+<p class="admonition-title">The following operation is critical.</p>
+<p>You must insert the mLab password in your Atlas string.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you used the helper link above, copy the resulting string obtained by pressing the <code>Convert</code> button.</p>
+</div>
+<p>In Notepad you have two strings with this format (not these values).</p>
+<p><code>mongodb+srv://heroku_zzzzzzzz:&lt;password&gt;@cluster-zzzzzzzz.xxxxx.mongodb.net/heroku_zzzzzzzz?retryWrites=true&amp;w=majority</code></p>
+<p><code>mongodb://heroku_zzzzzzzz:hfo7fbh6h3dummy6o60kvjojg0@yyyyyyyy.mlab.com:12345/heroku_zzzzzzzz</code></p>
+<p>Your password (do not copy it from this guide) is made of <strong>26 characters</strong> in between <strong>:</strong> and <strong>@</strong>.</p>
+<p>In the first string you should replace <code>&lt;password&gt;</code>, with your real password so that it will look like this:</p>
+<p><code>mongodb+srv://heroku_zzzzzzzz:hfo7fbh6h3dummy6o60kvjojg0@cluster-zzzzzzzz.xxxxx.mongodb.net/heroku_zzzzzzzz?retryWrites=true&amp;w=majority</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>there are no &lt; and &gt; remaining in this string!</p>
+</div>
+<p>Now find and edit the <code>MONGO_CONNECTION</code> variable (click the pen to edit it)</p>
+<p>Paste the resulting string and click <code>Save changes</code></p>
+<p><img src="..\img\MigrateNS53.png" style="zoom:80%;" /> </p>
+<p>Find the variable named <code>MONGODB_URI</code> or <code>MONGOLAB_URI</code> that you identified at the beginning and click the cross to delete it.</p>
+<p><img src="..\img\MigrateNS54.png" style="zoom:80%;" /> </p>
+<p>Confirm with <code>Delete Config Var</code></p>
+<p><img src="..\img\MigrateNS55.png" style="zoom:80%;" /> </p>
+<p>Scroll up to the page top, still in <code>Settings</code>, click <code>More</code>, select <code>Restart all dynos</code></p>
+<p><img src="..\img\MigrateNS57.png" style="zoom:80%;" /> </p>
+<p>Congratulations, you completed migration from mLab to Atlas.</p>
+<p>Browse to your Nightscout site and wait 5/10 minutes for it to restart (make sure readings are sent to it).</p>
+<p></br></p>
+<h2 id="step-5-update-nightscout">Step 5: Update Nightscout<a class="headerlink" href="#step-5-update-nightscout" title="Permanent link">⌁</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">If you didn't update Nightscout before migration</p>
+<p><a href=".\update.md"><strong>Update your Nightscout to latest release!</strong></a> 
+Versions older than 13.0.x won't probably run. 
+Versions 13.x are not optimized for the Atlas database.</p>
+</div>
+<p></br></p>
+<h2 id="step-6-delete-mlab-add-on-optional">Step 6: Delete mLab add-on (optional)<a class="headerlink" href="#step-6-delete-mlab-add-on-optional" title="Permanent link">⌁</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>MAKE SURE NIGHTSCOUT IS FULLY FUNCTIONAL BEFORE REMOVING THE ADD-ON</strong></p>
+</div>
+<p>If you want to complete the operation once you’re sure everything is working well (<strong>and this is not necessary</strong>) you can remove mLab from Heroku.</p>
+<p>For this, in Heroku go to <code>Resources</code></p>
+<p><img src="..\img\MigrateNS58.png" style="zoom:80%;" /> </p>
+<p>On the right of the mLab MongoDB line, click the drop down menu then <code>Delete Add-on</code></p>
+<p><img src="..\img\MigrateNS59.png" style="zoom:80%;" /> </p>
+<p>Write the name of your app to confirm, click <code>Remove add-on</code></p>
+<p><img src="..\img\MigrateNS60.png" style="zoom:80%;" /> </p>
+<p>Migration is complete and your Nightscout doesn't have anything to do with the old mLab database now.</p></div>
             </div>
         </div>
 

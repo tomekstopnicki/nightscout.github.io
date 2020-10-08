@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Install - Nightscout</title>
+        <title>New Nightscout - Nightscout</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -39,16 +39,26 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../.." class="dropdown-item">Index</a>
+    <a href="../.." class="dropdown-item">Nightscout</a>
 </li>
                                     
 <li>
-    <a href="../overview/" class="dropdown-item">Overview</a>
+    <a href="../insights/" class="dropdown-item">How does it work?</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/uploaders/" class="dropdown-item">Uploaders</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Install</a>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">New Nightscout</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
@@ -56,6 +66,10 @@
                                     
 <li>
     <a href="../../update/update/" class="dropdown-item">Updating your site</a>
+</li>
+                                    
+<li>
+    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
@@ -76,7 +90,7 @@
 </li>
                                     
 <li>
-    <a href="../uploaders/" class="dropdown-item">Uploaders</a>
+    <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
 </li>
                                     
 <li>
@@ -110,7 +124,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../troublehoot/" class="dropdown-item">Troubleshooting</a>
+    <a href="../../troubleshoot/troublehoot/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
@@ -127,7 +141,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../overview/" class="nav-link">
+                                <a rel="prev" href="../../uploader/uploaders/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -190,7 +204,10 @@
 <p></br></p>
 <p>Create your Heroku, GitHub and Atlas accounts from a computer.</p>
 <p>Do not change device/computer/browser during the creation process!</p>
-<p>If you have issues with your current browser try another one.</br></br></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have unexpected issues whilst creating your site restart with another browser.</br></br></p>
+</div>
 <h2 id="step-1-create-a-github-account">Step 1: Create a GitHub account<a class="headerlink" href="#step-1-create-a-github-account" title="Permanent link">⌁</a></h2>
 <p></br></p>
 <ul>
@@ -355,11 +372,18 @@
 </ul>
 <p>It should be similar to this (<code>xxxxx</code> will be different):</p>
 <p><code>mongodb+srv://nightscout:&lt;password&gt;@cluster0.xxxxx.mongodb.net/&lt;dbname&gt;?retryWrites=true&amp;w=majority</code></p>
+<div class="admonition info">
+<p class="admonition-title">Helper page</p>
+<p>Open <a href="../stringhelp.html">this helper page</a> in another tab and insert the original connection string and both your database password and the name you decided for your database name (not important), then click <code>Generate</code> to get the final string (leave the page open).</p>
+</div>
 <ul>
-<li>Replace <password> with your password as noted previously and <dbname> by any text you want, say mycgmic for example. The result will be like this:</li>
+<li>If you want to do it manually: replace <code>&lt;password&gt;</code> with your password as noted previously (in the example below <code>soo5ecret</code>) and <code>&lt;dbname&gt;</code> by any text you want, say <code>mycgmic</code> for example. The result will be like this:</li>
 </ul>
 <p><code>mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/mycgmic?retryWrites=true&amp;w=majority</code></p>
-<p>Note: there are no &lt; and &gt; characters in the final string, neither for password and database name.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are no &lt; and &gt; characters in the final string, neither for password and database name.</p>
+</div>
 <p>Keep this string safely aside, it is called your <code>MONGODB_URI</code></p>
 <p></br></br></p>
 <h2 id="step-4-fork-and-deploy-cgm-remote-monitor">Step 4: Fork and deploy cgm-remote-monitor<a class="headerlink" href="#step-4-fork-and-deploy-cgm-remote-monitor" title="Permanent link">⌁</a></h2>
@@ -455,6 +479,10 @@
 <li>Now you need that connection string you defined during the Atlas cluster creation (as the example below, but not the string below). Copy and paste it in the <code>MONGODB_URI</code> variable field.</li>
 </ul>
 <p><code>mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/mycgmic?retryWrites=true&amp;w=majority</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the string generated in the helper page if you decided to use it.</p>
+</div>
 <p><img src="..\img\NewNS39.png" style="zoom:80%;" /></p>
 <p></br></p>
 <ul>
@@ -509,9 +537,7 @@
 <p></br></br></p>
 <h2 id="step-5-uploader-setup">Step 5: Uploader setup<a class="headerlink" href="#step-5-uploader-setup" title="Permanent link">⌁</a></h2>
 <p></br></p>
-<p>Most uploaders require your Nightscout URL and the API secret.</p>
-<p>For xDrip+ you need to put the URL in this format:</p>
-<p><code>https://APISecret@SiteURL.herokuapp.com/api/v1</code></p></div>
+<p><a href="..\uploader\setup.md">Configure your uploader</a>.</p></div>
             </div>
         </div>
 
