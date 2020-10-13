@@ -51,14 +51,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../nightscout/new_user/" class="dropdown-item">New Nightscout</a>
-</li>
-                                </ul>
+                            <li class="navitem">
+                                <a href="../../nightscout/new_user/" class="nav-link">Install</a>
                             </li>
                             <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
@@ -167,13 +161,27 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#heroku-with-atlas-migration-is-mandatory-for-azure-users" class="nav-link">Heroku with Atlas migration is mandatory for Azure users.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Coming soon...</p>
-<p><a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ#migrating-to-atlas-for-azure-users">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ#migrating-to-atlas-for-azure-users</a></p></div>
+<h1 id="heroku-with-atlas-migration-is-mandatory-for-azure-users">Heroku with Atlas migration is mandatory for Azure users.<a class="headerlink" href="#heroku-with-atlas-migration-is-mandatory-for-azure-users" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<div class="admonition warning">
+<p class="admonition-title">You must migrate your existing mLab MongoDB, where all your Nightscout data are stored, to MongoDB Atlas <strong>before November 2020</strong>.</p>
+<p>This is essential to keep your Nightscout functioning.</p>
+</div>
+<p></br> </p>
+<p>Read this:</p>
+<p><a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ#migrating-to-atlas-for-azure-users">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ#migrating-to-atlas-for-azure-users</a></p>
+<p>To migrate your database you can use the guide provided by mLab:</p>
+<p><a href="https://docs.mlab.com/how-to-migrate-sandbox-databases-to-atlas/">https://docs.mlab.com/how-to-migrate-sandbox-databases-to-atlas/</a></p></div>
             </div>
         </div>
 

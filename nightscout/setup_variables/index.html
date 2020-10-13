@@ -51,14 +51,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../new_user/" class="dropdown-item">New Nightscout</a>
-</li>
-                                </ul>
+                            <li class="navitem">
+                                <a href="../new_user/" class="nav-link">Install</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
@@ -198,6 +192,9 @@
 <p>When deploying Nightscout for the first time you are required to setup core config variables that are mandatory to the site functioning.</p>
 <p>You will see them in the same order they appear when setting up a new site.</p>
 <p>If you need to modify them later, you'll find them in <a href="../setup_variables#editing-config-vars-in-heroku">Heroku</a>.</p>
+<p>From <code>Settings</code>, click on the  <code>Reveal Config Vars</code></p>
+<p><img src="../img/config-vars.png" width="800"></p>
+<p></br></p>
 <hr />
 <h3 id="alarms">Alarms<a class="headerlink" href="#alarms" title="Permanent link">⌁</a></h3>
 <div class="admonition note">
@@ -363,18 +360,17 @@
 
 <p><strong>MMCONNECT_USER_NAME</strong></p>
 <p>Your CareLink account username, to receive CGM data from the CareLink service. Also make sure to include 'mmconnect' in your ENABLE line.</p>
-<p></br></p>
 <div class="admonition info">
 <p class="admonition-title">More variables for <code>MMCONNECT</code> are available <a href="https://github.com/nightscout/cgm-remote-monitor#mmconnect-minimed-connect-bridge">here</a> for you to add and edit in <a href="../setup_variables#editing-config-vars-in-heroku">Heroku</a>. </p>
 </div>
 <hr />
+<p><strong>MONGO_COLLECTION <code>Required</code></strong></p>
+<p>The Mongo collection where CGM data is stored.</p>
 <div class="admonition warning">
 <p class="admonition-title">This string is vital to your Nightscout functioning: it is the link that will allow access to the database where all your data is stored in the cloud. A wrong connection string will prevent your site to open and your data to upload in Nightscout</p>
 </div>
 <p>An Atlas database string will look like this:</p>
 <p><code>mongodb+srv://nightscout:&lt;password&gt;@cluster0.xxxxx.mongodb.net/&lt;dbname&gt;?retryWrites=true&amp;w=majority</code></p>
-<p><strong>MONGO_COLLECTION <code>Required</code></strong></p>
-<p>The Mongo collection where CGM data is stored.</p>
 <hr />
 <p><strong>NIGHT_MODE</strong></p>
 <p>Default setting for new browser views, for whether Night Mode should be enabled. ('on' or 'off')</p>

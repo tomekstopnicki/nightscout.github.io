@@ -51,14 +51,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../nightscout/new_user/" class="dropdown-item">New Nightscout</a>
-</li>
-                                </ul>
+                            <li class="navitem">
+                                <a href="../../nightscout/new_user/" class="nav-link">Install</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
@@ -168,6 +162,15 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="1"><a href="#overall-third-party-services" class="nav-link">Overall third party services</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#before-troubleshooting" class="nav-link">Before troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="1"><a href="#github-and-heroku" class="nav-link">GitHub and Heroku</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#a-valid-github-directory-could-not-be-found" class="nav-link">A valid GitHub Directory could not be found.</a>
@@ -185,7 +188,16 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#nightscout-crash" class="nav-link">Nightscout crash</a>
+            <li class="nav-item" data-level="1"><a href="#atlas" class="nav-link">Atlas</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#limit-of-one-free-cluster" class="nav-link">Limit of one free cluster.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#nightscout-page-doesnt-open" class="nav-link">Nightscout page doesn't open</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#application-error" class="nav-link">Application Error</a>
               <ul class="nav flex-column">
@@ -204,6 +216,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#dexcom-data-not-showing" class="nav-link">Dexcom data not showing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -211,6 +227,18 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
+<h1 id="overall-third-party-services">Overall third party services<a class="headerlink" href="#overall-third-party-services" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<h2 id="before-troubleshooting">Before troubleshooting<a class="headerlink" href="#before-troubleshooting" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<p>Check the services you're using.</p>
+<p>Dexcom: <a href="https://status.dexcom.com/">https://status.dexcom.com/</a></p>
+<p>Carelink US: <a href="https://carelink.minimed.com/">https://carelink.minimed.com/</a></p>
+<p>Carelink non-US: <a href="https://carelink.minimed.eu/app/login">https://carelink.minimed.eu/app/login</a></p>
+<p>GitHub: <a href="https://www.githubstatus.com/">https://www.githubstatus.com/</a></p>
+<p>Heroku: <a href="https://status.heroku.com/">https://status.heroku.com/</a></p>
+<p>Atlas: <a href="https://status.cloud.mongodb.com/">https://status.cloud.mongodb.com/</a></p>
+<p></br></p>
 <h1 id="github-and-heroku">GitHub and Heroku<a class="headerlink" href="#github-and-heroku" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <h2 id="a-valid-github-directory-could-not-be-found">A valid GitHub Directory could not be found.<a class="headerlink" href="#a-valid-github-directory-could-not-be-found" title="Permanent link">⌁</a></h2>
@@ -252,7 +280,47 @@
 <li>Click <code>Authorize GitHub</code> in the pop-up.</li>
 </ul>
 <p></br></p>
-<h1 id="nightscout-crash">Nightscout crash<a class="headerlink" href="#nightscout-crash" title="Permanent link">⌁</a></h1>
+<h1 id="atlas">Atlas<a class="headerlink" href="#atlas" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<h2 id="limit-of-one-free-cluster">Limit of one free cluster.<a class="headerlink" href="#limit-of-one-free-cluster" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<p>When creating a new site or migrating (usually not the first attempt), when reaching <code>Target Cluster</code>.</p>
+<p><img src="../img/TShoot17.png" style="zoom:80%;" ></p>
+<ul>
+<li>Click the leaf top left in your Atlas account. Look at the <code>Project Name</code> you wanted to use when creating your new cluster, it shouldn't contain a cluster yet (like the example below, I tried to create a new Nightscout site but there is already a cluster inside the project I wanted to use). You can't have two clusters in a free project. Click your <code>Project Name</code>.</li>
+<li>This should not happen in normal conditions. Before deleting a cluster, check it doesn't contain your data!</li>
+</ul>
+<p><img src="../img/TShoot18.png" style="zoom:80%;" ></p>
+<ul>
+<li>Click on <code>Collections</code> in the cluster you selected.</li>
+</ul>
+<p><img src="../img/TShoot19.png" style="zoom:80%;" ></p>
+<ul>
+<li>Click on <code>entries</code></li>
+</ul>
+<p><img src="../img/TShoot20.png" style="zoom:80%;" ></p>
+<ul>
+<li>In the case there is data, like in the example below, <strong>don't use this cluster</strong>. Leave it like this and create a new one.</li>
+</ul>
+<p><img src="../img/TShoot21.png" style="zoom:80%;" ></p>
+<ul>
+<li><strong>If there no data</strong>, you can safely delete it.</li>
+</ul>
+<p><img src="../img/TShoot22.png" style="zoom:80%;" ></p>
+<ul>
+<li>In this cluster you want to delete click <code>...</code> then <code>Terminate</code></li>
+</ul>
+<p><img src="../img/TShoot23.png" style="zoom:80%;" ></p>
+<ul>
+<li>Copy the cluster name to confirm then click <code>Terminate</code></li>
+</ul>
+<p><img src="../img/TShoot24.png" style="zoom:80%;" ></p>
+<ul>
+<li>Wait until the operation completes.</li>
+<li>You can now use this project name to create a new site.</li>
+</ul>
+<p></br></p>
+<h1 id="nightscout-page-doesnt-open">Nightscout page doesn't open<a class="headerlink" href="#nightscout-page-doesnt-open" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <h2 id="application-error">Application Error<a class="headerlink" href="#application-error" title="Permanent link">⌁</a></h2>
 <p></br></p>
@@ -261,6 +329,11 @@
 <li><a href="../../update/update/">Update Nightscout to latest release</a>.</li>
 <li>It might not fix your issue but it will help find a solution.</li>
 </ul>
+<p></br></p>
+<ul>
+<li>If your site is already up to date, try to restart your app: log in Heroku, go to <code>Settings</code>, <code>More</code>, <code>Restart all dynos</code>.</li>
+</ul>
+<p><img src="../../update/img/MigrateNS57.png" style="zoom:80%;" ></p>
 <p></br></p>
 <h2 id="boot-error-unable-to-connect-to-mongo">Boot Error - Unable to connect to Mongo<a class="headerlink" href="#boot-error-unable-to-connect-to-mongo" title="Permanent link">⌁</a></h2>
 <p></br></p>
@@ -331,7 +404,48 @@
 <ul>
 <li>Change the permissions to <code>Atlas Admin</code> and <code>Update User</code></li>
 </ul>
-<p><img src="../img/TShoot16.png" style="zoom:80%;" ></p></div>
+<p><img src="../img/TShoot16.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h2 id="dexcom-data-not-showing">Dexcom data not showing<a class="headerlink" href="#dexcom-data-not-showing" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<p>If you are using a Dexcom system, and your data is not appearing in Nightscout, there are only a limited number of reasons for that. You should check your (1) Heroku settings and (2) Dexcom Share.</p>
+<p>NOTE: The #1 reason why BGs aren't showing is that you have mismatched password and user names in Heroku settings and Dexcom. Please see blue box below for that error.</p>
+<h3 id="heroku-settings">Heroku Settings<a class="headerlink" href="#heroku-settings" title="Permanent link">⌁</a></h3>
+<p>Login to your Heroku account and from within Heroku <code>Settings</code>, click on the  <code>Reveal Config Vars</code></p>
+<p><img src="../../nightscout/img/config-vars.png" width="800"></p>
+<p></br></p>
+<p>Now from the <code>Config Vars</code> area, check the following (see screenshot below for reference):</p>
+<ol>
+<li>You must use the same <code>BRIDGE_PASSWORD</code> or <code>BRIDGE_USER_NAME</code> that your Dexcom mobile app is using.</li>
+<li>You must have <code>bridge</code> and <code>careportal</code> on the <code>ENABLE</code> line (you can have other values there...but don't forget these two).</li>
+<li>If you are outside the USA, you must add <code>BRIDGE_SERVER</code> set to <code>EU</code> in Heroku settings.</li>
+<li>Your <code>careportal</code> must be one word in the <code>ENABLE</code> line, sometimes autocorrect makes it two words.</li>
+<li>If using <code>mmol</code>, make sure you have spelled that value correctly in the <code>DISPLAY_UNITS</code>.</li>
+</ol>
+<p><img src="../../nightscout/img/bridge-settings.jpg" width="600"></p>
+<p></br></p>
+<p>One thing that can happen if you have an incorrect Dexcom login/password in Loop's CGM Share account settings and/or in your Nightscout BRIDGE settings is that Dexcom will lock your account...and you won't see CGM data in Nightscout. If you notice your CGM readings disappeared, but everything else is flowing...check your Heroku logs that are viewable by selecting "View Logs" from the drop-down menu underneath the "More" option. </p>
+<p><img src="../../nightscout/img/heroku-logs.png"></p>
+<p></br></p>
+<p>Do your logs have "SSO authentication errors" like in the red box highlighted above? If you do, then:</p>
+<ol>
+<li>
+<p>Delete your share account entry from your Loop's CGM account settings...like you should have NO ENTRY in your share account settings WITHIN LOOP CGM SETTINGS.</p>
+</li>
+<li>
+<p>Delete your BRIDGE entries within Heroku settings.  Don't delete the rows, just delete the entries within BRIDGE_PASSWORD and BRIDGE_USER_NAME.</p>
+</li>
+<li>
+<p>Wait 15 minutes and then follow the directions in the blue box below. It is important to wait the 15 minutes...the reason you can't log in right now is that your Dexcom account has a temporary lock from one of the passwords in step 1 or 2 being incorrect. The temporary lock will expire after 10-15 minutes of giving the account login a break from the incorrect logins. So, definitely wait or else you'll just keep prolonging the issue.</p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">About your Bridge password and user name</p>
+<p>The <code>BRIDGE_PASSWORD</code> and <code>BRIDGE_USER_NAME</code> are NOT visible from within your Dexcom mobile app or online account. The values of them are what you entered into your Dexcom mobile app when you VERY FIRST logged into that app however long ago. If you have double-checked everything else that could be incorrect and BGs still aren't showing in Nightscout, then you likely have those Bridge values incorrect. To fix that, delete your Dexcom app (don't stop the session before deleting the app...just keep it going). Download the app again from the iPhone's App Store and login to the freshly-downloaded Dexcom app. <strong>Take note</strong> that deleting the app will not stop your session, your session will pick right back up once the transmitter pairs again. The <code>BRIDGE_USER_NAME</code> is not an email address. Use that exact same login now in your Heroku settings. You can leave your Loop's Share account info blank...you just need the transmitter ID going forward.</p>
+</div>
+<h3 id="dexcom-share">Dexcom Share<a class="headerlink" href="#dexcom-share" title="Permanent link">⌁</a></h3>
+<p>Make sure you have Dexcom Share turned ON in your Dexcom app. In the Dexcom app's main screen, find the triangle made of dots. If the dots are grey, you do not have Share turned on. Tap the triangle, and follow the directions to add a follower (yourself if you don't have someone else you'd like to invite) and turn on Share.</p>
+<p><img src="../../nightscout/img/sharing.jpg" width="250"></p></div>
             </div>
         </div>
 

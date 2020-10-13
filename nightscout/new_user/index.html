@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>New Nightscout - Nightscout</title>
+        <title>Install - Nightscout</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -51,14 +51,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="./" class="dropdown-item active">New Nightscout</a>
-</li>
-                                </ul>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Install</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
@@ -368,10 +362,67 @@
 <p><img src="..\img\NewNS28.png" style="zoom:100%;" /></p>
 <p></br></p>
 <ul>
-<li>Modify the connection string:</li>
+<li>Paste the string in the box below:</li>
 </ul>
+<p><input type="text" id="myAtlas" value="" size="100">
+</br></p>
+<ul>
+<li>Enter your new Atlas database password and database name in the boxes below:</li>
+</ul>
+<p>Password: <input type="text" id="myPwd" value="soo5ecret" size="20">
+          Name: <input type="text" id="mydB" value="mycgmic" size="20">
+</br></p>
+<ul>
+<li>Click the <code>Generate</code> button:</li>
+</ul>
+<p><button onclick="Generate()">Generate</button></p>
+<p style="font-size:25px" id="result">The connection string will appear here</p>
+
+<script>
+var bAtlas;
+var sdB, sPwd;
+var sFinalString = "Not defined yet";
+
+function Generate()
+{
+  var sString = sFinalString;
+
+  bAtlas=0;
+  var sString = "Looks good!";
+  var sAtlas = document.getElementById("myAtlas").value;
+  sPwd = document.getElementById("myPwd").value;
+  sdB = document.getElementById("mydB").value;
+  var iAS = sAtlas.search("://");
+  if(iAS!=11) { sString = "Atlas URI should start with mongodb+srv://"; }
+  else
+  {
+    var iAP = sAtlas.search("<password>");
+    if(iAP==-1) { sString = "Atlas URI should contain &lt;password&gt;"; }
+    else
+    {
+      var iAD = sAtlas.search("<dbname>");
+      if(iAD==-1) { sString = "Atlas URI should contain &lt;dbname&gt;"; }
+      else
+      {
+        bAtlas=1;
+        sString = sAtlas.substring(0,iAP);
+        sFinalString = sString.concat(sPwd, sAtlas.substring(iAP+10, iAD));
+        sString = sAtlas.substring(iAP+10, iAD);
+        sFinalString = sFinalString.concat(sdB, sAtlas.substring(iAD+8));
+      }
+    }
+  }
+
+  if(bAtlas) document.getElementById("result").innerHTML = sFinalString;
+  else document.getElementById("result").innerHTML = sString;
+}
+</script>
+
 <p>It should be similar to this (<code>xxxxx</code> will be different):</p>
 <p><code>mongodb+srv://nightscout:&lt;password&gt;@cluster0.xxxxx.mongodb.net/&lt;dbname&gt;?retryWrites=true&amp;w=majority</code></p>
+<p>Keep this string safely aside, it is called your <code>MONGODB_URI</code></p>
+<p></br></p>
+<p><strong>If you didn't manage to get the string with the automated script:</strong> (else proceed to Step 4)</p>
 <div class="admonition info">
 <p class="admonition-title">Helper page</p>
 <p>Open <a href="../stringhelp.html">this helper page</a> in another tab and insert the original connection string and both your database password and the name you decided for your database name (not important), then click <code>Generate</code> to get the final string (leave the page open).</p>
@@ -384,7 +435,6 @@
 <p class="admonition-title">Note</p>
 <p>There are no &lt; and &gt; characters in the final string, neither for password and database name.</p>
 </div>
-<p>Keep this string safely aside, it is called your <code>MONGODB_URI</code></p>
 <p></br></br></p>
 <h2 id="step-4-fork-and-deploy-cgm-remote-monitor">Step 4: Fork and deploy cgm-remote-monitor<a class="headerlink" href="#step-4-fork-and-deploy-cgm-remote-monitor" title="Permanent link">⌁</a></h2>
 <p></br></p>
@@ -409,11 +459,6 @@
 </ul>
 <p><img src="..\img\NewNS31.png" style="zoom:80%;" /></p>
 <p><img src="..\img\NewNS32.png" style="zoom:80%;" /></p>
-<p></br></p>
-<div class="admonition note">
-<p class="admonition-title">You're getting into the core setup of your site</p>
-<p>Below you'll see the minimum required configuration, you can modify the variables later in Heroku. A more complete list here: <a href="..\setup_variables">Setup</a></p>
-</div>
 <p></br></p>
 <div class="admonition note">
 <p class="admonition-title">You're getting into the core setup of your site</p>
@@ -450,6 +495,10 @@
 <p class="admonition-title">Password</p>
 <p><em>Some people have had problems with their bridge connecting when their Dexcom passwords are entirely numeric. If you have connection issues in that case, try changing your password to something with a mix of numbers and letters.</em></p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You need to have at least one follower to use Dexcom Share. See <a href="../../uploader/setup/#dexcom">here</a>.</p>
+</div>
 <p></br></p>
 <ul>
 <li>If you want to link your CareLink account as a data source, compile the following lines:</li>
@@ -466,10 +515,6 @@
 </ul>
 <p><code>careportal</code> <code>basal</code> <code>dbsize</code> <code>rawbg</code> <code>iob</code> <code>maker</code> <code>bridge</code> <code>cob</code> <code>bwp</code> <code>cage</code> <code>iage</code> <code>sage</code> <code>boluscalc</code> <code>pushover</code> <code>treatmentnotify</code> <code>mmconnect</code> <code>loop</code> <code>pump</code> <code>profile</code> <code>food</code> <code>openaps</code> <code>bage</code> <code>alexa</code> <code>override</code></p>
 <p><img src="..\img\NewNS38.png" style="zoom:80%;" /></p>
-<div class="admonition note">
-<p class="admonition-title">More on <code>ENABLE</code> words</p>
-<p>If you want to know more about them, look here: <a href="..\setup_variables">Setup</a></p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">More on <code>ENABLE</code> words</p>
 <p>If you want to know more about them, look here: <a href="..\setup_variables">Setup</a></p>

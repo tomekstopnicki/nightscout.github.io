@@ -51,14 +51,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../nightscout/new_user/" class="dropdown-item">New Nightscout</a>
-</li>
-                                </ul>
+                            <li class="navitem">
+                                <a href="../../nightscout/new_user/" class="nav-link">Install</a>
                             </li>
                             <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
@@ -217,6 +211,7 @@
 <p></br></p>
 <p>As of 0.12, Nightscout no longer readily supports the free Azure platform. If you really want to keep using Azure, don’t update to this version. Read this <a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ</a></p>
 <p></br></p>
+<p>It is recommended that you <a href="../migrate_azure/">migrate to Heroku+Atlas</a>.</p>
 <p></br></p>
 <h2 id="step1-update-your-repository-in-github">Step1: Update your repository in GitHub<a class="headerlink" href="#step1-update-your-repository-in-github" title="Permanent link">⌁</a></h2>
 <p></br></p>
@@ -260,8 +255,14 @@
 <p><img src="../img/UpdateNS06.png" style="zoom:75%;" ></p>
 <p></br></p>
 <ul>
-<li>Now comes the tricky part. Make sure the left hand side repository is yours (name hidden in yellow) and the right hand side is  <code>nightscout/cgm-remote-monitor</code>, and click <code>Create pull request</code>.</li>
+<li>Now comes the tricky part.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't try to update cgm-remote-monitor with your own project!</p>
+<p>Make sure the left hand side repository is yours (name hidden in yellow)
+and the right hand side is  <code>nightscout/cgm-remote-monitor</code>.</p>
+</div>
+<p>Click <code>Create pull request</code>.</p>
 <p><img src="../img/UpdateNS07.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
