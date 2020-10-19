@@ -122,7 +122,7 @@
 </li>
                                     
 <li>
-    <a href="../../nightscout/mlab_cleanup/" class="dropdown-item">Nightscout stopped working</a>
+    <a href="../connection_string/" class="dropdown-item">Connection failure</a>
 </li>
                                 </ul>
                             </li>
@@ -140,7 +140,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../nightscout/mlab_cleanup/" class="nav-link">
+                                <a rel="next" href="../connection_string/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -173,53 +173,31 @@
             
             <li class="nav-item" data-level="1"><a href="#github-and-heroku" class="nav-link">GitHub and Heroku</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#a-valid-github-directory-could-not-be-found" class="nav-link">A valid GitHub Directory could not be found.</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cannot-find-cgm-remote-monitor-in-heroku-no-github-source-visible" class="nav-link">Cannot find cgm-remote-monitor in Heroku / No GitHub source visible</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cannot-find-cgm-remote-monitor-in-heroku-item-cannot-be-retrieved" class="nav-link">Cannot find cgm-remote-monitor in Heroku: Item cannot be retrieved</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
             
             <li class="nav-item" data-level="1"><a href="#atlas" class="nav-link">Atlas</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#limit-of-one-free-cluster" class="nav-link">Limit of one free cluster.</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
             
             <li class="nav-item" data-level="1"><a href="#nightscout-page-doesnt-open" class="nav-link">Nightscout page doesn't open</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#application-error" class="nav-link">Application Error</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#boot-error-unable-to-connect-to-mongo" class="nav-link">Boot Error - Unable to connect to Mongo</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
             
             <li class="nav-item" data-level="1"><a href="#no-data-in-nightscout" class="nav-link">No data in Nightscout</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#just-after-migrating-from-mlab-to-atlas" class="nav-link">Just after migrating from mLab to Atlas</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#data-timing-issues" class="nav-link">Data timing issues</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#dexcom-data-not-showing" class="nav-link">Dexcom data not showing</a>
+            
+            <li class="nav-item" data-level="1"><a href="#database-full" class="nav-link">Database full</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -241,7 +219,7 @@
 <p></br></p>
 <h1 id="github-and-heroku">GitHub and Heroku<a class="headerlink" href="#github-and-heroku" title="Permanent link">⌁</a></h1>
 <p></br></p>
-<h2 id="a-valid-github-directory-could-not-be-found">A valid GitHub Directory could not be found.<a class="headerlink" href="#a-valid-github-directory-could-not-be-found" title="Permanent link">⌁</a></h2>
+<h3 id="a-valid-github-directory-could-not-be-found">A valid GitHub Directory could not be found.<a class="headerlink" href="#a-valid-github-directory-could-not-be-found" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <p>When trying to deploy a new Nightscout site, this message appears when clicking <code>Deploy to Heroku</code>.</p>
 <p><img src="../img/TShoot00.png" style="zoom:70%;" ></p>
@@ -249,7 +227,7 @@
 <li>Change browser and retry.</li>
 </ul>
 <p></br></p>
-<h2 id="cannot-find-cgm-remote-monitor-in-heroku-no-github-source-visible">Cannot find cgm-remote-monitor in Heroku / No GitHub source visible<a class="headerlink" href="#cannot-find-cgm-remote-monitor-in-heroku-no-github-source-visible" title="Permanent link">⌁</a></h2>
+<h3 id="cannot-find-cgm-remote-monitor-in-heroku-no-github-source-visible">Cannot find cgm-remote-monitor in Heroku / No GitHub source visible<a class="headerlink" href="#cannot-find-cgm-remote-monitor-in-heroku-no-github-source-visible" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <p>When updating Nightscout, <code>cgm-remote-monitor</code> doesn't appear automatically in Heroku under your repository name.</p>
 <p><img src="../img/TShoot01.png" style="zoom:80%;" ></p>
@@ -264,7 +242,7 @@
 <li>If it doesn't help try to re-authorize as explained below:</li>
 </ul>
 <p></br></p>
-<h2 id="cannot-find-cgm-remote-monitor-in-heroku-item-cannot-be-retrieved">Cannot find cgm-remote-monitor in Heroku: Item cannot be retrieved<a class="headerlink" href="#cannot-find-cgm-remote-monitor-in-heroku-item-cannot-be-retrieved" title="Permanent link">⌁</a></h2>
+<h3 id="cannot-find-cgm-remote-monitor-in-heroku-item-cannot-be-retrieved">Cannot find cgm-remote-monitor in Heroku: Item cannot be retrieved<a class="headerlink" href="#cannot-find-cgm-remote-monitor-in-heroku-item-cannot-be-retrieved" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <p>When updating Nightscout, <code>cgm-remote-monitor</code> doesn't appear automatically in Heroku under your repository name and an error message appears when you try to connect to GitHub.</p>
 <p><img src="../img/TShoot02.png" style="zoom:80%;" ></p>
@@ -278,11 +256,12 @@
 <p><img src="../img/TShoot03.png" style="zoom:80%;" ></p>
 <ul>
 <li>Click <code>Authorize GitHub</code> in the pop-up.</li>
+<li>If it doesn't help, you can also try to <code>Revoke access</code>... before going back to Re-<code>Connect</code> your GitHub account. This is necessary if someone else did setup Nightscout for you and left his own GitHub connected to your Heroku account.</li>
 </ul>
 <p></br></p>
 <h1 id="atlas">Atlas<a class="headerlink" href="#atlas" title="Permanent link">⌁</a></h1>
 <p></br></p>
-<h2 id="limit-of-one-free-cluster">Limit of one free cluster.<a class="headerlink" href="#limit-of-one-free-cluster" title="Permanent link">⌁</a></h2>
+<h3 id="limit-of-one-free-cluster">Limit of one free cluster.<a class="headerlink" href="#limit-of-one-free-cluster" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <p>When creating a new site or migrating (usually not the first attempt), when reaching <code>Target Cluster</code>.</p>
 <p><img src="../img/TShoot17.png" style="zoom:80%;" ></p>
@@ -322,7 +301,7 @@
 <p></br></p>
 <h1 id="nightscout-page-doesnt-open">Nightscout page doesn't open<a class="headerlink" href="#nightscout-page-doesnt-open" title="Permanent link">⌁</a></h1>
 <p></br></p>
-<h2 id="application-error">Application Error<a class="headerlink" href="#application-error" title="Permanent link">⌁</a></h2>
+<h3 id="application-error">Application Error<a class="headerlink" href="#application-error" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <p><img src="../img/TShoot05.png" style="zoom:80%;" ></p>
 <ul>
@@ -335,66 +314,13 @@
 </ul>
 <p><img src="../../update/img/MigrateNS57.png" style="zoom:80%;" ></p>
 <p></br></p>
-<h2 id="boot-error-unable-to-connect-to-mongo">Boot Error - Unable to connect to Mongo<a class="headerlink" href="#boot-error-unable-to-connect-to-mongo" title="Permanent link">⌁</a></h2>
+<h3 id="boot-error-unable-to-connect-to-mongo">Boot Error - Unable to connect to Mongo<a class="headerlink" href="#boot-error-unable-to-connect-to-mongo" title="Permanent link">⌁</a></h3>
 <p></br></p>
-<p>The database Heroku is pointing to is not available (like mLab after Nov 10th 2020)</p>
-<p>Your Atlas connection string is incorrect</p>
-<p><img src="../img/TShoot06.png" style="zoom:80%;" ></p>
-<ul>
-<li>Open Heroku and <code>Reveal Config Vars</code> in <code>Settings</code></li>
-</ul>
-<p><img src="../../update/img/MigrateNS03.png" style="zoom:80%;" ></p>
-<ul>
-<li>Search for a variable called <code>MONGODB_URI</code> or <code>MONGO_CONNECTION</code></li>
-<li>Verify it is looking like this (without &lt; and &gt; characters)</li>
-</ul>
-<p><code>mongodb+srv://atlasusername:atlaspassword@cluster0.zzzzz.mongodb.net/dbname?retryWrites=true&amp;w=majority</code></p>
-<ul>
-<li>If you've just migrated to Atlas, try to use <a href="../../update/stringhelp.html">this help page</a> to verify or recreate it.</li>
-<li>If you've just created a new site, try to use <a href="../../nightscout/stringhelp.html">this help page</a> to verify or recreate it.</li>
-<li>To recover your connection string log into <a href="https://cloud.mongodb.com/">Atlas</a></li>
-<li>Click <code>Connect</code> on your cluster</li>
-</ul>
-<p><img src="../img/TShoot07.png" style="zoom:80%;" ></p>
-<ul>
-<li>Click <code>Connect your application</code></li>
-</ul>
-<p><img src="../img/TShoot09.png" style="zoom:80%;" ></p>
-<ul>
-<li>Click <code>Copy</code> then <code>Close</code></li>
-</ul>
-<p><img src="../img/TShoot10.png" style="zoom:80%;" ></p>
-<ul>
-<li>Open the <a href="../../nightscout/stringhelp.html">the help page</a> in a new tab and paste the string in the first field.</li>
-<li>If you don't remember your password invent a new one.</li>
-<li>Copy the resulting string in your Heroku variable <code>MONGODB_URI</code> or <code>MONGO_CONNECTION</code></li>
-<li>If you changed the password in the string you need to change it in the database too:</li>
-<li>Click <code>Database Access</code></li>
-</ul>
-<p><img src="../img/TShoot11.png" style="zoom:80%;" ></p>
-<ul>
-<li>At the end of the line, click <code>Edit</code></li>
-</ul>
-<p><img src="../img/TShoot08.png" style="zoom:80%;" ></p>
-<ul>
-<li>In <code>Password</code> click <code>Edit Password</code></li>
-</ul>
-<p><img src="../img/TShoot12.png" style="zoom:80%;" ></p>
-<ul>
-<li>Write down your new password make it the same than the one in your connection string</li>
-</ul>
-<p><img src="../img/TShoot13.png" style="zoom:80%;" ></p>
-<ul>
-<li>Click <code>Update User</code></li>
-</ul>
-<p><img src="../img/TShoot14.png" style="zoom:80%;" ></p>
-<ul>
-<li>Refresh your Nightscout web page display</li>
-</ul>
+<p>Look at this <a href="../connection_string/">dedicated page</a>.</p>
 <p></br></p>
 <h1 id="no-data-in-nightscout">No data in Nightscout<a class="headerlink" href="#no-data-in-nightscout" title="Permanent link">⌁</a></h1>
 <p></br></p>
-<h2 id="just-after-migrating-from-mlab-to-atlas">Just after migrating from mLab to Atlas<a class="headerlink" href="#just-after-migrating-from-mlab-to-atlas" title="Permanent link">⌁</a></h2>
+<h3 id="just-after-migrating-from-mlab-to-atlas">Just after migrating from mLab to Atlas<a class="headerlink" href="#just-after-migrating-from-mlab-to-atlas" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <ul>
 <li>If not already done, <a href="../../update/update/">Update Nightscout to latest release</a>.</li>
@@ -406,12 +332,16 @@
 </ul>
 <p><img src="../img/TShoot16.png" style="zoom:80%;" ></p>
 <p></br></p>
-<h2 id="dexcom-data-not-showing">Dexcom data not showing<a class="headerlink" href="#dexcom-data-not-showing" title="Permanent link">⌁</a></h2>
+<h3 id="dexcom-data-not-showing">Dexcom data not showing<a class="headerlink" href="#dexcom-data-not-showing" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<h4 id="dexcom-share">Dexcom Share<a class="headerlink" href="#dexcom-share" title="Permanent link">⌁</a></h4>
+<p>Make sure you have Dexcom Share turned ON in your Dexcom app. In the Dexcom app's main screen, find the triangle made of dots. If the dots are grey, you do not have Share turned on. Tap the triangle, and follow the directions to add a follower (yourself if you don't have someone else you'd like to invite) and turn on Share.</p>
+<p><img src="../../nightscout/img/sharing.jpg" width="250"></p>
 <p></br></p>
 <p>If you are using a Dexcom system, and your data is not appearing in Nightscout, there are only a limited number of reasons for that. You should check your (1) Heroku settings and (2) Dexcom Share.</p>
-<p>NOTE: The #1 reason why BGs aren't showing is that you have mismatched password and user names in Heroku settings and Dexcom. Please see blue box below for that error.</p>
-<h3 id="heroku-settings">Heroku Settings<a class="headerlink" href="#heroku-settings" title="Permanent link">⌁</a></h3>
-<p>Login to your Heroku account and from within Heroku <code>Settings</code>, click on the  <code>Reveal Config Vars</code></p>
+<p>NOTE: The #1 reason why BGs aren't showing is that you have mismatched password and user names in Heroku settings and Dexcom.</p>
+<h4 id="heroku-settings">Heroku Settings<a class="headerlink" href="#heroku-settings" title="Permanent link">⌁</a></h4>
+<p>Login to your <a href="https://www.heroku.com/">Heroku</a> account and from within Heroku <code>Settings</code>, click on the  <code>Reveal Config Vars</code></p>
 <p><img src="../../nightscout/img/config-vars.png" width="800"></p>
 <p></br></p>
 <p>Now from the <code>Config Vars</code> area, check the following (see screenshot below for reference):</p>
@@ -424,28 +354,127 @@
 </ol>
 <p><img src="../../nightscout/img/bridge-settings.jpg" width="600"></p>
 <p></br></p>
-<p>One thing that can happen if you have an incorrect Dexcom login/password in Loop's CGM Share account settings and/or in your Nightscout BRIDGE settings is that Dexcom will lock your account...and you won't see CGM data in Nightscout. If you notice your CGM readings disappeared, but everything else is flowing...check your Heroku logs that are viewable by selecting "View Logs" from the drop-down menu underneath the "More" option. </p>
+<p>One thing that can happen if you have an incorrect Dexcom login/password in your Share account settings and/or in your Nightscout BRIDGE settings is that Dexcom will lock your account...and you won't see CGM data in Nightscout. If you notice your CGM readings disappeared, but everything else is flowing...check your Heroku logs that are viewable by selecting "View Logs" from the drop-down menu underneath the "More" option. </p>
 <p><img src="../../nightscout/img/heroku-logs.png"></p>
 <p></br></p>
 <p>Do your logs have "SSO authentication errors" like in the red box highlighted above? If you do, then:</p>
 <ol>
-<li>
-<p>Delete your share account entry from your Loop's CGM account settings...like you should have NO ENTRY in your share account settings WITHIN LOOP CGM SETTINGS.</p>
-</li>
-<li>
-<p>Delete your BRIDGE entries within Heroku settings.  Don't delete the rows, just delete the entries within BRIDGE_PASSWORD and BRIDGE_USER_NAME.</p>
-</li>
-<li>
-<p>Wait 15 minutes and then follow the directions in the blue box below. It is important to wait the 15 minutes...the reason you can't log in right now is that your Dexcom account has a temporary lock from one of the passwords in step 1 or 2 being incorrect. The temporary lock will expire after 10-15 minutes of giving the account login a break from the incorrect logins. So, definitely wait or else you'll just keep prolonging the issue.</p>
-</li>
+<li>Delete your BRIDGE entries within Heroku settings.  Don't delete the variables, just delete the values of BRIDGE_PASSWORD and BRIDGE_USER_NAME.</li>
+<li>Wait 15 minutes and then follow the directions below. It is important to wait 15 minutes: the reason you can't log in right now is that your Dexcom account has a temporary lock from the passwords in the step above being incorrect. The temporary lock will expire after 10-15 minutes of giving the account login a break from the incorrect logins. So, definitely wait or else you'll just keep prolonging the issue.</li>
 </ol>
+<p>When you change these variables, Heroku restarts Nightscout. So now everything should work.</p>
 <div class="admonition info">
 <p class="admonition-title">About your Bridge password and user name</p>
 <p>The <code>BRIDGE_PASSWORD</code> and <code>BRIDGE_USER_NAME</code> are NOT visible from within your Dexcom mobile app or online account. The values of them are what you entered into your Dexcom mobile app when you VERY FIRST logged into that app however long ago. If you have double-checked everything else that could be incorrect and BGs still aren't showing in Nightscout, then you likely have those Bridge values incorrect. To fix that, delete your Dexcom app (don't stop the session before deleting the app...just keep it going). Download the app again from the iPhone's App Store and login to the freshly-downloaded Dexcom app. <strong>Take note</strong> that deleting the app will not stop your session, your session will pick right back up once the transmitter pairs again. The <code>BRIDGE_USER_NAME</code> is not an email address. Use that exact same login now in your Heroku settings. You can leave your Loop's Share account info blank...you just need the transmitter ID going forward.</p>
 </div>
-<h3 id="dexcom-share">Dexcom Share<a class="headerlink" href="#dexcom-share" title="Permanent link">⌁</a></h3>
-<p>Make sure you have Dexcom Share turned ON in your Dexcom app. In the Dexcom app's main screen, find the triangle made of dots. If the dots are grey, you do not have Share turned on. Tap the triangle, and follow the directions to add a follower (yourself if you don't have someone else you'd like to invite) and turn on Share.</p>
-<p><img src="../../nightscout/img/sharing.jpg" width="250"></p></div>
+<h3 id="dexcom-username-issue">Dexcom username issue<a class="headerlink" href="#dexcom-username-issue" title="Permanent link">⌁</a></h3>
+<p>It seems that Dexcom share somewhere in its systems is not capable of using the username other than ordinary letters.</p>
+<p>By changing the username, this has been solved for everyone who has tried so far. If that doesn't work for you, please report it at <a href="https://github.com/nightscout/cgm-remote-monitor/issues/5608">https://github.com/nightscout/cgm-remote-monitor/issues/5608</a> or if you can comment on any Facebook post that linked to this site.</p>
+<h4 id="change-username">Change username<a class="headerlink" href="#change-username" title="Permanent link">⌁</a></h4>
+<p>Unfortunately, it is not possible to change the username of a Dexcom account. You have to create a whole new account.</p>
+<h4 id="create-new-account">Create new account<a class="headerlink" href="#create-new-account" title="Permanent link">⌁</a></h4>
+<p>You can only associate one email address with a Dexcom account, so it might be a good idea to create a new email address and associate it to your current account so that you can use your current email with the new account. Go to <a href="https://www.dexcom.com/">https://www.dexcom.com</a> and look for where to create accounts. Follow the instructions to create a new account.  The alternative is to delete the old account. But do <strong>not</strong> do that. It may be good to be able to go back and retrieve historical data. Make sure the new username contains only letters. It is better to stick to a-z. We know that the period . underscore <code>_</code> and at <code>@</code> characters creates problems, but we do not know which other characters can create problems.</p>
+<h4 id="reinstall-dexcom-transmitter-app">Reinstall Dexcom Transmitter app<a class="headerlink" href="#reinstall-dexcom-transmitter-app" title="Permanent link">⌁</a></h4>
+<p>When you install the Dexcom app, it is linked to a Dexcom account. Unfortunately, there is no way to switch accounts. What you have to do is simply uninstall the app and reinstall it. In principle, it is the same procedure as changing phone. Of course, this time you should log in with the new account.</p>
+<ul>
+<li>Write down the current Transmitter ID. You can find the ID if you look in settings in the Dexcom app.</li>
+<li>Uninstall the Dexcom app</li>
+<li>Reinstall the Dexcom app</li>
+<li>Log in with your new account</li>
+<li>Follow the instructions in the app.</li>
+<li>For G6 do not select sensor code. The sensor code is already saved on your old transmitter.</li>
+<li>Enter the transmitter ID and wait for pairing</li>
+<li>Answer yes to the question "have you inserted sensor"</li>
+</ul>
+<p>You then have to re-invite your followers.</p>
+<h4 id="nightscout">Nightscout<a class="headerlink" href="#nightscout" title="Permanent link">⌁</a></h4>
+<p>Check your Heroku settings match your new credentials (see above)</p>
+<p></br></p>
+<h3 id="dexcom-or-carelink-data-stopping-after-a-while">Dexcom or CareLink data stopping after a while<a class="headerlink" href="#dexcom-or-carelink-data-stopping-after-a-while" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>First verify you can see your BG in Clarity or CareLink.</p>
+<p>If data is present open Heroku and check you app didn't fall asleep.</p>
+<p><img src="../img/TShoot25.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>A sleeping might be due to your Heroku free plan: a Hobby plan makes the app never sleep. <a href="https://www.heroku.com/pricing">https://www.heroku.com/pricing</a> </p>
+<p>If this is the case you will need to setup an uptime robot. <a href="https://uptimerobot.com/">https://uptimerobot.com/</a></p>
+<p>Select <code>Register for FREE</code> and create an account.</p>
+<p><img src="../img/TShoot26.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>Check your email (also check the spam folder) and activate your account.</p>
+<p>Your dashboard will open, click <code>+ Add New Monitor</code></p>
+<p><img src="../img/TShoot27.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>In <code>Monitor Type</code> select  <code>HTTP(s)</code></p>
+<p><img src="../img/TShoot28.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>Add a <code>Friendly Name</code> (any), type your Nightscout site page then click <code>Create Monitor</code></p>
+<p>You can enable your email address as an alert contact to inform you if your site goes down.</p>
+<p><img src="../img/TShoot29.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>After a moment your monitored site will show 100% up.</p>
+<p>This will keep your Heroku app active, but should the data source go down, it will not help getting data into it.</p>
+<p></br></p>
+<h1 id="data-timing-issues">Data timing issues<a class="headerlink" href="#data-timing-issues" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<h3 id="basal-is-shifted-in-time">Basal is shifted in time<a class="headerlink" href="#basal-is-shifted-in-time" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<ul>
+<li>Check the time zone is correct for your currently active profile in your Nightscout <code>Profile editor</code>.</li>
+</ul>
+<p><img src="../img/TShoot30.png" style="zoom:75%;" ></p>
+<p></br></p>
+<h3 id="data-in-the-future">Data in the future<a class="headerlink" href="#data-in-the-future" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<ul>
+<li>Check you don't have data in the future with the <code>Admin tools</code>. Remove them if existing.</li>
+</ul>
+<p><img src="../img/TShoot31.png" style="zoom:75%;" ></p>
+<p></br></p>
+<ul>
+<li>If this isn't working, or shows no future data, check in <a href="https://account.mongodb.com/account/login">Atlas</a></li>
+<li>Open your Nightscout cluster and select <code>Collections</code></li>
+</ul>
+<p><img src="../img/TShoot32.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>In <code>Entries</code> type <code>{date:-1}</code> and click <code>Find</code></li>
+</ul>
+<p><img src="../img/TShoot33.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Delete the entries in the future (manually) with the bin icon</li>
+</ul>
+<p><img src="../img/TShoot34.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h1 id="database-full">Database full<a class="headerlink" href="#database-full" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<p>Free databases like M0 Sandbox provided by Atlas will only hold a limited amount of data (512MB) and you will eventually need to manually cleanup. You can extend the capacity to 2 and 5GB paying an M2 or M5 Shared cluster.</p>
+<ul>
+<li>Make sure your Nightscout site has <code>Database Size</code> enabled to monitor database capacity. Look <a href="https://github.com/nightscout/cgm-remote-monitor#dbsize-database-size">here</a> for more information on this plugin.</li>
+</ul>
+<p><img src="../img/TShoot35.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Check in <a href="https://account.mongodb.com/account/login">Atlas</a></li>
+<li>Open your Nightscout cluster and select <code>Collections</code></li>
+</ul>
+<p><img src="../img/TShoot32.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Click your database name (hidden left). Check the<code>DATABASE SIZE</code> is indeed close to or at the limit then look at these three collections <code>Documents size</code>: <code>devicestatus</code>, <code>entries</code> and <code>treatments</code>.</li>
+</ul>
+<p><img src="../img/TShoot36.png" style="zoom:80%;" ></p>
+<ul>
+<li>Open Nightscout  <code>Admin tools</code>.</li>
+<li>Depending on the collection you identified above, choose which of the following you want to cleanup:</li>
+</ul>
+<p>You can cleanup (enter the number of days to keep) or delete your devices status:</p>
+<p><img src="../img/TShoot37.png" style="zoom:80%;" ></p>
+<p>Same for <code>Treatments</code>:</p>
+<p><img src="../img/TShoot38.png" style="zoom:80%;" ></p>
+<p>And <code>Glucose entries</code>. If you are reluctant to lose historical data you should consider opting for a paid database solution.</p>
+<p><img src="../img/TShoot39.png" style="zoom:80%;" ></p></div>
             </div>
         </div>
 

@@ -122,7 +122,7 @@
 </li>
                                     
 <li>
-    <a href="../mlab_cleanup/" class="dropdown-item">Nightscout stopped working</a>
+    <a href="../../troubleshoot/connection_string/" class="dropdown-item">Connection failure</a>
 </li>
                                 </ul>
                             </li>
@@ -164,15 +164,19 @@
             
             <li class="nav-item" data-level="1"><a href="#nightscout-configuration" class="nav-link">Nightscout Configuration</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#nightscout-core-config-vars" class="nav-link">Nightscout core Config Vars</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#editing-config-vars-in-heroku" class="nav-link">Editing Config Vars in Heroku</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#plugins" class="nav-link">Plugins</a>
+            <li class="nav-item" data-level="2"><a href="#nightscout-core-config-vars" class="nav-link">Nightscout core Config Vars</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#default-plugins" class="nav-link">Default Plugins</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#advanced-plugins" class="nav-link">Advanced Plugins</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -186,6 +190,34 @@
 <h1 id="nightscout-configuration">Nightscout Configuration<a class="headerlink" href="#nightscout-configuration" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <p>A complete list and description is available here: <a href="https://github.com/nightscout/cgm-remote-monitor#environment">https://github.com/nightscout/cgm-remote-monitor#environment</a></p>
+<p></br></p>
+<h2 id="editing-config-vars-in-heroku">Editing Config Vars in Heroku<a class="headerlink" href="#editing-config-vars-in-heroku" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<p>Once Nightscout deployed, you can access your variables from <a href="https://id.heroku.com/login">Heroku</a>.</p>
+<ul>
+<li>Select your app</li>
+</ul>
+<p><img src="..\img\SetupNS00.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Click <code>Settings</code></li>
+</ul>
+<p><img src="..\img\SetupNS01.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Scroll down and click <code>Reveal Config Vars</code></li>
+</ul>
+<p><img src="..\img\SetupNS02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>You can modify the values clicking on the pen icon</li>
+</ul>
+<p><img src="..\img\SetupNS03.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Change the contents of <code>Value</code>  as needed then click <code>Save Changes</code></li>
+</ul>
+<p><img src="..\img\SetupNS04.png" style="zoom:80%;" /></p>
 <p></br></p>
 <h2 id="nightscout-core-config-vars">Nightscout core Config Vars<a class="headerlink" href="#nightscout-core-config-vars" title="Permanent link">⌁</a></h2>
 <p></br></p>
@@ -402,37 +434,37 @@
 </code></pre>
 
 <p></br></p>
-<h2 id="editing-config-vars-in-heroku">Editing Config Vars in Heroku<a class="headerlink" href="#editing-config-vars-in-heroku" title="Permanent link">⌁</a></h2>
+<h2 id="default-plugins">Default Plugins<a class="headerlink" href="#default-plugins" title="Permanent link">⌁</a></h2>
+<p>Plugins are used to extend the way information is displayed, how notifications are sent, alarms are triggered, and more.</p>
+<p>If you want the <code>ENABLE</code>'d plugins to show by default on any browser, you should put them in the <code>SHOW_PLUGINS</code> variable.</p>
+<p>If you want to specifically disable a plugin (mainly a default plugin) you should place it in the <code>DISABLE</code> variable.</p>
+<p>You also can enable them manually on your Nightscout view from the hamburger menu. <code>Authenticate</code> and <code>Save</code> the settings on your browser.</p>
+<p><img src="..\img\SetupNS09.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>Once Nightscout deployed, you can access your variables from <a href="https://id.heroku.com/login">Heroku</a>.</p>
-<ul>
-<li>Select your app</li>
-</ul>
-<p><img src="..\img\SetupNS00.png" style="zoom:80%;" /></p>
+<p>Below some default plugins: <code>timeago</code>, <code>upbat</code>, <code>direction</code> and <code>delta</code>.</p>
+<p><img src="..\img\SetupNS11.png" style="zoom:80%;" /></p>
 <p></br></p>
-<ul>
-<li>Click <code>Settings</code></li>
-</ul>
-<p><img src="..\img\SetupNS01.png" style="zoom:80%;" /></p>
+<p><code>AR2</code> forecasting can be enabled/disabled from <code>...</code> more about it <a href="https://github.com/nightscout/nightscout.github.io/wiki/Forecasting">here</a>.</p>
+<p><img src="..\img\SetupNS10.png" style="zoom:80%;" /></p>
 <p></br></p>
-<ul>
-<li>Scroll down and click <code>Reveal Config Vars</code></li>
-</ul>
-<p><img src="..\img\SetupNS02.png" style="zoom:80%;" /></p>
+<p>Simple alarms are enabled by default if one of the <code>BG_HIGH</code>, <code>BG_TARGET_TOP</code>, <code>BG_TARGET_BOTTOM</code>, <code>BG_LOW</code> thresholds is set or <code>ALARM_TYPES</code> includes <code>simple</code>.</p>
+<p>You'll find the plugin in the hamburger menu. You can change thresholds in <code>Profile editor</code>.</p>
+<p>You can click the loudspeaker icon to test the alarms volume or to snooze an active alarm.</p>
+<p><img src="..\img\SetupNS12.png"/></p>
 <p></br></p>
-<ul>
-<li>You can modify the values clicking on the pen icon</li>
-</ul>
-<p><img src="..\img\SetupNS03.png" style="zoom:80%;" /></p>
+<p>Profile editor is available from the hamburger menu with the default variable <code>profile</code>.</p>
+<p><img src="..\img\SetupNS13.png"/></p>
 <p></br></p>
-<ul>
-<li>Change the contents of <code>Value</code>  as needed then click <code>Save Changes</code></li>
-</ul>
-<p><img src="..\img\SetupNS04.png" style="zoom:80%;" /></p>
+<p>Database size allows you to monitor your free tier database size with the variable <code>dbsize</code>. The indication will not be accurate for other sizes than 512MiB unless you set it up correctly. See <a href="https://github.com/nightscout/cgm-remote-monitor#dbsize-database-size">here</a>.</p>
+<p><img src="..\img\SetupNS15.png"/></p>
 <p></br></p>
-<p>Some variables changes might require you to restart all Dynos.</p>
-<h2 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">⌁</a></h2>
-<p>Work in progress...</p></div>
+<h2 id="advanced-plugins">Advanced Plugins<a class="headerlink" href="#advanced-plugins" title="Permanent link">⌁</a></h2>
+<p>Care Portal plugin is an important plugin that gives access to the <code>Log a treatment</code> interface. Unlock it entering your API secret with the lock icon top right, then use the <code>+</code> icon to log a treatment. The variable required to enable it is <code>careportal</code>. </p>
+<p><img src="..\img\SetupNS14.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>Bolus Wizard plugin gives access to the <code>Bolus Wizard</code> interface. You can access it with the calculator icon top right. The variable required to enable it is <code>boluscalc</code>. </p>
+<p><img src="..\img\SetupNS16.png" style="zoom:80%;" /></p>
+<p></br></p></div>
             </div>
         </div>
 
