@@ -97,6 +97,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../nightscout/discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
     <a href="../../nightscout/reports/" class="dropdown-item">Reports</a>
 </li>
                                     
@@ -203,7 +207,7 @@
 <h1 id="atlas-migration-is-mandatory-for-heroku-users-with-mlab">Atlas migration is mandatory for Heroku users with mLab.<a class="headerlink" href="#atlas-migration-is-mandatory-for-heroku-users-with-mlab" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <div class="admonition warning">
-<p class="admonition-title">You must migrate your existing mLab MongoDB, where all your Nightscout data are stored, to MongoDB Atlas <strong>before November 2020</strong>.</p>
+<p class="admonition-title">You must migrate your existing mLab MongoDB, where all your Nightscout data are stored, to MongoDB Atlas <strong>before November 10th 2020</strong>.</p>
 <p>This is essential to keep your Nightscout functioning.</p>
 </div>
 <p></br> </p>
@@ -211,7 +215,12 @@
 <p><a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ</a></p>
 <p>To migrate your database you can use the video provided by mLab:</p>
 <p><a href="https://docs.mlab.com/how-to-migrate-nightscout-sandbox-heroku-addons-to-atlas/">https://docs.mlab.com/how-to-migrate-nightscout-sandbox-heroku-addons-to-atlas/</a></p>
-<p></br> </p>
+<p></br></p>
+<div class="admonition warning">
+<p class="admonition-title">If you want to migrate your site but <strong>you don't want to keep your historical data</strong></p>
+<p>Follow <a href="https://www.youtube.com/watch?v=hXSLBACjYQo">this easy video guide</a> from Katie DiSimone.</p>
+</div>
+<p></br></p>
 <p>Access your Heroku account from a computer. Do not change device/computer/browser during the upgrade!</p>
 <div class="admonition note">
 <p class="admonition-title">If you have issues with your current browser try another one.</p>
@@ -219,7 +228,11 @@
 <p></br></p>
 <h1 id="important-prerequisite">Important Prerequisite<a class="headerlink" href="#important-prerequisite" title="Permanent link">⌁</a></h1>
 <p></br></p>
-<p><a href=".\update.md"><strong>Update your Nightscout to latest release!</strong></a></p>
+<h4 id="update-your-nightscout-to-latest-release"><a href=".\update.md"><strong>Update your Nightscout to latest release!</strong></a><a class="headerlink" href="#update-your-nightscout-to-latest-release" title="Permanent link">⌁</a></h4>
+<p></br></p>
+<p>Enable dbsize and <strong>check your sandbox database size is within 512MiB</strong>.</p>
+<p>In the case it's oversize, <a href="../../troubleshoot/troublehoot/#cleanup">cleanup</a> your database <strong>before</strong> migrating to Atlas.</p>
+<p><img src="..\img\MigrateNS63.png" /></p>
 <p></br></p>
 <h2 id="step-1-heroku">Step 1: Heroku<a class="headerlink" href="#step-1-heroku" title="Permanent link">⌁</a></h2>
 <p></br></p>
@@ -264,7 +277,6 @@
 var bmLAB =  0;
 var sUsr, sPwd;
 var sFinalString = "Not defined yet";
-
 function ValidatemLab()
 {
   bmLab=0;
@@ -414,29 +426,37 @@ function ValidatemLab()
 <p><button onclick="ValidateAtlas()">Validate</button></p>
 <p id="validAtlas">Click the Validate button above to verify your string</p>
 
-<p id="auser">This is your username</p>
+<p id="auser">This is your Atlas database username</p>
+
+<p id="muser">This is your mLab database username</p>
 
 <script>
-var bAtlas =  0;
-var sAusr;
 
 function ValidateAtlas()
 {
 
   bAtlas=0;
-  var sString = "Looks good! Verify your Atlas user name below:";
+  var iAS, iAP;
+  var sString = "Undefined";
   var sAtlas = document.getElementById("myAtlas").value;
-  var sdB = document.getElementById("myAtlas").value;
-  var iAS = sAtlas.search("://");
-  if(iAS!=11) { sString = "Atlas URI should start with mongodb+srv://"; }
+
+  iAS = sAtlas.search("://");
+  if(iAS!=11)
+  {
+    sString = "Atlas URI should start with mongodb+srv://";
+  }
   else
   {
-    var iAP = sAtlas.search("<password>");
-    if(iAP==-1) { sString = "Atlas URI should contain &lt;password&gt;"; }
+    iAP = sAtlas.search("<password>");
+    if(iAP==-1)
+    {
+      sString = "Atlas URI should contain &lt;password&gt;"; 
+    }
     else
     {
       sString = sAtlas.substring(0,iAP);
       sFinalString = sString.concat(sPwd, sAtlas.substring(iAP+10));
+      sString = "Looks good! Verify your Atlas database username below is the same as mLab database username:";
       bAtlas=1;
     }
   }
@@ -445,8 +465,10 @@ function ValidateAtlas()
   {
     sAusr = sAtlas.substring(14, iAP-1);
     document.getElementById("auser").innerHTML = sAusr;
+    document.getElementById("muser").innerHTML = document.getElementById("user").innerHTML;
+    document.getElementById("validAtlas").innerHTML 
   }
-  document.getElementById("validAtlas").innerHTML = "Looks good! Verify your Atlas user name below is the same than mLab:";
+  document.getElementById("validAtlas").innerHTML = sString;
 }
 
 </script>
@@ -495,9 +517,9 @@ function ValidateAtlas()
 <script>
 function Generate()
 {
-  var sString = sFinalString;
   ValidatemLab();
   ValidateAtlas();
+  var sString = sFinalString;
   if(bmLab==0) {sString = "Validate the mLab string first";}
   else if(bAtlas==0) {sString = "Validate the Atlas string first";}
   document.getElementById("result").innerHTML = sString;
@@ -531,6 +553,9 @@ function Generate()
 <p>Your password (do not copy it from this guide) is made of <strong>26 characters</strong> (if you didn't customize it) in between <strong>:</strong> and <strong>@</strong>.</p>
 <p>In the first string you should replace <code>&lt;password&gt;</code>, with your real password so that it will look like this:</p>
 <p><code>mongodb+srv://heroku_zzzzzzzz:hfo7fbh6h3dummy6o60kvjojg0@cluster-zzzzzzzz.xxxxx.mongodb.net/heroku_zzzzzzzz?retryWrites=true&amp;w=majority</code></p>
+<p></br></p>
+<p><img src="..\..\troubleshoot\img\TShoot41.png" style="zoom:80%;" /> </p>
+<p></br></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>there are no &lt; and &gt; remaining in this string!</p>

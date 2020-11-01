@@ -97,6 +97,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../nightscout/discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
     <a href="../../nightscout/reports/" class="dropdown-item">Reports</a>
 </li>
                                     
@@ -215,7 +219,7 @@
 <p></br></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You usually should express the Nightscout URL in secure <strong>https://</strong>, not only http. </p>
+<p>You usually should express the Nightscout URL in secure <strong>https://</strong>, not only http://.  (Unless you set <code>INSECURE_USE_HTTP</code> to <code>true</code>)</p>
 </div>
 <p></br></p>
 <h2 id="dexcom">Dexcom<a class="headerlink" href="#dexcom" title="Permanent link">⌁</a></h2>
@@ -260,7 +264,7 @@
 <h2 id="xdrip">xDrip+<a class="headerlink" href="#xdrip" title="Permanent link">⌁</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Mind the syntax!</p>
-<p><strong>https://APISecret@SiteURL.herokuapp.com/api/v1/</strong></p>
+<p><strong><code>https://APISecret@SiteURL.herokuapp.com/api/v1/</code></strong></p>
 </div>
 <p><img src="..\img\UploadCFG00.png" style="zoom:80%;" /></p>
 <p></br></p>

@@ -97,6 +97,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../nightscout/discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
     <a href="../../nightscout/reports/" class="dropdown-item">Reports</a>
 </li>
                                     
@@ -314,6 +318,19 @@
 </ul>
 <p><img src="../../update/img/MigrateNS57.png" style="zoom:80%;" ></p>
 <p></br></p>
+<h3 id="nightscout-stopped-working-after-a-few-weeks">Nightscout stopped working after a few weeks<a class="headerlink" href="#nightscout-stopped-working-after-a-few-weeks" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>Same screen than above but you received a mail from Heroku telling you you're out of dyno hours...</p>
+<ul>
+<li>
+<p>Check your remaining dyno hours in Heroku, click on your profile picture top right and select <code>Account Settings</code>, then <code>Billing</code>.</p>
+</li>
+<li>
+<p>An account without credit card information has 550 free dyno hours, with credit card information 1000.</p>
+</li>
+</ul>
+<p><img src="../img/TShoot42.png" style="zoom:80%;" ></p>
+<p></br></p>
 <h3 id="boot-error-unable-to-connect-to-mongo">Boot Error - Unable to connect to Mongo<a class="headerlink" href="#boot-error-unable-to-connect-to-mongo" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <p>Look at this <a href="../connection_string/">dedicated page</a>.</p>
@@ -415,6 +432,52 @@
 <p>After a moment your monitored site will show 100% up.</p>
 <p>This will keep your Heroku app active, but should the data source go down, it will not help getting data into it.</p>
 <p></br></p>
+<h3 id="error-code-instead-of-a-bg-value">Error code instead of a BG value<a class="headerlink" href="#error-code-instead-of-a-bg-value" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>Nightscout implements Dexcom error codes as listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Corresponding error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>?SN</code></td>
+<td>Sensor not active</td>
+</tr>
+<tr>
+<td><code>?MD</code></td>
+<td>Minimal deviation</td>
+</tr>
+<tr>
+<td><code>?NA</code></td>
+<td>No antenna</td>
+</tr>
+<tr>
+<td><code>?NC</code></td>
+<td>Sensor not calibrated</td>
+</tr>
+<tr>
+<td><code>?CD</code></td>
+<td>Counts deviation</td>
+</tr>
+<tr>
+<td><code>?AD</code></td>
+<td>Absolute deviation</td>
+</tr>
+<tr>
+<td><code>???</code></td>
+<td>Power deviation</td>
+</tr>
+<tr>
+<td><code>?RF</code></td>
+<td>Bad RF</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
 <h1 id="data-timing-issues">Data timing issues<a class="headerlink" href="#data-timing-issues" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <h3 id="basal-is-shifted-in-time">Basal is shifted in time<a class="headerlink" href="#basal-is-shifted-in-time" title="Permanent link">⌁</a></h3>
@@ -451,7 +514,7 @@
 <p></br></p>
 <p>Free databases like M0 Sandbox provided by Atlas will only hold a limited amount of data (512MB) and you will eventually need to manually cleanup. You can extend the capacity to 2 and 5GB paying an M2 or M5 Shared cluster.</p>
 <ul>
-<li>Make sure your Nightscout site has <code>Database Size</code> enabled to monitor database capacity. Look <a href="https://github.com/nightscout/cgm-remote-monitor#dbsize-database-size">here</a> for more information on this plugin.</li>
+<li>Make sure your Nightscout site has <code>Database Size</code> enabled to monitor database capacity. Look <a href="../../nightscout/setup_variables/#dbsize-database-size">here</a> for more information on this plugin.</li>
 </ul>
 <p><img src="../img/TShoot35.png" style="zoom:80%;" ></p>
 <p></br></p>
@@ -469,6 +532,7 @@
 <li>Open Nightscout  <code>Admin tools</code>.</li>
 <li>Depending on the collection you identified above, choose which of the following you want to cleanup:</li>
 </ul>
+<h5 id="cleanup">Cleanup:<a class="headerlink" href="#cleanup" title="Permanent link">⌁</a></h5>
 <p>You can cleanup (enter the number of days to keep) or delete your devices status:</p>
 <p><img src="../img/TShoot37.png" style="zoom:80%;" ></p>
 <p>Same for <code>Treatments</code>:</p>

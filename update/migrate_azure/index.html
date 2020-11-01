@@ -97,6 +97,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../nightscout/discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
     <a href="../../nightscout/reports/" class="dropdown-item">Reports</a>
 </li>
                                     
@@ -272,7 +276,6 @@
 var bmLAB =  0;
 var sUsr, sPwd;
 var sFinalString = "Not defined yet";
-
 function ValidatemLab()
 {
   bmLab=0;
@@ -426,7 +429,9 @@ function ValidatemLab()
 <p><button onclick="ValidateAtlas()">Validate</button></p>
 <p id="validAtlas">Click the Validate button above to verify your string</p>
 
-<p id="auser">This is your username</p>
+<p id="auser">This is your Atlas database username</p>
+
+<p id="muser">This is your mLab database username</p>
 
 <script>
 var bAtlas =  0;
@@ -452,13 +457,18 @@ function ValidateAtlas()
       bAtlas=1;
     }
   }
-
+  if(bmLab!=1)
+  {
+    document.getElementById("auser").innerHTML = "Validate mLab first";
+  }
   if(bAtlas==1)
   {
     sAusr = sAtlas.substring(14, iAP-1);
     document.getElementById("auser").innerHTML = sAusr;
+    document.getElementById("muser").innerHTML = document.getElementById("user").innerHTML;
+    document.getElementById("validAtlas").innerHTML = "Looks good! Verify your Atlas database username below is the same as mLab database username:";
   }
-  document.getElementById("validAtlas").innerHTML = "Looks good! Verify your Atlas user name below is the same than mLab:";
+  else document.getElementById("validAtlas").innerHTML = sString; 
 }
 
 </script>
@@ -516,6 +526,8 @@ function Generate()
 }
 </script>
 
+<p>If you have your connection string skip the next instructions and <a href="../migrate_azure/#connection-string"><strong>continue here</strong></a>.</p>
+<p></br></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you see <code>Validate the mLab string first</code> you need to go back <a href="../migrate_azure/#mongodb_uri">there</a>.</p>
@@ -551,8 +563,16 @@ function Generate()
 <p>Paste the resulting string and click <code>Save changes</code></p>
 <p><img src="..\img\MigrateNS53.png" style="zoom:80%;" /> </p>
 <p></br></p>
+<p>Find the variable named <code>MONGODB_URI</code> or <code>MONGOLAB_URI</code> that you identified at the beginning and click the cross to delete it.</p>
+<p>If the original variable was already named <code>MONGO_CONNECTION</code> it's been updated now, don't delete it.</p>
+<p><img src="..\img\MigrateNS54.png" style="zoom:80%;" /> </p>
+<p></br></p>
+<p>Confirm with <code>Delete Config Var</code></p>
+<p><img src="..\img\MigrateNS55.png" style="zoom:80%;" /> </p>
+<p></br></p>
 <p>Congratulations, you completed migration from Azure to Heroku and Atlas.</p>
 <p>Browse to your Nightscout site and wait 5 minutes for a new value to show up (make sure your uploader is sending data).</p>
+<p>If you have connection errors and your site doesn't start, proceed to <a href="../../troubleshoot/connection_string">troubleshooting</a>.</p>
 <p></br></p>
 <h2 id="roll-back-to-new-empty-nightscout-created-as-a-prerequisite">Roll back to new (empty) Nightscout created as a prerequisite<a class="headerlink" href="#roll-back-to-new-empty-nightscout-created-as-a-prerequisite" title="Permanent link">⌁</a></h2>
 <div class="admonition warning">

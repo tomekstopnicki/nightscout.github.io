@@ -97,6 +97,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../nightscout/discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
     <a href="../../nightscout/reports/" class="dropdown-item">Reports</a>
 </li>
                                     
@@ -163,6 +167,11 @@
         <ul class="nav flex-column">
             
             <li class="nav-item" data-level="2"><a href="#unable-to-connect-to-mongo" class="nav-link">Unable to connect to Mongo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#change-your-atlas-database-password" class="nav-link">Change your Atlas database password</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -236,7 +245,7 @@ function Analyze()
   iAS = sAtlas.search("<password>");
   if(iAS!=-1 && !bErr)
   { 
-    sString = "You should replace &lt;password&gt; with your actual Atlas database passwowrd in the Atlas string";
+    sString = "You should replace &lt;password&gt; with your actual Atlas database password in the Atlas string";
     bErr = 1;
   }
 
@@ -330,10 +339,16 @@ function Analyze()
 <p class="admonition-title">Note</p>
 <p>If you migrated from mLab your username and database name should be identical.</p>
 </div>
+<p><img src="../img/TShoot41.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
 <li>If you've just migrated to Atlas, try to use <a href="../../update/stringhelp.html">this help page</a> to verify or recreate it.</li>
 <li>If you've just created a new site, try to use <a href="../../nightscout/stringhelp.html">this help page</a> to verify or recreate it.</li>
+<li>If you're still in trouble change your database password:</li>
+</ul>
+<p></br></p>
+<h2 id="change-your-atlas-database-password">Change your Atlas database password<a class="headerlink" href="#change-your-atlas-database-password" title="Permanent link">⌁</a></h2>
+<ul>
 <li>To recover your connection string log into <a href="https://cloud.mongodb.com/">Atlas</a></li>
 <li>Click <code>Connect</code> on your cluster</li>
 </ul>
@@ -351,8 +366,14 @@ function Analyze()
 <p></br></p>
 <ul>
 <li>Open the <a href="../../nightscout/stringhelp.html">the help page</a> in a new tab and paste the string in the first field.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">If you migrated from mLab and Heroku (not Azure)</p>
+<p><strong>Your database name should be identical to your database user name!</strong> (Unless you modified it) "</p>
+</div>
+<ul>
 <li>If you don't remember your password invent a new one.</li>
-<li>Copy the resulting string in your Heroku variable <code>MONGODB_URI</code> or <code>MONGO_CONNECTION</code></li>
+<li>Copy the resulting string in your Heroku variable <code>MONGODB_URI</code> (new Nightscout) or <code>MONGO_CONNECTION</code> (migration)</li>
 <li>If you changed the password in the string you need to change it in the database too:</li>
 <li>Click <code>Database Access</code></li>
 </ul>
