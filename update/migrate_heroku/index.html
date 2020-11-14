@@ -105,6 +105,10 @@
 </li>
                                     
 <li>
+    <a href="../../nightscout/profile_editor/" class="dropdown-item">Profile Editor</a>
+</li>
+                                    
+<li>
     <a href="../../nightscout/ifttt/" class="dropdown-item">IF This Then That</a>
 </li>
                                     
@@ -171,7 +175,7 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#important-prerequisite" class="nav-link">Important Prerequisite</a>
+            <li class="nav-item" data-level="1"><a href="#mlab-database-recovery" class="nav-link">mLab database recovery</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#step-1-heroku" class="nav-link">Step 1: Heroku</a>
               <ul class="nav flex-column">
@@ -193,10 +197,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#step-6-delete-mlab-add-on-optional" class="nav-link">Step 6: Delete mLab add-on (optional)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -207,32 +207,26 @@
 <h1 id="atlas-migration-is-mandatory-for-heroku-users-with-mlab">Atlas migration is mandatory for Heroku users with mLab.<a class="headerlink" href="#atlas-migration-is-mandatory-for-heroku-users-with-mlab" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <div class="admonition warning">
-<p class="admonition-title">You must migrate your existing mLab MongoDB, where all your Nightscout data are stored, to MongoDB Atlas <strong>before November 10th 2020</strong>.</p>
-<p>This is essential to keep your Nightscout functioning.</p>
+<p class="admonition-title">You should have migrated your existing mLab MongoDB, where all your Nightscout data are stored, to MongoDB Atlas <strong>before November 10th 2020</strong>.</p>
+<p>This was essential to keep your Nightscout functioning and now you can't access your add-on from Heroku as it's been deleted. If you absolutely need your historical data, you still have a possibility to do so <strong>until December 8th 2020</strong>. mLab will then shut down, migration is <strong>mandatory</strong>.</p>
 </div>
 <p></br> </p>
 <p>Read this:</p>
 <p><a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ</a></p>
-<p>To migrate your database you can use the video provided by mLab:</p>
-<p><a href="https://docs.mlab.com/how-to-migrate-nightscout-sandbox-heroku-addons-to-atlas/">https://docs.mlab.com/how-to-migrate-nightscout-sandbox-heroku-addons-to-atlas/</a></p>
 <p></br></p>
 <div class="admonition warning">
-<p class="admonition-title">If you want to migrate your site but <strong>you don't want to keep your historical data</strong></p>
-<p>Follow <a href="https://www.youtube.com/watch?v=hXSLBACjYQo">this easy video guide</a> from Katie DiSimone.</p>
+<p class="admonition-title">If you want to recover your site (not the data)</p>
+<p>Follow <a href="https://www.youtube.com/watch?v=hXSLBACjYQo">this easy video guide</a> from Katie DiSimone. Make sure to use only letters and numbers in database name and password. </p>
 </div>
+<p></br></p>
+<p>If you absolutely need your data, continue with this guide.</p>
 <p></br></p>
 <p>Access your Heroku account from a computer. Do not change device/computer/browser during the upgrade!</p>
 <div class="admonition note">
 <p class="admonition-title">If you have issues with your current browser try another one.</p>
 </div>
 <p></br></p>
-<h1 id="important-prerequisite">Important Prerequisite<a class="headerlink" href="#important-prerequisite" title="Permanent link">⌁</a></h1>
-<p></br></p>
-<h4 id="update-your-nightscout-to-latest-release"><a href=".\update.md"><strong>Update your Nightscout to latest release!</strong></a><a class="headerlink" href="#update-your-nightscout-to-latest-release" title="Permanent link">⌁</a></h4>
-<p></br></p>
-<p>Enable dbsize and <strong>check your sandbox database size is within 512MiB</strong>.</p>
-<p>In the case it's oversize, <a href="../../troubleshoot/troublehoot/#cleanup">cleanup</a> your database <strong>before</strong> migrating to Atlas.</p>
-<p><img src="..\img\MigrateNS63.png" /></p>
+<h1 id="mlab-database-recovery">mLab database recovery<a class="headerlink" href="#mlab-database-recovery" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <h2 id="step-1-heroku">Step 1: Heroku<a class="headerlink" href="#step-1-heroku" title="Permanent link">⌁</a></h2>
 <p></br></p>
@@ -242,6 +236,12 @@
 <p></br></p>
 <p>Select your Nightscout app name  </p>
 <p><img src="..\img\MigrateNS01.png" style="zoom:80%;" /> </p>
+<p></br></p>
+<p>Go to Activity and identify the line where your mLab add-on was removed (below in the red box). In the first line below that presents Remove <code>MONGO_CONNECTION</code> config var or  Remove <code>MONGODB_URI</code> config var click Roll Back to here.</p>
+<p><img src="..\img\MigratemLab01.png" style="zoom:80%;" /> </p>
+<p></br></p>
+<p>Click Rollback  </p>
+<p><img src="..\img\MigratemLab02.png" style="zoom:80%;" /> </p>
 <p></br></p>
 <p>Go to Settings</p>
 <p><img src="..\img\MigrateNS02.png" style="zoom:80%;" /> </p>
@@ -312,7 +312,13 @@ function ValidatemLab()
 </script>
 
 <p></br></p>
-<p>All good? Then create a last entry:</p>
+<p>All good? </p>
+<div class="admonition warning">
+<p class="admonition-title">Note your mLab user name!!!</p>
+<p>It will look like <code>heroku_zzzzzzzz</code> with zzzzzzzz a sequence of letters and numbers.</p>
+</div>
+<p></br></p>
+<p>Then create a last entry:</p>
 <p>Scroll down Config Vars until you’ll see <code>KEY</code> and <code>VALUE</code></p>
 <p><img src="..\img\MigrateNS08.png" style="zoom:80%;" /> </p>
 <p></br></p>
@@ -323,11 +329,14 @@ function ValidatemLab()
 <p><img src="..\img\MigrateNS10.png" style="zoom:80%;" /> </p>
 <p></br></p>
 <p>We’ll use it later. </p>
-<p>Now scroll all the way up and select <code>Overview</code> (top left)</p>
-<p><img src="..\img\MigrateNS11.png" style="zoom:80%;" /> </p>
 <p></br></p>
-<p>Click <code>mLab MongoDB</code></p>
-<p><img src="..\img\MigrateNS12.png" style="zoom:80%;" /> </p>
+<p>Now let's get a recovery access to the mLab database. </p>
+<p>Open the mLab reset password page: <a href="https://mlab.com/reset-password/">https://mlab.com/reset-password/</a></p>
+<p>Enter your mLab user name and click RESET PASSWORD</p>
+<p><img src="..\img\MigratemLab03.png" style="zoom:80%;" /> </p>
+<p></br></p>
+<p>Check your inbox and reset the mLab account password to something simple then log into mLab <a href="https://mlab.com/login/">https://mlab.com/login/</a>.</p>
+<p><img src="..\img\MigratemLab04.png" style="zoom:80%;" /> </p>
 <p></br></p>
 <p>Another tab will open, from mLab. <strong>Leave it open</strong>. </p>
 <p><img src="..\img\MigrateNS62.png" style="zoom:80%;" /> </p>
@@ -582,23 +591,7 @@ function Generate()
 Versions older than 13.0.x won't probably run. 
 Versions 13.x are not optimized for the Atlas database.</p>
 </div>
-<p></br></p>
-<h2 id="step-6-delete-mlab-add-on-optional">Step 6: Delete mLab add-on (optional)<a class="headerlink" href="#step-6-delete-mlab-add-on-optional" title="Permanent link">⌁</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>MAKE SURE NIGHTSCOUT IS FULLY FUNCTIONAL BEFORE REMOVING THE ADD-ON</strong></p>
-</div>
-<p>If you want to complete the operation once you’re sure everything is working well you can remove mLab from Heroku (<strong>and this is not necessary</strong>).</p>
-<p>For this, in Heroku go to <code>Resources</code></p>
-<p><img src="..\img\MigrateNS58.png" style="zoom:80%;" /> </p>
-<p></br></p>
-<p>On the right of the mLab MongoDB line, click the drop down menu then <code>Delete Add-on</code></p>
-<p><img src="..\img\MigrateNS59.png" style="zoom:80%;" /> </p>
-<p></br></p>
-<p>Write the name of your app to confirm, click <code>Remove add-on</code></p>
-<p><img src="..\img\MigrateNS60.png" style="zoom:80%;" /> </p>
-<p></br></p>
-<p>Migration is complete and your Nightscout doesn't have anything to do with the old mLab database now.</p></div>
+<p></br></p></div>
             </div>
         </div>
 

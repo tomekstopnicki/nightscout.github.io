@@ -105,6 +105,10 @@
 </li>
                                     
 <li>
+    <a href="../profile_editor/" class="dropdown-item">Profile Editor</a>
+</li>
+                                    
+<li>
     <a href="../ifttt/" class="dropdown-item">IF This Then That</a>
 </li>
                                     
@@ -177,6 +181,10 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#edit-mode-edit" class="nav-link">Edit Mode (edit)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#drawer-menu" class="nav-link">Drawer Menu</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -283,7 +291,74 @@
 <p>Once done, exit the edit mode by de-selecting it (white on black background). <img src="..\img\UseNS17.png" /> </p>
 <p><img src="..\img\UseNS19.png"/></p>
 <p></br></p>
-<p><em>More to come soon...</em></p></div>
+<h2 id="drawer-menu">Drawer Menu<a class="headerlink" href="#drawer-menu" title="Permanent link">⌁</a></h2>
+<p>You'll find many features in the drawer menu like access to advanced plugins and customizations of your web page (local view only, in order to modify the default view look into your Heroku variables <a href="../setup_variables/">here</a>).</p>
+<p><img src="..\img\UseNS21.png" /> </p>
+<p><code>Reports</code> will drive you to a powerful reporting toolset detailed <a href="../reports/">here</a>.</p>
+<p><code>Profile Editor</code> will allow you to modify and add profiles, see <a href="../profile_editor/">here</a>.</p>
+<p><code>Food Editor</code> handles your customized <a href="../setup_variables/#food-custom-foods">food database</a>.</p>
+<p><code>Admin Tools</code> gives you access control and database tools, see <a href="../admin_tools">here</a>.</p>
+<p></br></p>
+<h3 id="simple-views">Simple views:<a class="headerlink" href="#simple-views" title="Permanent link">⌁</a></h3>
+<p><img src="..\img\UseNS22.png" /> </p>
+<p></br></p>
+<ul>
+<li><code>Clock</code> - Shows current BG, trend arrow, and time of day. Grey text on a black background.</li>
+</ul>
+<p><img src="../img/SetupNS32.png" style="zoom:40%;" /></p>
+<ul>
+<li><code>Color</code> - Shows current BG and trend arrow. White text on a color background.</li>
+</ul>
+<p><img src="../img/SetupNS33.png" style="zoom:40%;" /></p>
+<ul>
+<li>
+<p><code>Simple</code> - Shows current BG. Grey text on a black background.</p>
+</li>
+<li>
+<p><code>[+]</code> -  Create custom, simplified views using a predefined set of elements.</p>
+</li>
+</ul>
+<p><img src="../img/SetupNS34.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>List of available items:</p>
+<ul>
+<li><code>SGV</code> - Sensor Glucose Value</li>
+<li><code>SGV age</code> - time since the last SGV read</li>
+<li><code>SGV delta</code> - change of SGV in the last 5 minutes</li>
+<li><code>Trend arrow</code> - icon of the SG trend</li>
+<li><code>Time</code> - current time</li>
+<li><code>Line break</code> - invisible item that will move following items to the next line (by default all are showing on the same level)</li>
+</ul>
+<p>All visible items have <code>Size</code> property which allows to customize the view even more. Also, all items may appear multiple times on the view.</p>
+<p>Apart from adding items, it is possible to customize other aspects of the views, like selecting <code>Color</code> or <code>Black</code> background. The first one will indicate current BG threshold (green = in range; blue = below range; yellow = above range; red = urgent below/above). <code>Show SGV age</code> option will make <code>SGV age</code> item appear <code>Always</code> or only if the predefined threshold is reached: <code>Only after threshold</code>. Breaching <code>SGV age threshold</code> will also make <code>Color</code> background turn grey and strike through <code>SGV</code>. <code>Clock view configurator</code> will generate an URL (available under <code>Open my clock view!</code> link) that could be bookmarked.</p>
+<p>If you launch one of these views in a fullscreen view in iOS, you can use a left-to-right swipe gesture to exit the view.</p>
+<p></br></p>
+<h3 id="settings">Settings:<a class="headerlink" href="#settings" title="Permanent link">⌁</a></h3>
+<p><img src="..\img\UseNS23.png" /> </p>
+<p></br></p>
+<p>You can customize your view using Settings. Changes will only be applied to your current browser view, if you want to make these settings default for any browser you need to change directly the corresponding <a href="../setup_variables">system variables</a> indicated below and add the corresponding plugins in <a href="../setup_variables/#plugins"><code>SHOW_PLUGINS</code></a>.</p>
+<p>You need to <a href="../discover/#authenticate_yourself">authenticate</a> to save your settings. </p>
+<h5 id="units-display_units"><a href="../setup_variables/#display_units"><strong>Units <code>DISPLAY_UNITS</code></strong></a><a class="headerlink" href="#units-display_units" title="Permanent link">⌁</a></h5>
+<h5 id="date-format-time_format"><a href="../setup_variables/#time_format-12"><strong>Date Format <code>TIME_FORMAT</code></strong></a><a class="headerlink" href="#date-format-time_format" title="Permanent link">⌁</a></h5>
+<h5 id="language-language"><a href="../setup_variables/#language-en"><strong>Language <code>LANGUAGE</code></strong></a><a class="headerlink" href="#language-language" title="Permanent link">⌁</a></h5>
+<h5 id="scale-scale_y"><a href="../setup_variables/#scale_y-log"><strong>Scale <code>SCALE_Y</code></strong></a><a class="headerlink" href="#scale-scale_y" title="Permanent link">⌁</a></h5>
+<h5 id="render-basal-basal_render"><a href="../setup_variables/#basal-basal-profile"><strong>Render Basal <code>BASAL_RENDER</code></strong></a><a class="headerlink" href="#render-basal-basal_render" title="Permanent link">⌁</a></h5>
+<h5 id="render-bolus-amount-bolus_render_over"><a href="../setup_variables/#bolus_render_over-1"><strong>Render Bolus Amount <code>BOLUS_RENDER_OVER</code></strong></a><a class="headerlink" href="#render-bolus-amount-bolus_render_over" title="Permanent link">⌁</a></h5>
+<h5 id="alarms-alarm"><a href="../setup_variables/#alarms"><strong>Alarms <code>ALARM</code></strong></a><a class="headerlink" href="#alarms-alarm" title="Permanent link">⌁</a></h5>
+<p></br></p>
+<p><img src="..\img\UseNS24.png" /> </p>
+<p></br></p>
+<p><a href="../discover/#edit-mode-edit"><strong>Edit Mode <code>EDIT</code></strong></a></p>
+<p><a href="../setup_variables/#rawbg-raw-bg"><strong>Show Raw BG Data <code>rawbg</code></strong></a></p>
+<p><a href="../setup_variables/#custom_title-nightscout"><strong>Custom Title <code>CUSTOM_TITLE</code></strong></a></p>
+<p><a href="../setup_variables/#theme-colors"><strong>Theme <code>THEME</code></strong></a></p>
+<p><a href="../setup_variables/#plugins"><strong>Show Plugins <code>SHOW_PLUGINS</code></strong></a></p>
+<p></br></p>
+<p><img src="..\img\UseNS25.png" /> </p>
+<p></br></p>
+<p>In order to <code>Save</code> your changes you need to Authenticate, click <code>Authenticate</code> and enter your <a href="../setup_variables/#api_secret">API Secret</a>.</p>
+<p><code>Reset, and use defaults</code> will reverse your changes to defaults from your Heroku <a href="../setup_variables/#nightscout-config-vars">config variables</a>.</p>
+<p>In <code>About</code> you'll see your current Nightscout version.</p></div>
             </div>
         </div>
 

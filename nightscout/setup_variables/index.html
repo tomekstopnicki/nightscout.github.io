@@ -105,6 +105,10 @@
 </li>
                                     
 <li>
+    <a href="../profile_editor/" class="dropdown-item">Profile Editor</a>
+</li>
+                                    
+<li>
     <a href="../ifttt/" class="dropdown-item">IF This Then That</a>
 </li>
                                     
@@ -448,7 +452,7 @@
 <p><img src="..\img\SetupNS41.png" style="zoom:60%;" /></p>
 <p></br></p>
 <h5 id="edit_mode-on"><strong>EDIT_MODE</strong> (<code>on</code>)<a class="headerlink" href="#edit_mode-on" title="Permanent link">⌁</a></h5>
-<p>Possible values <code>on</code> or <code>off</code>. Enables the icon allowing for editing of treatments in the main view.</p>
+<p>Possible values <code>on</code> or <code>off</code>. Enables the icon allowing for editing of treatments in the main view. More about edit <a href="../discover/#edit-mode-edit">here</a>.</p>
 <p><img src="..\img\SetupNS42.png" style="zoom:80%;" /></p>
 <p></br></p>
 <h5 id="bolus_render_over-1"><strong>BOLUS_RENDER_OVER</strong> (<code>1</code>)<a class="headerlink" href="#bolus_render_over-1" title="Permanent link">⌁</a></h5>
@@ -469,41 +473,6 @@
 <p>Add Content Security Policy headers. Possible values <code>false</code>, or <code>true</code>.</p>
 <h5 id="secure_csp_report_only-false"><strong>SECURE_CSP_REPORT_ONLY</strong> (<code>false</code>)<a class="headerlink" href="#secure_csp_report_only-false" title="Permanent link">⌁</a></h5>
 <p>If set to <code>true</code> allows to experiment with policies by monitoring (but not enforcing) their effects. Possible values <code>false</code>, or <code>true</code>.</p>
-<p></br></p>
-<hr />
-<h3 id="views">Views<a class="headerlink" href="#views" title="Permanent link">⌁</a></h3>
-<p>There are a few simple default views available from the main menu:</p>
-<p><img src="..\img\SetupNS31.png" style="zoom:80%;" /></p>
-<ul>
-<li><code>Clock</code> - Shows current BG, trend arrow, and time of day. Grey text on a black background.</li>
-</ul>
-<p><img src="..\img\SetupNS32.png" style="zoom:40%;" /></p>
-<ul>
-<li><code>Color</code> - Shows current BG and trend arrow. White text on a color background.</li>
-</ul>
-<p><img src="..\img\SetupNS33.png" style="zoom:40%;" /></p>
-<ul>
-<li>
-<p><code>Simple</code> - Shows current BG. Grey text on a black background.</p>
-</li>
-<li>
-<p><code>[+]</code> -  Create custom, simplified views using a predefined set of elements.</p>
-</li>
-</ul>
-<p><img src="..\img\SetupNS34.png" style="zoom:80%;" /></p>
-<p></br></p>
-<p>List of available items:</p>
-<ul>
-<li><code>SGV</code> - Sensor Glucose Value</li>
-<li><code>SGV age</code> - time since the last SGV read</li>
-<li><code>SGV delta</code> - change of SGV in the last 5 minutes</li>
-<li><code>Trend arrow</code> - icon of the SG trend</li>
-<li><code>Time</code> - current time</li>
-<li><code>Line break</code> - invisible item that will move following items to the next line (by default all are showing on the same level)</li>
-</ul>
-<p>All visible items have <code>Size</code> property which allows to customize the view even more. Also, all items may appear multiple times on the view.</p>
-<p>Apart from adding items, it is possible to customize other aspects of the views, like selecting <code>Color</code> or <code>Black</code> background. The first one will indicate current BG threshold (green = in range; blue = below range; yellow = above range; red = urgent below/above). <code>Show SGV age</code> option will make <code>SGV age</code> item appear <code>Always</code> or only if the predefined threshold is reached: <code>Only after threshold</code>. Breaching <code>SGV age threshold</code> will also make <code>Color</code> background turn grey and strike through <code>SGV</code>. <code>Clock view configurator</code> will generate an URL (available under <code>Open my clock view!</code> link) that could be bookmarked.</p>
-<p>If you launch one of these views in a fullscreen view in iOS, you can use a left-to-right swipe gesture to exit the view.</p>
 <p></br></p>
 <hr />
 <h3 id="split-view">Split View<a class="headerlink" href="#split-view" title="Permanent link">⌁</a></h3>
@@ -587,7 +556,7 @@
 </ul>
 <p>Simple alarms are enabled by default if one of the <code>BG_HIGH</code>, <code>BG_TARGET_TOP</code>, <code>BG_TARGET_BOTTOM</code>, <code>BG_LOW</code> thresholds is set or <code>ALARM_TYPES</code> includes <code>simple</code>.</p>
 <p>You'll find the plugin in the drawer menu. You can change thresholds in <code>Profile editor</code>.</p>
-<p>You can click the loudspeaker icon to test the alarms volume or to snooze an active alarm.</p>
+<p>You can click the loudspeaker icon to test the alarms volume or to snooze an active alarm. If you want to use sound alarms, you should click the icon to enable playback at least once after opening your Nightscout page in order to allow the browser to play it.</p>
 <p><img src="..\img\SetupNS12.png"/></p>
 <p></br></p>
 <h5 id="profile-treatment-profile"><code>profile</code> (Treatment Profile)<a class="headerlink" href="#profile-treatment-profile" title="Permanent link">⌁</a></h5>
@@ -599,9 +568,10 @@
 <p>More variables of your profile will be used by Nightscout plugins like treatments, see below or <a href="https://github.com/nightscout/cgm-remote-monitor#treatment-profile">here</a>. </p>
 <p><img src="..\img\SetupNS13.png"/></p>
 <p></br></p>
+<h5 id="dbsize-database-size"><code>dbsize</code> (Database Size)<a class="headerlink" href="#dbsize-database-size" title="Permanent link">⌁</a></h5>
+<p>Show size of Nightscout Database, as a percentage of declared available space or in MiB.</p>
 <p><img src="..\img\SetupNS15.png"/></p>
 <p></br></p>
-<p>Show size of Nightscout Database, as a percentage of declared available space or in MiB.</p>
 <p>Many deployments of Nightscout use free tier of MongoDB Atlas on Heroku, which is limited in size to 512MiB. After some time, as volume of stored data grows, it may happen that this limit is reached and system is unable to store new data. This plugin provides pill that indicates size of Database and shows (when configured) alarms regarding reaching space limit.</p>
 <p><strong>IMPORTANT:</strong> This plugin can only check how much space database already takes, <em>but cannot infer</em> max size available on server for it. To have correct alarms and realistic percentage, <code>DBSIZE_MAX</code> need to be properly set - according to your mongoDB hosting configuration.</p>
 <p><strong>NOTE:</strong> This plugin rely on db.stats() for reporting <em>logical</em> size of database, which may be different than <em>physical</em> size of database on server. It may work for free tier of MongoDB on Atlas, since it calculate quota according to logical size too, but may fail for other hostings or self-hosted database with quota based on physical size.</p>
@@ -620,7 +590,7 @@
 <h2 id="advanced-plugins">Advanced Plugins:<a class="headerlink" href="#advanced-plugins" title="Permanent link">⌁</a></h2>
 <h5 id="careportal-careportal"><code>careportal</code> (Careportal)<a class="headerlink" href="#careportal-careportal" title="Permanent link">⌁</a></h5>
 <p>An optional form to enter treatments.</p>
-<p>Care Portal is an important plugin that gives access to the <code>Log a treatment</code> interface. Unlock it entering your API secret with the lock icon top right, then use the <code>+</code> icon to log a treatment. </p>
+<p>Care Portal is an important plugin that gives access to the <code>Log a treatment</code> interface. Unlock it entering your API secret with the lock icon top right, then use the <code>+</code> icon to log a treatment.  More information <a href="../discover/#add-a-treatment-careportal">here</a>.</p>
 <p><img src="..\img\SetupNS14.png" style="zoom:80%;" /></p>
 <p></br></p>
 <h5 id="boluscalc-bolus-wizard"><code>boluscalc</code> (Bolus Wizard)<a class="headerlink" href="#boluscalc-bolus-wizard" title="Permanent link">⌁</a></h5>
@@ -632,7 +602,6 @@
 <p><img src="..\img\SetupNS17.png" style="zoom:80%;" /></p>
 <p></br></p>
 <h5 id="rawbg-raw-bg"><code>rawbg</code> (Raw BG)<a class="headerlink" href="#rawbg-raw-bg" title="Permanent link">⌁</a></h5>
-<h5 id="rawbg-raw-bg_1"><code>rawbg</code> (Raw BG)<a class="headerlink" href="#rawbg-raw-bg_1" title="Permanent link">⌁</a></h5>
 <p>Calculates BG using sensor and calibration records from and displays an alternate BG values and noise levels. Defaults that can be adjusted with extended setting. Raw BG will only display if your sensor provides this data, your bridge device transfers it and your uploader sends it to Nightscout.</p>
 <ul>
 <li>
@@ -858,7 +827,7 @@
 <li><code>CORS_ALLOW_ORIGIN</code> (<code>*</code>) - The list of sites that are allow to make requests</li>
 </ul>
 <p></br></p>
-<h5 id="dbsize-database-size"><code>dbsize</code> (Database Size)<a class="headerlink" href="#dbsize-database-size" title="Permanent link">⌁</a></h5>
+<h5 id="dbsize-database-size_1"><code>dbsize</code> (Database Size)<a class="headerlink" href="#dbsize-database-size_1" title="Permanent link">⌁</a></h5>
 <p><img src="..\img\SetupNS15.png"/></p>
 <p></br></p>
 <p>Show size of Nightscout Database, as a percentage of declared available space or in MiB.</p>
