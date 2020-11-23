@@ -132,6 +132,10 @@
 <li>
     <a href="../../troubleshoot/connection_string/" class="dropdown-item">Connection failure</a>
 </li>
+                                    
+<li>
+    <a href="../../troubleshoot/cleanup/" class="dropdown-item">Cleanup</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -188,6 +192,12 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="redeploy-your-repository">Redeploy your repository<a class="headerlink" href="#redeploy-your-repository" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<div class="admonition note">
+<p class="admonition-title">Azure Users</p>
+<p>As of 0.12, Nightscout no longer readily supports the free Azure platform. If you really want to keep using Azure, don’t update to this version. Read this <a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ</a>.
+It is recommended that you <a href="../migrate_azure/">migrate to Heroku+Atlas</a>.</p>
+</div>
 <p></br></p>
 <p>If you prefer videos look at <a href="https://youtu.be/C0edTQhO21g">this one</a> from Katie DiSimone.</p>
 <p><br></p>
@@ -277,12 +287,14 @@
 <p><img src="../img/UpdateNS24.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
-<li>Wait until the deploy process completes and click <code>View</code></li>
+<li>Wait until the deploy process completes and click <code>View</code> (if nothing happens click <code>Manage App</code> then upper right <code>Open App</code>)</li>
 </ul>
 <p><img src="../img/UpdateNS25.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
-<li>Your site will open and should be at the latest version. You're done!</li>
+<li>Your site will open and should be at the latest version.</li>
+<li>Check your <a href="../../nightscout/profile_editor/#profile-view">profile time zone</a> is correct.</li>
+<li>You're done!</li>
 </ul></div>
             </div>
         </div>

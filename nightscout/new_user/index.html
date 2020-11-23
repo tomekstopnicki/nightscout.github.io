@@ -132,6 +132,10 @@
 <li>
     <a href="../../troubleshoot/connection_string/" class="dropdown-item">Connection failure</a>
 </li>
+                                    
+<li>
+    <a href="../../troubleshoot/cleanup/" class="dropdown-item">Cleanup</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -202,14 +206,21 @@
 <h1 id="new-nightscout-users">New Nightscout Users<a class="headerlink" href="#new-nightscout-users" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <p>Nightscout is DIY, if you don’t feel confident you’ll have necessary skills, give it a try, you’ll find open heart people ready to help you building it in many Facebook groups. For free. Paying it forward.</p>
-<p>Here is a step-by-step guide for completing your own Nightscout site DIY style.</p>
+<p>If you want to <a href="https://github.com/nightscout/nightscout.github.io/wiki/Can-I-sell-Nightscout">sell installations</a>, keep in mind you will be legally liable and can easily be sued by your buyers should anything bad happen to them because of Nightscout. Nightscout is not approved by FDA, CE, ... this is the reason why it's DIY.</p>
+<p></br></p>
+<h4 id="here-is-a-step-by-step-guide-for-completing-your-own-nightscout-site-diy-style">Here is a step-by-step guide for completing your own Nightscout site DIY style.<a class="headerlink" href="#here-is-a-step-by-step-guide-for-completing-your-own-nightscout-site-diy-style" title="Permanent link">⌁</a></h4>
 <p></br></p>
 <p>Create your Heroku, GitHub and Atlas accounts from a computer.</p>
 <p>Do not change device/computer/browser during the creation process!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you have unexpected issues whilst creating your site restart with another browser.</br></br></p>
+<p>If you have unexpected issues whilst creating your site restart with another browser.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">If this is not your first attempt to deploy Nightscout</p>
+<p>You might want to do some <a href="../../troubleshoot/cleanup/">cleanup</a> before.</p>
+</div>
+<p></br></br></p>
 <h2 id="step-1-create-a-github-account">Step 1: Create a GitHub account<a class="headerlink" href="#step-1-create-a-github-account" title="Permanent link">⌁</a></h2>
 <p></br></p>
 <div class="admonition warning">
@@ -346,6 +357,9 @@
 <ul>
 <li>Click on <code>Allow Access from Anywhere</code></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">If you don't allow access from anywhere (IP 0.0.0.0/0) Nightscout will not be able to access your database.</p>
+</div>
 <p><img src="..\img\NewNS23.png" style="zoom:80%;" /></p>
 <p></br></p>
 <ul>
@@ -354,7 +368,19 @@
 <p><img src="..\img\NewNS24.png" style="zoom:80%;" /></p>
 <p></br></p>
 <ul>
-<li>Add a username (for example nightscout) and a password. Write down this information, you’ll need it later.</li>
+<li>Add a database username (for example <code>nightscout</code>) and a database password (in the example below <code>soo5ecret</code>).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Database credentials</p>
+<p>Do not use your Atlas account credentials. Do not use special characters: only letters and numbers.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Write down these credentials in the boxes below: you’ll need them later.</p>
+</div>
+<p>Database password: <input type="text" id="myPwd" value="soo5ecret" size="20"></p>
+<p>Database username: <input type="text" id="mydB" value="mycgmic" size="20"></p>
+<p></br></p>
+<ul>
 <li>Then click <code>Create Database User</code>.</li>
 </ul>
 <p><img src="..\img\NewNS25.png" style="zoom:80%;" /></p>
@@ -375,16 +401,14 @@
 <p><img src="..\img\NewNS28.png" style="zoom:100%;" /></p>
 <p></br></p>
 <ul>
-<li>Paste the string in the box below:</li>
+<li>Paste the string in the box below.</li>
 </ul>
-<p><input type="text" id="myAtlas" value="" size="100">
-</br></p>
-<ul>
-<li>Enter your new Atlas database password and database name (only letters and numbers) in the boxes below:</li>
-</ul>
-<p>Password: <input type="text" id="myPwd" value="soo5ecret" size="20">
-          Name: <input type="text" id="mydB" value="mycgmic" size="20">
-</br></p>
+<p><input type="text" id="myAtlas" value="" size="100"></p>
+<div class="admonition info">
+<p class="admonition-title">It should be similar to this (<code>xxxxx</code> will be different):</p>
+<p><code>mongodb+srv://nightscout:&lt;password&gt;@cluster0.xxxxx.mongodb.net/&lt;dbname&gt;?retryWrites=true&amp;w=majority</code></p>
+</div>
+<p></br></p>
 <ul>
 <li>Click the <code>Generate</code> button:</li>
 </ul>
@@ -431,22 +455,24 @@ function Generate()
 }
 </script>
 
-<p>It should be similar to this (<code>xxxxx</code> will be different):</p>
-<p><code>mongodb+srv://nightscout:&lt;password&gt;@cluster0.xxxxx.mongodb.net/&lt;dbname&gt;?retryWrites=true&amp;w=majority</code></p>
-<p>Keep this string safely aside, it is called your <code>MONGODB_URI</code></p>
 <p></br></p>
-<p><strong>If you didn't manage to get the string with the automated script:</strong> (else proceed to Step 4)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Keep this string safely aside, it is called your <code>MONGODB_URI</code></p>
+</div>
+<p></br></p>
+<p><strong>If you didn't manage to get the string with the automated script:</strong> (else proceed to <a href="./#step-4-fork-and-deploy-cgm-remote-monitor">Step 4</a>)</p>
 <div class="admonition info">
 <p class="admonition-title">Helper page</p>
 <p>Open <a href="../stringhelp.html">this helper page</a> in another tab and insert the original connection string and both your database password and the name you decided for your database name (not important), then click <code>Generate</code> to get the final string (leave the page open).</p>
 </div>
 <ul>
-<li>If you want to do it manually: replace <code>&lt;password&gt;</code> with your password as noted previously (in the example below <code>soo5ecret</code>) and <code>&lt;dbname&gt;</code> by any text you want, say <code>mycgmic</code> for example. The result will be like this:</li>
+<li>If you want to do it manually: replace <code>&lt;password&gt;</code> with your database password as noted previously (in the example below <code>soo5ecret</code>) and <code>&lt;dbname&gt;</code> by any text you want, say <code>mycgmic</code> for example. The result will be like this:</li>
 </ul>
 <p><code>mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/mycgmic?retryWrites=true&amp;w=majority</code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There are no &lt; and &gt; characters in the final string, neither for password and database name.</p>
+<p>There are no &lt; and &gt; characters in the final string, neither for password nor for database name.</p>
 </div>
 <p></br></br></p>
 <h2 id="step-4-fork-and-deploy-cgm-remote-monitor">Step 4: Fork and deploy cgm-remote-monitor<a class="headerlink" href="#step-4-fork-and-deploy-cgm-remote-monitor" title="Permanent link">⌁</a></h2>
@@ -495,7 +521,7 @@ function Generate()
 <p>Scroll down and setup the following variables:</p>
 <p></br></p>
 <ul>
-<li><code>API_SECRET</code> will be your Nightscout site password, it needs to be at least 12 characters long and should <strong>NOT use spaces and @ or ! symbols</strong>.</li>
+<li><code>API_SECRET</code> will be your Nightscout site password, it needs to be at least 12 characters long and should <strong>NOT use spaces and @ or ! symbols</strong>: it is recommended to use only letters and numbers.</li>
 </ul>
 <p><img src="..\img\NewNS34.png" style="zoom:80%;" /></p>
 <p></br></p>
@@ -558,7 +584,7 @@ function Generate()
 <p><img src="..\img\NewNS41.png" style="zoom:80%;" /></p>
 <p></br></p>
 <ul>
-<li>Then click <code>View</code></li>
+<li>Then click <code>View</code> (if nothing happens click <code>Manage App</code> then upper right <code>Open App</code>)</li>
 </ul>
 <p><img src="..\img\NewNS42.png" style="zoom:80%;" /></p>
 <p></br></p>

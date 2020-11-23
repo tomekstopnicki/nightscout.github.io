@@ -132,6 +132,10 @@
 <li>
     <a href="../../troubleshoot/connection_string/" class="dropdown-item">Connection failure</a>
 </li>
+                                    
+<li>
+    <a href="../../troubleshoot/cleanup/" class="dropdown-item">Cleanup</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -172,11 +176,6 @@
             
             <li class="nav-item" data-level="1"><a href="#atlas-migration-is-mandatory-for-heroku-users-with-mlab" class="nav-link">Atlas migration is mandatory for Heroku users with mLab.</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#mlab-database-recovery" class="nav-link">mLab database recovery</a>
-              <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#step-1-heroku" class="nav-link">Step 1: Heroku</a>
               <ul class="nav flex-column">
               </ul>
@@ -211,22 +210,25 @@
 <p>This was essential to keep your Nightscout functioning and now you can't access your add-on from Heroku as it's been deleted. If you absolutely need your historical data, you still have a possibility to do so <strong>until December 8th 2020</strong>. mLab will then shut down, migration is <strong>mandatory</strong>.</p>
 </div>
 <p></br> </p>
-<p>Read this:</p>
+<p>For more information read this:</p>
 <p><a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ</a></p>
+<p>You can also use <a href="https://docs.mlab.com/how-to-migrate-sandbox-heroku-addons-to-atlas/">this guide from mLab</a> else continue reading.</p>
 <p></br></p>
 <div class="admonition warning">
-<p class="admonition-title">If you want to recover your site (not the data)</p>
+<p class="admonition-title">If you only need to recover your site (not the data)</p>
 <p>Follow <a href="https://www.youtube.com/watch?v=hXSLBACjYQo">this easy video guide</a> from Katie DiSimone. Make sure to use only letters and numbers in database name and password. </p>
 </div>
 <p></br></p>
 <p>If you absolutely need your data, continue with this guide.</p>
+<div class="admonition warning">
+<p class="admonition-title">If this is not your first attempt to migrate or deploy Nightscout</p>
+<p>You might want to do some <a href="../../troubleshoot/cleanup/">cleanup</a> before.</p>
+</div>
 <p></br></p>
 <p>Access your Heroku account from a computer. Do not change device/computer/browser during the upgrade!</p>
 <div class="admonition note">
 <p class="admonition-title">If you have issues with your current browser try another one.</p>
 </div>
-<p></br></p>
-<h1 id="mlab-database-recovery">mLab database recovery<a class="headerlink" href="#mlab-database-recovery" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <h2 id="step-1-heroku">Step 1: Heroku<a class="headerlink" href="#step-1-heroku" title="Permanent link">⌁</a></h2>
 <p></br></p>
@@ -237,12 +239,18 @@
 <p>Select your Nightscout app name  </p>
 <p><img src="..\img\MigrateNS01.png" style="zoom:80%;" /> </p>
 <p></br></p>
+<h4 id="case-1-you-have-the-mlab-email">Case 1: You have the mLab email<a class="headerlink" href="#case-1-you-have-the-mlab-email" title="Permanent link">⌁</a></h4>
+<p>Write down your mLab Admin Username. Continue <a href="./#backup-your-old-connection-string">here</a>.</p>
+<p><img src="..\img\MigratemLab05.png" style="zoom:50%;" /> </p>
+<p></br></p>
+<h4 id="case-2-you-deleted-the-mlab-email">Case 2: You deleted the mLab email<a class="headerlink" href="#case-2-you-deleted-the-mlab-email" title="Permanent link">⌁</a></h4>
 <p>Go to Activity and identify the line where your mLab add-on was removed (below in the red box). In the first line below that presents Remove <code>MONGO_CONNECTION</code> config var or  Remove <code>MONGODB_URI</code> config var click Roll Back to here.</p>
 <p><img src="..\img\MigratemLab01.png" style="zoom:80%;" /> </p>
 <p></br></p>
 <p>Click Rollback  </p>
 <p><img src="..\img\MigratemLab02.png" style="zoom:80%;" /> </p>
 <p></br></p>
+<h4 id="backup-your-old-connection-string">Backup your old connection string<a class="headerlink" href="#backup-your-old-connection-string" title="Permanent link">⌁</a></h4>
 <p>Go to Settings</p>
 <p><img src="..\img\MigrateNS02.png" style="zoom:80%;" /> </p>
 <p></br></p>
@@ -314,7 +322,7 @@ function ValidatemLab()
 <p></br></p>
 <p>All good? </p>
 <div class="admonition warning">
-<p class="admonition-title">Note your mLab user name!!!</p>
+<p class="admonition-title">Note your mLab Admin  Username!!!</p>
 <p>It will look like <code>heroku_zzzzzzzz</code> with zzzzzzzz a sequence of letters and numbers.</p>
 </div>
 <p></br></p>
@@ -332,7 +340,7 @@ function ValidatemLab()
 <p></br></p>
 <p>Now let's get a recovery access to the mLab database. </p>
 <p>Open the mLab reset password page: <a href="https://mlab.com/reset-password/">https://mlab.com/reset-password/</a></p>
-<p>Enter your mLab user name and click RESET PASSWORD</p>
+<p>Enter your mLab Admin  Username and click RESET PASSWORD</p>
 <p><img src="..\img\MigratemLab03.png" style="zoom:80%;" /> </p>
 <p></br></p>
 <p>Check your inbox and reset the mLab account password to something simple then log into mLab <a href="https://mlab.com/login/">https://mlab.com/login/</a>.</p>
@@ -572,6 +580,9 @@ function Generate()
 <p></br></p>
 <h4 id="connection-string">Connection string<a class="headerlink" href="#connection-string" title="Permanent link">⌁</a></h4>
 <p>Now find and edit the <code>MONGO_CONNECTION</code> variable (click the pen to edit it)</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not modify the <code>MONGO_COLLECTION</code> variable that should remain set to <code>entries</code></p>
+</div>
 <p>Paste the resulting string and click <code>Save changes</code></p>
 <p><img src="..\img\MigrateNS53.png" style="zoom:80%;" /> </p>
 <p></br></p>

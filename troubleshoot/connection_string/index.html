@@ -132,6 +132,10 @@
 <li>
     <a href="./" class="dropdown-item active">Connection failure</a>
 </li>
+                                    
+<li>
+    <a href="../cleanup/" class="dropdown-item">Cleanup</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -148,7 +152,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../cleanup/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -170,13 +174,37 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#unable-to-connect-to-mongo" class="nav-link">Unable to connect to Mongo</a>
+            <li class="nav-item" data-level="1"><a href="#meet-your-connection-string" class="nav-link">Meet your connection string</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
+            <li class="nav-item" data-level="1"><a href="#unable-to-connect-to-mongo" class="nav-link">Unable to connect to Mongo</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#mongodb-in-read-only-mode" class="nav-link">MongoDB in read only mode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mongodb_uri-missing" class="nav-link">MONGODB_URI missing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#generic-unable-to-connect-to-mongo" class="nav-link">Generic Unable to connect to Mongo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bad-connection-string" class="nav-link">Bad connection string</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#recover-your-connection-string" class="nav-link">Recover your connection string</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#change-your-atlas-database-password" class="nav-link">Change your Atlas database password</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -184,7 +212,34 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="unable-to-connect-to-mongo">Unable to connect to Mongo<a class="headerlink" href="#unable-to-connect-to-mongo" title="Permanent link">⌁</a></h2>
+<h1 id="meet-your-connection-string">Meet your connection string<a class="headerlink" href="#meet-your-connection-string" title="Permanent link">⌁</a></h1>
+<p>For technical details look <a href="https://docs.mongodb.com/manual/reference/connection-string/#mongodb-uri">here</a>.</p>
+<p>A typical mLab migrated string will look like this:</p>
+<p><code>mongodb+srv://heroku_0v50k8rf:ddfsjcpfu8fcoj9n6dueabfd5u@cluster0.g03wh.mongodb.net/heroku_0v50k8rf?retryWrites=true&amp;w=majority</code></p>
+<p>A typical new string created with Atlas will look like this:</p>
+<p><code>mongodb+srv://johndoe:V3ry53cr3t@cluster0.a01bc.mongodb.net/myCGMiC?retryWrites=true&amp;w=majority</code></p>
+<ul>
+<li>
+<p>It will start by <code>mongodb+srv://</code> with <code>mongodb</code> a <strong>standard prefix</strong> for a connection string, and <code>+srv</code> adding a security layer.</p>
+</li>
+<li>
+<p>After <code>://</code> you'll find your <strong>database username</strong>, that is not your Atlas account username. In the examples above <code>heroku_0v50k8rf</code> or <code>johndoe</code>.</p>
+</li>
+<li>
+<p>Following the username, a separator <code>:</code> and your <strong>database password</strong> that is not your Atlas account password. In the examples above a typical 26 characters password created automatically with the mLab add-on <code>ddfsjcpfu8fcoj9n6dueabfd5u</code> and a user created password <code>V3ry53cr3t</code>.</p>
+</li>
+<li>
+<p>Following the password, a separator <code>@</code> then the <strong>host name</strong> that was provided by Atlas after you created you cluster. typically it will look like <code>cluster0.</code><em><code>a1b2c3</code></em><code>.mongodb.net</code></p>
+</li>
+<li>
+<p>After the host name and the separator <code>/</code> you'll see your Nightscout <strong>database name</strong>. If you migrated from mLab it will be identical to your database username (unless you modified it). If you created your Atlas cluster it will be the one you decided. In the examples above <code>heroku_0v50k8rf</code> or <code>myCGMiC</code>.</p>
+</li>
+<li>
+<p>Another separator <code>?</code> and you'll see two options: <code>retryWrites=true&amp;w=majority</code> </p>
+</li>
+</ul>
+<p></br></p>
+<h1 id="unable-to-connect-to-mongo">Unable to connect to Mongo<a class="headerlink" href="#unable-to-connect-to-mongo" title="Permanent link">⌁</a></h1>
 <p>Common reasons:</p>
 <ul>
 <li>
@@ -195,7 +250,54 @@
 </li>
 </ul>
 <p></br></p>
+<p>If you see this message</p>
 <p><img src="../img/TShoot06.png" style="zoom:80%;" ></p>
+<ul>
+<li><a href="../../update/redeploy/">Update to latest version</a> and come back after you have a more accurate error message.</li>
+</ul>
+<p></br></p>
+<h2 id="mongodb-in-read-only-mode">MongoDB in read only mode<a class="headerlink" href="#mongodb-in-read-only-mode" title="Permanent link">⌁</a></h2>
+<p>If you see this message:</p>
+<p><img src="../img/TShoot44.png" style="zoom:80%;" ></p>
+<ul>
+<li>Verify your Atlas database is not read only, if migration went well on the first time it should be like this, else click <code>Edit</code></li>
+</ul>
+<p><img src="../img/TShoot15.png" style="zoom:80%;" ></p>
+<ul>
+<li>Change the permissions to <code>Atlas Admin</code> and <code>Update User</code></li>
+</ul>
+<p><img src="../img/TShoot16.png" style="zoom:80%;" ></p>
+<ul>
+<li>Restart all dynos in Heroku</li>
+</ul>
+<p></br></p>
+<h2 id="mongodb_uri-missing"><code>MONGODB_URI</code> missing<a class="headerlink" href="#mongodb_uri-missing" title="Permanent link">⌁</a></h2>
+<p>If you see this message:</p>
+<p><img src="../img/TShoot45.png" style="zoom:80%;" ></p>
+<ul>
+<li>You most probably forgot to <a href="../../update/migrate_heroku/">migrate to Atlas</a> and as the mLab add-on was removed, the connection string was deleted.</li>
+<li>If you know you migrated, and your Nightscout was still functional after November 11th, continue <a href="./#bad-connection-string">below</a> to recover:</li>
+</ul>
+<p></br></p>
+<h2 id="generic-unable-to-connect-to-mongo">Generic Unable to connect to Mongo<a class="headerlink" href="#generic-unable-to-connect-to-mongo" title="Permanent link">⌁</a></h2>
+<p>If you see this message:</p>
+<p><img src="../img/TShoot47.png" style="zoom:80%;" ></p>
+<ul>
+<li>Check you authorized all IPs to access your Atlas database:</li>
+<li>Open your Atlas cluster and select your Nightscout project, then <code>Network access</code></li>
+</ul>
+<p><img src="../img/TShoot48.png" style="zoom:80%;" ></p>
+<ul>
+<li>If you see an IP (in red above) instead of 0.0.0.0/0 click <code>Edit</code> select <code>ALLOW ACCESS FROM ANYWHERE</code> then <code>Confirm</code>.</li>
+</ul>
+<p><img src="../img/TShoot49.png" style="zoom:80%;" ></p>
+<ul>
+<li>Restart all dynos in Heroku</li>
+</ul>
+<p></br></p>
+<h2 id="bad-connection-string">Bad connection string<a class="headerlink" href="#bad-connection-string" title="Permanent link">⌁</a></h2>
+<p>If you see this message:</p>
+<p><img src="../img/TShoot46.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
 <li>Open Heroku and <code>Reveal Config Vars</code> in <code>Settings</code></li>
@@ -203,10 +305,19 @@
 <p><img src="../../update/img/MigrateNS03.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
-<li>Search for a variable called <code>MONGODB_URI</code> or <code>MONGO_CONNECTION</code>. There should be only one of them, not both. If you migrated from mLab you should have <code>MONGO_CONNECTION</code>, if you deployed a brand new Nightscout it should be <code>MONGODB_URI</code>.</li>
-<li>Verify it is looking like this (<code>atlasusername</code>, <code>atlaspassword</code>, <code>dbname</code> will be different from the example below). </li>
+<li>Search for a variable called <code>MONGODB_URI</code> or <code>MONGO_CONNECTION</code>. If you find none, go <a href="./#recover-your-connection-string">here</a>.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title"> <code>MONGODB_URI</code> or <code>MONGO_CONNECTION</code></p>
+<p>There should be at least one and only one of them, not both.</p>
+</div>
+<p>If you migrated from mLab Heroku add-on it is usually <code>MONGO_CONNECTION</code></p>
+<p>if you deployed a brand new Nightscout it should be <code>MONGODB_URI</code></p>
+<ul>
+<li>Verify it is looking like this: </li>
 </ul>
 <p><code>mongodb+srv://atlasusername:atlaspassword@cluster0.zzzzz.mongodb.net/dbname?retryWrites=true&amp;w=majority</code></p>
+<p>Note that your <code>atlasusername</code>, <code>atlaspassword</code> and <code>dbname</code> will be different from the example above.</p>
 <ul>
 <li>Paste the string in the box below:</li>
 </ul>
@@ -219,9 +330,9 @@
 <p style="font-size:20px" id="result">Analysis result will appear here.</p>
 
 <p>If the analysis result doesn't show any error, check below the data is what you actually wanted:</p>
-<p><strong>Username: <p id="myUser">...</p>
-Password:</strong> <p id="myPwd">...</p>
-<strong>Database: </strong><p id="mydB">...</p></p>
+<p><strong>Database Username:</strong> <p id="myUser">...</p>
+<strong>Database Password:</strong> <p id="myPwd">...</p>
+<strong>Database name:</strong> <p id="mydB">...</p></p>
 <script>
 var sUser, sdB, sPwd;
 function Analyze()
@@ -341,19 +452,23 @@ function Analyze()
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you migrated from mLab your username and database name should be identical.</p>
+<p>If you migrated from Heroku mLab add-on, your database username and database name should be identical.</p>
 </div>
 <p><img src="../img/TShoot41.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
 <li>If you've just migrated to Atlas, try to use <a href="../../update/stringhelp.html">this help page</a> to verify or recreate it.</li>
 <li>If you've just created a new site, try to use <a href="../../nightscout/stringhelp.html">this help page</a> to verify or recreate it.</li>
-<li>If you're still in trouble change your database password:</li>
 </ul>
 <p></br></p>
-<h2 id="change-your-atlas-database-password">Change your Atlas database password<a class="headerlink" href="#change-your-atlas-database-password" title="Permanent link">⌁</a></h2>
+<p>If you're still in trouble continue below:</p>
+<p></br></p>
+<h2 id="recover-your-connection-string">Recover your connection string<a class="headerlink" href="#recover-your-connection-string" title="Permanent link">⌁</a></h2>
+<p>If you've tried several times to deploy or migrate, you might end-up with too many items to cope with in your different accounts. At this point, you could benefit doing some cleanup in order to identify the correct Atlas database you want to connect to.</p>
+<p><a href="../cleanup/">Cleanup</a> and come back.</p>
+<p></br></p>
 <ul>
-<li>To recover your connection string log into <a href="https://cloud.mongodb.com/">Atlas</a></li>
+<li>Log into <a href="https://cloud.mongodb.com/">Atlas</a></li>
 <li>Click <code>Connect</code> on your cluster</li>
 </ul>
 <p><img src="../img/TShoot07.png" style="zoom:80%;" ></p>
@@ -369,17 +484,79 @@ function Analyze()
 <p><img src="../img/TShoot10.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
-<li>Open the <a href="../../nightscout/stringhelp.html">the help page</a> in a new tab and paste the string in the first field.</li>
+<li>Paste the connection string in this box below:</li>
 </ul>
+<p><input type="text" id="myAtlas2" value="" size="100"></p>
+<ul>
+<li>Modify the database password and database name (not username) in the boxes below (only letters and numbers allowed):</li>
+</ul>
+<p>Database password: <input type="text" id="myPwd2" value="soo5ecret" size="20"></p>
+<p>Database name: <input type="text" id="mydB2" value="mycgmic" size="20"></p>
 <div class="admonition warning">
 <p class="admonition-title">If you migrated from mLab and Heroku (not Azure)</p>
 <p><strong>Your database name should be identical to your database user name!</strong> (Unless you modified it) "</p>
 </div>
 <ul>
-<li>If you don't remember your password invent a new one (only letters and numbers).</li>
-<li>Copy the resulting string in your Heroku variable <code>MONGODB_URI</code> (new Nightscout) or <code>MONGO_CONNECTION</code> (migration)</li>
-<li>If you changed the password in the string you need to change it in the database too:</li>
-<li>Click <code>Database Access</code></li>
+<li>If you don't remember your Atlas database password (which should not be your mongoDB Atlas account password) invent a new one (only letters and numbers). And proceed to <a href="./#change-your-atlas-database-password">Change your Atlas database password</a> then come back.</li>
+</ul>
+<p><button onclick="Generate2()">Generate</button></p>
+<p style="font-size:25px" id="result2">The connection string will appear here</p>
+
+<script>
+var bAtlas;
+var sdB, sPwd;
+var sFinalString = "Not defined yet";
+
+function Generate2()
+{
+  var sString = sFinalString;
+
+  bAtlas=0;
+  var sString = "Looks good!";
+  var sAtlas = document.getElementById("myAtlas2").value;
+  sPwd = document.getElementById("myPwd2").value;
+  sdB = document.getElementById("mydB2").value;
+  var iAS = sAtlas.search("://");
+  if(iAS!=11) { sString = "Atlas URI should start with mongodb+srv://"; }
+  else
+  {
+    var iAP = sAtlas.search("<password>");
+    if(iAP==-1) { sString = "Atlas URI should contain &lt;password&gt;"; }
+    else
+    {
+      var iAD = sAtlas.search("<dbname>");
+      if(iAD==-1) { sString = "Atlas URI should contain &lt;dbname&gt;"; }
+      else
+      {
+        bAtlas=1;
+        sString = sAtlas.substring(0,iAP);
+        sFinalString = sString.concat(sPwd, sAtlas.substring(iAP+10, iAD));
+        sString = sAtlas.substring(iAP+10, iAD);
+        sFinalString = sFinalString.concat(sdB, sAtlas.substring(iAD+8));
+      }
+    }
+  }
+
+  if(bAtlas) document.getElementById("result2").innerHTML = sFinalString;
+  else document.getElementById("result2").innerHTML = sString;
+}
+</script>
+
+<p></br></p>
+<ul>
+<li>Copy the resulting string into your Heroku variable <code>MONGODB_URI</code> (new Nightscout) or <code>MONGO_CONNECTION</code> (migration). There must be only one of these variables, not both.</li>
+<li>If there is neither one nor the other create a new <code>MONGODB_URI</code> variable and paste the string in the value field.</li>
+<li>Restart all dynos in Heroku</li>
+</ul>
+<p></br></p>
+<h2 id="change-your-atlas-database-password">Change your Atlas database password<a class="headerlink" href="#change-your-atlas-database-password" title="Permanent link">⌁</a></h2>
+<ul>
+<li>
+<p>If you changed the password in the string you will need to change it in the database too:</p>
+</li>
+<li>
+<p>Click <code>Database Access</code></p>
+</li>
 </ul>
 <p><img src="../img/TShoot11.png" style="zoom:80%;" ></p>
 <p></br></p>
@@ -394,7 +571,8 @@ function Analyze()
 <p><img src="../img/TShoot12.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
-<li>Write down your new password make it the same than the one in your connection string</li>
+<li>If you forgot your password invent a new one (use only letters and numbers: no special characters) or use <code>Autogenerate Secure Password</code> and click <code>Copy</code></li>
+<li>Else make it the same than the one in your connection string</li>
 </ul>
 <p><img src="../img/TShoot13.png" style="zoom:80%;" ></p>
 <p></br></p>
@@ -404,7 +582,12 @@ function Analyze()
 <p><img src="../img/TShoot14.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
-<li>Refresh your Nightscout web page display</li>
+<li>
+<p>Make sure the password matches in your connection string Heroku variable <code>MONGODB_URI</code> (new Nightscout) or <code>MONGO_CONNECTION</code> (migration)</p>
+</li>
+<li>
+<p>Refresh your Nightscout web page display</p>
+</li>
 </ul></div>
             </div>
         </div>

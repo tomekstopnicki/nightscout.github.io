@@ -132,6 +132,10 @@
 <li>
     <a href="../connection_string/" class="dropdown-item">Connection failure</a>
 </li>
+                                    
+<li>
+    <a href="../cleanup/" class="dropdown-item">Cleanup</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -314,7 +318,7 @@
 <p><img src="../img/TShoot05.png" style="zoom:80%;" ></p>
 <ul>
 <li><a href="../../update/update/">Update Nightscout to latest release</a>. It might not fix your issue but it will help find a solution.</li>
-<li>If you didn't migrate from mLab to Heroku go there.</li>
+<li>If you didn't migrate Heroku from mLab to Atlas to Heroku go <a href="../../update/migrate_heroku/">there</a>.</li>
 <li>If you're creating a new Nightscout site, it might have failed because of a wrong connection string. Delete your Heroku app and <a href="../../nightscout/new_user/#step-4-fork-and-deploy-cgm-remote-monitor">deploy</a> again after <a href="../connection_string/#change-your-atlas-database-password">checking</a> the Atlas connection string is correct.</li>
 </ul>
 <p></br></p>
@@ -339,20 +343,12 @@
 <h3 id="boot-error-unable-to-connect-to-mongo">Boot Error - Unable to connect to Mongo<a class="headerlink" href="#boot-error-unable-to-connect-to-mongo" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <p>Look at this <a href="../connection_string/">dedicated page</a>.</p>
+<p><img src="../img/TShoot43.png" style="zoom:80%;" ></p>
 <p></br></p>
 <h1 id="no-data-in-nightscout">No data in Nightscout<a class="headerlink" href="#no-data-in-nightscout" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <h3 id="just-after-migrating-from-mlab-to-atlas">Just after migrating from mLab to Atlas<a class="headerlink" href="#just-after-migrating-from-mlab-to-atlas" title="Permanent link">⌁</a></h3>
-<p></br></p>
-<ul>
-<li>If not already done, <a href="../../update/update/">Update Nightscout to latest release</a>.</li>
-<li>Verify your Atlas database is not read only, if migration went well on the first time it should be like this, else click <code>Edit</code></li>
-</ul>
-<p><img src="../img/TShoot15.png" style="zoom:80%;" ></p>
-<ul>
-<li>Change the permissions to <code>Atlas Admin</code> and <code>Update User</code></li>
-</ul>
-<p><img src="../img/TShoot16.png" style="zoom:80%;" ></p>
+<p><a href="../connection_string/#mongodb-in-read-only-mode">Check you database is not read only</a>.</p>
 <p></br></p>
 <h3 id="dexcom-data-not-showing">Dexcom data not showing<a class="headerlink" href="#dexcom-data-not-showing" title="Permanent link">⌁</a></h3>
 <p></br></p>
@@ -430,6 +426,7 @@
 <p>In <code>Monitor Type</code> select  <code>HTTP(s)</code></p>
 <p><img src="../img/TShoot28.png" style="zoom:80%;" ></p>
 <p></br></p>
+<p>You might want to set the monitoring interval to 15 or 20 minutes instead of 5 to save dynos usage.</p>
 <p>Add a <code>Friendly Name</code> (any), type your Nightscout site page then click <code>Create Monitor</code></p>
 <p>You can enable your email address as an alert contact to inform you if your site goes down.</p>
 <p><img src="../img/TShoot29.png" style="zoom:80%;" ></p>

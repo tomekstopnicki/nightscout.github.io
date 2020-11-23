@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Admin tools - Nightscout</title>
+        <title>Cleanup - Nightscout</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 </li>
                                     
 <li>
-    <a href="../insights/" class="dropdown-item">How does it work?</a>
+    <a href="../../nightscout/insights/" class="dropdown-item">How does it work?</a>
 </li>
                                     
 <li>
@@ -52,7 +52,7 @@
                                 </ul>
                             </li>
                             <li class="navitem">
-                                <a href="../new_user/" class="nav-link">Install</a>
+                                <a href="../../nightscout/new_user/" class="nav-link">Install</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
@@ -80,7 +80,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../setup_variables/" class="dropdown-item">Configure your Nightscout</a>
+    <a href="../../nightscout/setup_variables/" class="dropdown-item">Configure your Nightscout</a>
 </li>
                                     
 <li>
@@ -88,7 +88,7 @@
 </li>
                                     
 <li>
-    <a href="../close_loop/" class="dropdown-item">Close the loop</a>
+    <a href="../../nightscout/close_loop/" class="dropdown-item">Close the loop</a>
 </li>
                                 </ul>
                             </li>
@@ -97,44 +97,44 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../discover/" class="dropdown-item">Discover your site</a>
+    <a href="../../nightscout/discover/" class="dropdown-item">Discover your site</a>
 </li>
                                     
 <li>
-    <a href="../reports/" class="dropdown-item">Reports</a>
+    <a href="../../nightscout/reports/" class="dropdown-item">Reports</a>
 </li>
                                     
 <li>
-    <a href="../profile_editor/" class="dropdown-item">Profile Editor</a>
+    <a href="../../nightscout/profile_editor/" class="dropdown-item">Profile Editor</a>
 </li>
                                     
 <li>
-    <a href="../ifttt/" class="dropdown-item">IF This Then That</a>
+    <a href="../../nightscout/ifttt/" class="dropdown-item">IF This Then That</a>
 </li>
                                     
 <li>
-    <a href="../pebble/" class="dropdown-item">Pebble</a>
+    <a href="../../nightscout/pebble/" class="dropdown-item">Pebble</a>
 </li>
                                     
 <li>
-    <a href="../pushover/" class="dropdown-item">Remote Notifications</a>
+    <a href="../../nightscout/pushover/" class="dropdown-item">Remote Notifications</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Troubleshoot <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../troubleshoot/troublehoot/" class="dropdown-item">Troubleshooting</a>
+    <a href="../troublehoot/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
-    <a href="../../troubleshoot/connection_string/" class="dropdown-item">Connection failure</a>
+    <a href="../connection_string/" class="dropdown-item">Connection failure</a>
 </li>
                                     
 <li>
-    <a href="../../troubleshoot/cleanup/" class="dropdown-item">Cleanup</a>
+    <a href="./" class="dropdown-item active">Cleanup</a>
 </li>
                                 </ul>
                             </li>
@@ -146,6 +146,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../connection_string/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -164,8 +174,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#admin-tools" class="nav-link">Admin Tools</a>
+            <li class="nav-item" data-level="1"><a href="#cleanup" class="nav-link">Cleanup</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#github" class="nav-link">Github</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#heroku" class="nav-link">Heroku</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#atlas" class="nav-link">Atlas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -173,8 +195,73 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="admin-tools">Admin Tools<a class="headerlink" href="#admin-tools" title="Permanent link">⌁</a></h2>
-<p><em>coming soon</em></p></div>
+<h1 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">⌁</a></h1>
+<p>After unsuccessful attempts you might want to cleanup the various accounts to avoid confusion.</p>
+<p>If you're still trying to deploy your first Nightscout, ignore all data loss recommendations below.</p>
+<p>If you have a large amount of CGM data, be extra cautious when performing Atlas cleanup.</p>
+<p></br></p>
+<h2 id="github"><a href="https://github.com/login">Github</a><a class="headerlink" href="#github" title="Permanent link">⌁</a></h2>
+<p>Github cleanup consists of deleting your fork and forking again the <a href="https://github.com/nightscout/cgm-remote-monitor">official latest released version</a>.</p>
+<p>Follow <a href="../../update/redeploy/#step-1-cleanup-github">Step 1 of this guide (ONLY STEP1!)</a>.</p>
+<p></br></p>
+<h2 id="heroku"><a href="https://id.heroku.com/">Heroku</a><a class="headerlink" href="#heroku" title="Permanent link">⌁</a></h2>
+<p>If you experience issues during deployment you might end up with many apps. Make sure you keep the last one that was functional or delete all before attempting a new deployment. This will just make it easier to find which app you're trying to build. Keeping sleeping apps doesn't have any negative impact but no real advantage unless you do it on purpose.</p>
+<p>Deleting an Heroku app does <strong>not</strong> delete your Nightscout data, but you might want to write down your variables if your site was functional before. Note you can also rename an app (unless the name is already in use in heroku.com).</p>
+<p><img src="../img/Cleanup00.png" style="zoom:80%;" ></p>
+<p>To delete an app, select it and go to <code>Settings</code>, scroll down to <code>Delete App</code></p>
+<p><img src="../img/Cleanup01.png" style="zoom:80%;" ></p>
+<p>Copy and paste your app name to confirm deletion, </p>
+<p><img src="../img/Cleanup02.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h2 id="atlas"><a href="https://account.mongodb.com/account/login">Atlas</a><a class="headerlink" href="#atlas" title="Permanent link">⌁</a></h2>
+<p>It is very easy to get lost in Atlas.</p>
+<p>The structure from top to bottom is: Organization, Projects and Databases. You can have several organizations, each of them several projects and each of them several databases.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are deploying a brand new Nightscout make sure you have one organization, one project and one cluster created. No more no less.</p>
+</div>
+<p>If you want to cleanup Atlas, unless you don't have data, you must first find out which database contains your data. For this, start from <code>View All Organizations</code>:</p>
+<p><img src="../img/Cleanup03.png" style="zoom:80%;" ></p>
+<p>You can delete empty organizations (those without any project inside).</p>
+<p><img src="../img/Cleanup04.png" style="zoom:80%;" ></p>
+<p>Select the organization, then top left the cog wheel to go in <code>Settings</code>, then scroll down to <code>Delete Organization</code>: <code>Delete</code>.</p>
+<p><img src="../img/Cleanup06.png" style="zoom:80%;" ></p>
+<p>If an organization is connected to mLab delete it only if you don't want to migrate the database or if you're done it with another organization. Deleting an organization without projects will not delete your data. </p>
+<p><img src="../img/Cleanup05.png" style="zoom:80%;" ></p>
+<hr />
+<p>Once inside an organization, you will see its projects. You can safely delete projects without clusters.</p>
+<p><img src="../img/Cleanup07.png" style="zoom:80%;" ></p>
+<p>Deleting an empty project doesn't delete your Nightscout data.</p>
+<p><img src="../img/Cleanup08.png" style="zoom:80%;" ></p>
+<p>For non-empty projects continue reading before deciding to delete them.</p>
+<hr />
+<p>You can then move to your project (select it) and check its database(s) selecting <code>COLLECTIONS</code></p>
+<p><img src="../img/Cleanup09.png" style="zoom:80%;" ></p>
+<p>An empty project will look like below, and this is typically what you have before deploying Nightscout in Heroku. Once Nightscout is deployed in a project, a new database will be created there.</p>
+<p><img src="../img/Cleanup10.png" style="zoom:80%;" ></p>
+<p>The database currently used by your Nightscout is the one specified in the connection string, in the example below <code>dbname</code>. Whenever you change the database name in the connection string, a new database will be created in your project.</p>
+<p><code>mongodb+srv://atlasusername:atlaspassword@cluster0.zzzzz.mongodb.net/</code><strong><code>dbname</code></strong><code>?retryWrites=true&amp;w=majority</code></p>
+<p>There is usually one database for Nightscout, if there are several, select one and then the other(s) to understand which one contains your data. For this, select <code>entries</code>.</p>
+<p><img src="../img/Cleanup11.png" style="zoom:80%;" ></p>
+<p>A large database is most probably one you want to keep.</p>
+<p><img src="../img/Cleanup12.png" style="zoom:80%;" ></p>
+<p>You can safely delete empty databases (check the size first).</p>
+<p><img src="../img/Cleanup13.png" style="zoom:80%;" ></p>
+<div class="admonition warning">
+<p class="admonition-title">If you're not sure you're deleting the right database, just leave it.</p>
+</div>
+<p>Hover on the database name and click the bin icon. Confirm deletion by copying the database name and click <code>Drop</code>.</p>
+<p><img src="../img/Cleanup14.png" style="zoom:80%;" ></p>
+<p>If your database gets recreated after you deleted it this means you MONGODB_URI or MONGO_CONNECTION string is pointing to it.</p>
+<p></br></p>
+<h6 id="if-you-want-to-delete-a-non-empty-project-you-need-to-terminate-all-clusters-belonging-to-it">If you want to delete a non-empty Project you need to terminate all clusters belonging to it.<a class="headerlink" href="#if-you-want-to-delete-a-non-empty-project-you-need-to-terminate-all-clusters-belonging-to-it" title="Permanent link">⌁</a></h6>
+<p><img src="../img/Cleanup15.png" style="zoom:80%;" ></p>
+<div class="admonition warning">
+<p class="admonition-title">Terminating a cluster will delete all information and databases in this cluster!</p>
+</div>
+<p>Confirm with your cluster name and wait until shutdown is complete.</p>
+<p><img src="../img/Cleanup16.png" style="zoom:80%;" ></p>
+<p>You can then delete the empty project.</p></div>
             </div>
         </div>
 
