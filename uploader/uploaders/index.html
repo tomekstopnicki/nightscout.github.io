@@ -55,27 +55,6 @@
                                 <a href="../../nightscout/new_user/" class="nav-link">Install</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
-</li>
-                                    
-<li>
-    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
-</li>
-                                    
-<li>
-    <a href="../../update/migrate_heroku/" class="dropdown-item">Migrating to Atlas</a>
-</li>
-                                    
-<li>
-    <a href="../../update/migrate_azure/" class="dropdown-item">Migrating from Azure</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -85,6 +64,18 @@
                                     
 <li>
     <a href="../setup/" class="dropdown-item">Setup the uploader</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/multiadmin/" class="dropdown-item">Multiple sites administration</a>
 </li>
                                     
 <li>
@@ -109,15 +100,24 @@
 </li>
                                     
 <li>
-    <a href="../../nightscout/ifttt/" class="dropdown-item">IF This Then That</a>
+    <a href="../../nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pebble/" class="dropdown-item">Pebble</a>
+    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pushover/" class="dropdown-item">Remote Notifications</a>
+    <a href="../../update/newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
 </li>
                                 </ul>
                             </li>
@@ -176,6 +176,22 @@
             
             <li class="nav-item" data-level="1"><a href="#supported-uploaders" class="nav-link">Supported uploaders</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#dexcom" class="nav-link">Dexcom</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#medtronic" class="nav-link">Medtronic</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#libre" class="nav-link">Libre</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#eversense" class="nav-link">Eversense</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -185,7 +201,7 @@
 
 <h1 id="supported-uploaders">Supported uploaders<a class="headerlink" href="#supported-uploaders" title="Permanent link">⌁</a></h1>
 <p></br></p>
-<h3 id="dexcom">Dexcom<a class="headerlink" href="#dexcom" title="Permanent link">⌁</a></h3>
+<h2 id="dexcom">Dexcom<a class="headerlink" href="#dexcom" title="Permanent link">⌁</a></h2>
 <p>(1) Dexcom G4 requires additional hardware, like a <a href="https://github.com/StephenBlackWasAlreadyTaken/xDrip/wiki/xDrip-Wireless-Bridge">Wixel</a>, an xDripKit or (2) a compatible Android phone with an OTG cable connected to the receiver.</p>
 <p><img src="..\img\Upload01.png" style="zoom:80%;" /></p>
 <p>(3) Dexcom G4 Platinum (Share) requires you to carry the receiver to forward data to the uploader.</p>
@@ -196,12 +212,12 @@
 <p>iOS: Spike and xDrip4iOS for G4 (1)(3), G5 and old G6 transmitters (not Firefly).</p>
 <p><img src="..\img\Upload03.png" style="zoom:80%;" /></p>
 <p>Loop and AAPS will upload your data directly to Nightscout and will act as uploaders.</p>
-<h3 id="medtronic">Medtronic<a class="headerlink" href="#medtronic" title="Permanent link">⌁</a></h3>
+<h2 id="medtronic">Medtronic<a class="headerlink" href="#medtronic" title="Permanent link">⌁</a></h2>
 <p>If your sensor uploads to CareLink Nightscout will get the information directly with the <code>mmconnect</code> plugin (except for 780G pump).</p>
 <p><img src="..\img\Upload04.png" style="zoom:80%;" /></p>
 <p>Else you'll need an Android phone connected with an OTG cable to your pump Bluetooth glucometer like <a href="http://pazaan.github.io/600SeriesAndroidUploader/">this</a>.</p>
 <p><img src="..\img\Upload05.png" style="zoom:80%;" /></p>
-<h3 id="libre">Libre<a class="headerlink" href="#libre" title="Permanent link">⌁</a></h3>
+<h2 id="libre">Libre<a class="headerlink" href="#libre" title="Permanent link">⌁</a></h2>
 <p>Non Bluetooth Libre sensors need an additional transmitter device to send readings to the uploader. In release order you'll find these: <a href="https://github.com/JoernL/LimiTTer">LimiTTer</a>, blueReader, blucon, miaomiao, Bubble and Droplet.</p>
 <div class="admonition warning">
 <p class="admonition-title">Libre sensors</p>
@@ -211,7 +227,7 @@
 <p><a href="../setup/">Setup your uploader</a>.</p>
 <p>Open source apps xDrip+, Spike and xDrip4iOS support some of these devices.</p>
 <p>For using a Libre 2 sensor (EU only) without an additional transmitter: more information <a href="https://androidaps.readthedocs.io/en/latest/EN/Hardware/Libre2.html">here</a>.</p>
-<h3 id="eversense">Eversense<a class="headerlink" href="#eversense" title="Permanent link">⌁</a></h3>
+<h2 id="eversense">Eversense<a class="headerlink" href="#eversense" title="Permanent link">⌁</a></h2>
 <p>You need <a href="https://github.com/BernhardRo/Esel">ESEL</a> with an Android phone.</p>
 <p><img src="..\img\Upload06.png" style="zoom:80%;" /></p></div>
             </div>

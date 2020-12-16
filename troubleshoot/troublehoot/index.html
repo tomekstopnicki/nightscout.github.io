@@ -55,27 +55,6 @@
                                 <a href="../../nightscout/new_user/" class="nav-link">Install</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
-</li>
-                                    
-<li>
-    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
-</li>
-                                    
-<li>
-    <a href="../../update/migrate_heroku/" class="dropdown-item">Migrating to Atlas</a>
-</li>
-                                    
-<li>
-    <a href="../../update/migrate_azure/" class="dropdown-item">Migrating from Azure</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -85,6 +64,18 @@
                                     
 <li>
     <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/multiadmin/" class="dropdown-item">Multiple sites administration</a>
 </li>
                                     
 <li>
@@ -109,15 +100,24 @@
 </li>
                                     
 <li>
-    <a href="../../nightscout/ifttt/" class="dropdown-item">IF This Then That</a>
+    <a href="../../nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pebble/" class="dropdown-item">Pebble</a>
+    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pushover/" class="dropdown-item">Remote Notifications</a>
+    <a href="../../update/newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
 </li>
                                 </ul>
                             </li>
@@ -147,7 +147,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../nightscout/pushover/" class="nav-link">
+                                <a rel="prev" href="../../update/newdatabase/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -209,6 +209,11 @@
             </li>
             
             <li class="nav-item" data-level="1"><a href="#database-full" class="nav-link">Database full</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#reports-slow-loading-or-timeout" class="nav-link">Reports slow loading or timeout</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -316,9 +321,14 @@
 <h3 id="application-error">Application Error<a class="headerlink" href="#application-error" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <p><img src="../img/TShoot05.png" style="zoom:80%;" ></p>
+<div class="admonition warning">
+<p class="admonition-title">mLab will stop operating in December 2020 and the mLab add-on was removed on Nov 10th</p>
+<p>If you still can access your mLab account and <strong>absolutely</strong> need your historical data you can try to recover with these two guides: <a href="../../update/migrate_azure/">Azure</a> and <a href="../../update/migrate_heroku/">Heroku</a>. </p>
+</div>
 <ul>
 <li><a href="../../update/update/">Update Nightscout to latest release</a>. It might not fix your issue but it will help find a solution.</li>
-<li>If you didn't migrate Heroku from mLab to Atlas to Heroku go <a href="../../update/migrate_heroku/">there</a>.</li>
+<li>If you didn't migrate your Heroku database from mLab to Atlas <a href="../../update/newdatabase/">create a new Atlas database</a>.</li>
+<li>If you didn't migrate from Azure to Heroku create a new site <a href="../../nightscout/new_user/">create a new Nightscout site with Heroku</a>.</li>
 <li>If you're creating a new Nightscout site, it might have failed because of a wrong connection string. Delete your Heroku app and <a href="../../nightscout/new_user/#step-4-fork-and-deploy-cgm-remote-monitor">deploy</a> again after <a href="../connection_string/#change-your-atlas-database-password">checking</a> the Atlas connection string is correct.</li>
 </ul>
 <p></br></p>
@@ -391,7 +401,7 @@
 <h4 id="change-username">Change username<a class="headerlink" href="#change-username" title="Permanent link">⌁</a></h4>
 <p>Unfortunately, it is not possible to change the username of a Dexcom account. You have to create a whole new account.</p>
 <h4 id="create-new-account">Create new account<a class="headerlink" href="#create-new-account" title="Permanent link">⌁</a></h4>
-<p>You can only associate one email address with a Dexcom account, so it might be a good idea to create a new email address and associate it to your current account so that you can use your current email with the new account. Go to <a href="https://www.dexcom.com/">https://www.dexcom.com</a> and look for where to create accounts. Follow the instructions to create a new account.  The alternative is to delete the old account. But do <strong>not</strong> do that. It may be good to be able to go back and retrieve historical data. Make sure the new username contains only letters. It is better to stick to a-z. We know that the period . underscore <code>_</code> and at <code>@</code> characters creates problems, but we do not know which other characters can create problems.</p>
+<p>You can only associate one email address with a Dexcom account, so it might be a good idea to create a new email address and associate it to your current account so that you can use your current email with the new account. Go to <a href="https://www.dexcom.com/">https://www.dexcom.com</a> and look for where to create accounts. Follow the instructions to create a new account.  The alternative is to delete the old account. But do <strong>not</strong> do that. It may be good to be able to go back and retrieve historical data. Make sure the new username contains only letters. It is better to stick to a-z. We know that the period <code>.</code> underscore <code>_</code> and at <code>@</code> characters creates problems, but we do not know which other characters can create problems.</p>
 <h4 id="reinstall-dexcom-transmitter-app">Reinstall Dexcom Transmitter app<a class="headerlink" href="#reinstall-dexcom-transmitter-app" title="Permanent link">⌁</a></h4>
 <p>When you install the Dexcom app, it is linked to a Dexcom account. Unfortunately, there is no way to switch accounts. What you have to do is simply uninstall the app and reinstall it. In principle, it is the same procedure as changing phone. Of course, this time you should log in with the new account.</p>
 <ul>
@@ -409,6 +419,11 @@
 <p>Check your Heroku settings match your new credentials (see above)</p>
 <p></br></p>
 <h3 id="dexcom-or-carelink-data-stopping-after-a-while">Dexcom or CareLink data stopping after a while<a class="headerlink" href="#dexcom-or-carelink-data-stopping-after-a-while" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<div class="admonition note">
+<p class="admonition-title">CareLink</p>
+<p>There are issues with CareLink EU refusing authentication from Heroku. No solution yet.</p>
+</div>
 <p></br></p>
 <p>First verify you can see your BG in Clarity or CareLink.</p>
 <p>If data is present open Heroku and check you app didn't fall asleep.</p>
@@ -540,7 +555,27 @@
 <p>Same for <code>Treatments</code>:</p>
 <p><img src="../img/TShoot38.png" style="zoom:80%;" ></p>
 <p>And <code>Glucose entries</code>. If you are reluctant to lose historical data you should consider opting for a paid database solution.</p>
-<p><img src="../img/TShoot39.png" style="zoom:80%;" ></p></div>
+<p><img src="../img/TShoot39.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h1 id="reports-slow-loading-or-timeout">Reports slow loading or timeout<a class="headerlink" href="#reports-slow-loading-or-timeout" title="Permanent link">⌁</a></h1>
+<p>Loopers might experience Nightscout taking an extremely long time or even timing out when creating reports due to the profiles collection database growing too big.</p>
+<p>Two solutions are available:</p>
+<ol>
+<li>Follow this video (set it full screen in 720p) to selectively delete profiles <a href="https://www.youtube.com/watch?v=iipp0MfPKNQ">https://www.youtube.com/watch?v=iipp0MfPKNQ</a></li>
+<li>Delete all profiles in Atlas</li>
+</ol>
+<p>Log in to Atlas <a href="https://account.mongodb.com/account/login">https://account.mongodb.com/account/login</a></p>
+<p>Select your cluster then <code>COLLECTIONS</code></p>
+<p><img src="../img/TShoot50.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>Select the <code>profile</code> collection and click the bin icon to delete all profiles.</p>
+<p><img src="../img/TShoot51.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>Write <code>profile</code> in the box then click <code>Drop</code></p>
+<p><img src="../img/TShoot52.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>Open your Nightscout and create a new profile (mind the time zone!), authenticate and save it.</p>
+<p>If you are using Loop, temporarily change a basal rate in Loop, and confirm your profiles now show up in Nightscout.</p></div>
             </div>
         </div>
 

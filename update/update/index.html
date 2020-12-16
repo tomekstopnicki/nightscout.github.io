@@ -54,27 +54,6 @@
                             <li class="navitem">
                                 <a href="../../nightscout/new_user/" class="nav-link">Install</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Updating your site</a>
-</li>
-                                    
-<li>
-    <a href="../redeploy/" class="dropdown-item">Redeploying</a>
-</li>
-                                    
-<li>
-    <a href="../migrate_heroku/" class="dropdown-item">Migrating to Atlas</a>
-</li>
-                                    
-<li>
-    <a href="../migrate_azure/" class="dropdown-item">Migrating from Azure</a>
-</li>
-                                </ul>
-                            </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -85,6 +64,18 @@
                                     
 <li>
     <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/multiadmin/" class="dropdown-item">Multiple sites administration</a>
 </li>
                                     
 <li>
@@ -109,15 +100,24 @@
 </li>
                                     
 <li>
-    <a href="../../nightscout/ifttt/" class="dropdown-item">IF This Then That</a>
+    <a href="../../nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Updating your site</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pebble/" class="dropdown-item">Pebble</a>
+    <a href="../redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pushover/" class="dropdown-item">Remote Notifications</a>
+    <a href="../newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
 </li>
                                 </ul>
                             </li>
@@ -147,7 +147,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../nightscout/new_user/" class="nav-link">
+                                <a rel="prev" href="../../nightscout/admin_tools/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -203,8 +203,6 @@
 <p></br></p>
 <p>Updating your website to the latest version (see here which is the <a href="https://github.com/nightscout/cgm-remote-monitor/releases">current released version</a>) is easy with the update tool linked below.</p>
 <p></br></p>
-<p>You can also use <a href="https://www.youtube.com/watch?v=C0edTQhO21g">this video guide from Katie</a>. It's corresponding to the <a href="../redeploy/">Redeploy</a> method you should try if failing with the one below.</p>
-<p></br></p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">⌁</a></h2>
 <p></br></p>
 <p>This version of Nightscout will probably not run on anything older than these versions/platforms:</p>
@@ -220,10 +218,7 @@
 </ul>
 <p></br></p>
 <h2 id="azure-users">Azure Users<a class="headerlink" href="#azure-users" title="Permanent link">⌁</a></h2>
-<p></br></p>
-<p>As of 0.12, Nightscout no longer readily supports the free Azure platform. If you really want to keep using Azure, don’t update to this version. Read this <a href="https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ">https://github.com/nightscout/cgm-remote-monitor/wiki/mLab-discontinuation-FAQ</a></p>
-<p></br></p>
-<p>It is recommended that you <a href="../migrate_azure/">migrate to Heroku+Atlas</a>.</p>
+<p>It is recommended that you <a href="../../nightscout/new_user/">create a new Nightscout site with Heroku</a>.</p>
 <p></br></p>
 <h2 id="step1-update-your-repository-in-github">Step1: Update your repository in GitHub<a class="headerlink" href="#step1-update-your-repository-in-github" title="Permanent link">⌁</a></h2>
 <p></br></p>

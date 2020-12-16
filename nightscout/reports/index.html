@@ -55,27 +55,6 @@
                                 <a href="../new_user/" class="nav-link">Install</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
-</li>
-                                    
-<li>
-    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
-</li>
-                                    
-<li>
-    <a href="../../update/migrate_heroku/" class="dropdown-item">Migrating to Atlas</a>
-</li>
-                                    
-<li>
-    <a href="../../update/migrate_azure/" class="dropdown-item">Migrating from Azure</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -85,6 +64,18 @@
                                     
 <li>
     <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
+</li>
+                                    
+<li>
+    <a href="../downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+</li>
+                                    
+<li>
+    <a href="../wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../multiadmin/" class="dropdown-item">Multiple sites administration</a>
 </li>
                                     
 <li>
@@ -109,15 +100,24 @@
 </li>
                                     
 <li>
-    <a href="../ifttt/" class="dropdown-item">IF This Then That</a>
+    <a href="../admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
 </li>
                                     
 <li>
-    <a href="../pebble/" class="dropdown-item">Pebble</a>
+    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
-    <a href="../pushover/" class="dropdown-item">Remote Notifications</a>
+    <a href="../../update/newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
 </li>
                                 </ul>
                             </li>
@@ -176,46 +176,16 @@
             
             <li class="nav-item" data-level="1"><a href="#reports" class="nav-link">Reports</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#day-to-day" class="nav-link">Day To day</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#nightscout-reporter" class="nav-link">Nightscout Reporter</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#week-to-week" class="nav-link">Week to Week</a>
+            
+            <li class="nav-item" data-level="1"><a href="#power-bi" class="nav-link">Power BI</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#daily-stats" class="nav-link">Daily stats</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#distribution" class="nav-link">Distribution</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#hourly-stats" class="nav-link">Hourly stats</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#percentile-chart" class="nav-link">Percentile Chart</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#weekly-success" class="nav-link">Weekly success</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#calibrations" class="nav-link">Calibrations</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#treatments" class="nav-link">Treatments</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#profiles" class="nav-link">Profiles</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -249,7 +219,7 @@
 <p>Click <code>SHOW</code> and wait for data to load and rendering to complete. This might take some time if the period is long.</p>
 <p><img src="../img/Reports05.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h2 id="day-to-day">Day To day<a class="headerlink" href="#day-to-day" title="Permanent link">⌁</a></h2>
+<h3 id="day-to-day">Day To day<a class="headerlink" href="#day-to-day" title="Permanent link">⌁</a></h3>
 <p>This report will show your BG, day by day, including the treatments you select.</p>
 <p><img src="../img/Reports06.png" style="zoom:80%;" /></p>
 <p></br></p>
@@ -264,16 +234,18 @@
 <p>You can change the graph <code>Size</code>.</p>
 <p><img src="../img/Reports09.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h2 id="week-to-week">Week to Week<a class="headerlink" href="#week-to-week" title="Permanent link">⌁</a></h2>
+<h3 id="week-to-week">Week to Week<a class="headerlink" href="#week-to-week" title="Permanent link">⌁</a></h3>
 <p>This report will give you a week by week view, with color code for week days selected.</p>
 <p><img src="../img/Reports10.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h2 id="daily-stats">Daily stats<a class="headerlink" href="#daily-stats" title="Permanent link">⌁</a></h2>
+<h3 id="daily-stats">Daily stats<a class="headerlink" href="#daily-stats" title="Permanent link">⌁</a></h3>
 <p>This report will give you a daily distribution view.</p>
 <p><img src="../img/Reports11.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h2 id="distribution">Distribution<a class="headerlink" href="#distribution" title="Permanent link">⌁</a></h2>
+<h3 id="distribution">Distribution<a class="headerlink" href="#distribution" title="Permanent link">⌁</a></h3>
 <p>This report will give you a complete distribution view with a lot of information on the dates range you selected.</p>
+<p>You also can filter by hours (scroll to the bottom of the page).</p>
+<p><img src="../img/Reports18.png" style="zoom:80%;" /></p>
 <p><img src="../img/Reports12.png" style="zoom:80%;" /></p>
 <p>A1c is only a rough estimation that can be very inaccurate and does not replace actual blood testing. The formula used is taken from:Nathan, David M., et al. "Translating the A1C assay into estimated average glucose values." <em>Diabetes care</em> 31.8 (2008): 1473-1478.</p>
 <p>Time in fluctuation and Time in rapid fluctuation measure the % of time during the examined period, during which the blood glucose has been changing relatively fast or rapidly. Lower values are better.</p>
@@ -282,28 +254,36 @@
 <p>Out of Range RMS is calculated by squaring the distance out of range for all glucose readings for the examined period, summing them, dividing by the count and taking the square root. This metric is similar to in-range percentage but weights readings far out of range higher. Lower values are better.</p>
 <p>GVI (Glycemic Variability Index) and PGS (Patient Glycemic Status) are measures developed by Dexcom, detailed <a href="https://web.archive.org/web/20160523152519/http://www.healthline.com/diabetesmine/a-new-view-of-glycemic-variability-how-long-is-your-line">can be found here</a>.</p>
 <p></br></p>
-<h2 id="hourly-stats">Hourly stats<a class="headerlink" href="#hourly-stats" title="Permanent link">⌁</a></h2>
+<h3 id="hourly-stats">Hourly stats<a class="headerlink" href="#hourly-stats" title="Permanent link">⌁</a></h3>
 <p>This report will give you an hourly distribution view with a box plot and additional hour by hour statistics.</p>
 <p><img src="../img/Reports13.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h2 id="percentile-chart">Percentile Chart<a class="headerlink" href="#percentile-chart" title="Permanent link">⌁</a></h2>
+<h3 id="percentile-chart">Percentile Chart<a class="headerlink" href="#percentile-chart" title="Permanent link">⌁</a></h3>
 <p>This report will give you an percentile distribution view of the range you selected.</p>
 <p><img src="../img/Reports16.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h2 id="weekly-success">Weekly success<a class="headerlink" href="#weekly-success" title="Permanent link">⌁</a></h2>
+<h3 id="weekly-success">Weekly success<a class="headerlink" href="#weekly-success" title="Permanent link">⌁</a></h3>
 <p>This report will give you an weekly view of your statistics.</p>
 <p><img src="../img/Reports14.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h2 id="calibrations">Calibrations<a class="headerlink" href="#calibrations" title="Permanent link">⌁</a></h2>
+<h3 id="calibrations">Calibrations<a class="headerlink" href="#calibrations" title="Permanent link">⌁</a></h3>
 <p>This will give you a a table of your calibrations, if your uploader sends the correct event and data.</p>
 <p></br></p>
-<h2 id="treatments">Treatments<a class="headerlink" href="#treatments" title="Permanent link">⌁</a></h2>
+<h3 id="treatments">Treatments<a class="headerlink" href="#treatments" title="Permanent link">⌁</a></h3>
 <p>This will give you a a table of your treatments, day by day.</p>
 <p><img src="../img/Reports15.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h2 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">⌁</a></h2>
-<p>This report will display all your <a href="../profile_editor/">profiles</a>.</p>
-<p></br></p></div>
+<h3 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">⌁</a></h3>
+<p>This report will display <a href="../profile_editor/">profiles</a> used in the time range.</p>
+<p><img src="../img/Reports17.png" style="zoom:60%;" /></p>
+<p></br></p>
+<h1 id="nightscout-reporter">Nightscout Reporter<a class="headerlink" href="#nightscout-reporter" title="Permanent link">⌁</a></h1>
+<p><a href="https://nightscout-reporter.zreptil.de/">https://nightscout-reporter.zreptil.de/</a> can be used to generate PDF documents with the data stored at Nightscout.</p>
+<p>You need to add <a href="../setup_variables/#cors-cors"><code>cors</code></a> to your <a href="../setup_variables/#enable"><code>ENABLE</code></a> variables</p>
+<p>Facebook group <a href="https://www.facebook.com/nightrep">Nightscout Reporter</a></p>
+<p></br></p>
+<h1 id="power-bi">Power BI<a class="headerlink" href="#power-bi" title="Permanent link">⌁</a></h1>
+<p>Facebook group <a href="https://www.facebook.com/groups/857487091295727">Nightscout Power BI Reporting</a></p></div>
             </div>
         </div>
 

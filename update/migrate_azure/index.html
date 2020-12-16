@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Migrating from Azure - Nightscout</title>
+        <title>Heroku with Atlas migration is mandatory for Azure users. - Nightscout</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -54,27 +54,6 @@
                             <li class="navitem">
                                 <a href="../../nightscout/new_user/" class="nav-link">Install</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../update/" class="dropdown-item">Updating your site</a>
-</li>
-                                    
-<li>
-    <a href="../redeploy/" class="dropdown-item">Redeploying</a>
-</li>
-                                    
-<li>
-    <a href="../migrate_heroku/" class="dropdown-item">Migrating to Atlas</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Migrating from Azure</a>
-</li>
-                                </ul>
-                            </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -85,6 +64,18 @@
                                     
 <li>
     <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/multiadmin/" class="dropdown-item">Multiple sites administration</a>
 </li>
                                     
 <li>
@@ -109,15 +100,24 @@
 </li>
                                     
 <li>
-    <a href="../../nightscout/ifttt/" class="dropdown-item">IF This Then That</a>
+    <a href="../../nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../update/" class="dropdown-item">Updating your site</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pebble/" class="dropdown-item">Pebble</a>
+    <a href="../redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pushover/" class="dropdown-item">Remote Notifications</a>
+    <a href="../newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
 </li>
                                 </ul>
                             </li>
@@ -146,16 +146,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../migrate_heroku/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../../nightscout/setup_variables/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -211,7 +201,7 @@
 <h1 id="heroku-with-atlas-migration-is-mandatory-for-azure-users">Heroku with Atlas migration is mandatory for Azure users.<a class="headerlink" href="#heroku-with-atlas-migration-is-mandatory-for-azure-users" title="Permanent link">⌁</a></h1>
 <p></br></p>
 <div class="admonition warning">
-<p class="admonition-title">You must migrate your existing mLab MongoDB, where all your Nightscout data are stored, to MongoDB Atlas <strong>before December 8th 2020</strong>.</p>
+<p class="admonition-title">You must migrate your existing mLab MongoDB, where all your Nightscout data are stored, to MongoDB Atlas <strong>before December 2020</strong> before mLab with shut down.</p>
 <p>This is essential to keep your Nightscout functioning.</p>
 </div>
 <p></br> </p>

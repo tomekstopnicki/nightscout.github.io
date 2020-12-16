@@ -54,27 +54,6 @@
                             <li class="navitem">
                                 <a href="../new_user/" class="nav-link">Install</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
-</li>
-                                    
-<li>
-    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
-</li>
-                                    
-<li>
-    <a href="../../update/migrate_heroku/" class="dropdown-item">Migrating to Atlas</a>
-</li>
-                                    
-<li>
-    <a href="../../update/migrate_azure/" class="dropdown-item">Migrating from Azure</a>
-</li>
-                                </ul>
-                            </li>
                             <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -85,6 +64,18 @@
                                     
 <li>
     <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
+</li>
+                                    
+<li>
+    <a href="../downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+</li>
+                                    
+<li>
+    <a href="../wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../multiadmin/" class="dropdown-item">Multiple sites administration</a>
 </li>
                                     
 <li>
@@ -109,15 +100,24 @@
 </li>
                                     
 <li>
-    <a href="../ifttt/" class="dropdown-item">IF This Then That</a>
+    <a href="../admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
 </li>
                                     
 <li>
-    <a href="../pebble/" class="dropdown-item">Pebble</a>
+    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
-    <a href="../pushover/" class="dropdown-item">Remote Notifications</a>
+    <a href="../../update/newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
 </li>
                                 </ul>
                             </li>
@@ -147,7 +147,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../update/migrate_azure/" class="nav-link">
+                                <a rel="prev" href="../new_user/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -247,6 +247,10 @@
 </div>
 <p></br></p>
 <h5 id="api_secret"><strong>API_SECRET</strong><a class="headerlink" href="#api_secret" title="Permanent link">⌁</a></h5>
+<div class="admonition warning">
+<p class="admonition-title">This is an important password</p>
+<p>Knowing your site API Secret gives anybody full access to your Nightscout data, allows uploading to your site and uncontrolled access. Make sure you keep this password secret and avoid exposing it publicly.</p>
+</div>
 <p>A passphrase that must be at least 12 characters long.</p>
 <pre><code>MyV3ry53cr37
 </code></pre>
@@ -285,7 +289,7 @@
 </code></pre>
 
 <p>If you don't want to decide now, add all the followings, you can disable them if you don't need them:</p>
-<pre><code>careportal basal dbsize rawbg iob maker bridge cob bwp cage iage sage boluscalc pushover treatmentnotify mmconnect loop pump profile food openaps bage alexa override
+<pre><code>careportal basal dbsize rawbg iob maker bridge cob bwp cage iage sage boluscalc pushover treatmentnotify mmconnect loop pump profile food openaps bage alexa override cors
 </code></pre>
 
 <p></br></p>
@@ -493,7 +497,10 @@
 <p><code>FRAME_URL_2</code>   <code>https://joecgm.herokuapp.com</code></p>
 <p><code>FRAME_NAME_2</code>  <code>Joe</code></p>
 <p></br></p>
-<p>8 split view:</p>
+<p>To display the split view browse to:</p>
+<p><code>https://yourAppName.herokuapp.com/split</code></p>
+<p></br></p>
+<p>8 split view example:</p>
 <p><img src="..\img\SetupNS30.png" style="zoom:80%;" /></p>
 <p></br></p>
 <hr />
@@ -567,7 +574,7 @@
 <p><img src="..\img\SetupNS12.png"/></p>
 <p></br></p>
 <h5 id="profile-treatment-profile"><code>profile</code> (Treatment Profile)<a class="headerlink" href="#profile-treatment-profile" title="Permanent link">⌁</a></h5>
-<p>Add a link in the drawer menu to Profile Editor and allows to enter treatment profile settings. Also uses the extended setting:</p>
+<p>Add a link in the drawer menu to <a href="../profile_editor/">Profile Editor</a> and allows to enter treatment profile settings. Also uses the extended setting:</p>
 <ul>
 <li><code>PROFILE_HISTORY</code> (<code>off</code>) - possible values <code>on</code> or <code>off</code>. Enable/disable NS ability to keep history of your profiles (still experimental)</li>
 <li><code>PROFILE_MULTIPLE</code> (<code>off</code>) - possible values <code>on</code> or <code>off</code>. Enable/disable NS ability to handle and switch between multiple treatment profiles</li>
@@ -621,7 +628,7 @@
 <p><code>filtered</code> - Raw BG is calculated by applying the calibration to the glucose record's filtered value. The glucose record's filtered values are generally produced by the CGM by a running average of the unfiltered values to produce a smoothed value when the sensor noise is high.</p>
 </li>
 <li>
-<p><code>unsmoothed</code> - Raw BG is calculated by first finding the ratio of the calculated filtered value (the same value calculated by the <code>filtered</code> setting) to the reported glucose value. The displayed raw BG value is calculated by dividing the calculated unfiltered value (the same value calculated by the <code>unfiltered</code> setting) by the ratio. The effect is to exagerate changes in trend direction so the trend changes are more noticeable to the user. This is the legacy raw BG calculation algorithm.</p>
+<p><code>unsmoothed</code> - Raw BG is calculated by first finding the ratio of the calculated filtered value (the same value calculated by the <code>filtered</code> setting) to the reported glucose value. The displayed raw BG value is calculated by dividing the calculated unfiltered value (the same value calculated by the <code>unfiltered</code> setting) by the ratio. The effect is to exaggerate changes in trend direction so the trend changes are more noticeable to the user. This is the legacy raw BG calculation algorithm.</p>
 </li>
 </ul>
 <p><img src="..\img\SetupNS21.png" style="zoom:40%;" /></p>
@@ -636,7 +643,7 @@
 <p>When you enter the information with the Care Portal or Nightscout receives if from the uploader, you can see remaining insulin on board and carbs. </p>
 <p></br></p>
 <h5 id="bwp-bolus-wizard-preview"><code>bwp</code> (Bolus Wizard Preview)<a class="headerlink" href="#bwp-bolus-wizard-preview" title="Permanent link">⌁</a></h5>
-<p>This plugin in intended for the purpose of automatically snoozing alarms when the CGM indicates high blood sugar but there is also insulin on board (IOB) and secondly, alerting to user that it might be beneficial to measure the blood sugar using a glucometer and dosing insulin as calculated by the pump or instructed by trained medicare professionals. <strong><em>The values provided by the plugin are provided as a reference based on CGM data and insulin sensitivity you have configured, and are not intended to be used as a reference for bolus calculation.</em></strong> The plugin calculates the bolus amount when above your target, generates alarms when you should consider checking and bolusing, and snoozes alarms when there is enough IOB to cover a high BG. Uses the results of the <code>iob</code> plugin and <code>sens</code>, <code>target_high</code>, and <code>target_low</code> fields from the <a href="https://github.com/nightscout/cgm-remote-monitor#treatment-profile">treatment profile</a>. Defaults that can be adjusted with extended settings</p>
+<p>This plugin in intended for the purpose of automatically snoozing alarms when the CGM indicates high blood sugar but there is also insulin on board (IOB) and secondly, alerting to user that it might be beneficial to measure the blood sugar using a glucometer and dosing insulin as calculated by the pump or instructed by trained medicare professionals. <strong><em>The values provided by the plugin are provided as a reference based on CGM data and insulin sensitivity you have configured, and are not intended to be used as a reference for bolus calculation.</em></strong> The plugin calculates the bolus amount when above your target, generates alarms when you should consider checking and bolusing, and snoozes alarms when there is enough IOB to cover a high BG. Uses the results of the <code>iob</code> plugin and <code>sens</code>, <code>target_high</code>, and <code>target_low</code> fields from the <a href="../../nightscout/profile_editor/">treatment profile</a>. Defaults that can be adjusted with extended settings</p>
 <ul>
 <li><code>BWP_WARN</code> (<code>0.50</code>) - If <code>BWP</code> is &gt; <code>BWP_WARN</code> a warning alarm will be triggered.</li>
 <li><code>BWP_URGENT</code> (<code>1.00</code>) - If <code>BWP</code> is &gt; <code>BWP_URGENT</code> an urgent alarm will be triggered.</li>
@@ -822,7 +829,7 @@
 <h5 id="alexa-amazon-alexa"><code>alexa</code> (Amazon Alexa)<a class="headerlink" href="#alexa-amazon-alexa" title="Permanent link">⌁</a></h5>
 <p>Integration with Amazon Alexa, <a href="https://github.com/nightscout/cgm-remote-monitor/blob/master/docs/plugins/alexa-plugin.md">detailed setup instructions</a></p>
 <p></br></p>
-<h5 id="googlehome-google-homedialogflow"><code>googlehome</code> (Google Home/DialogFLow)<a class="headerlink" href="#googlehome-google-homedialogflow" title="Permanent link">⌁</a></h5>
+<h5 id="googlehome-google-homedialogflow"><code>googlehome</code> (Google Home/DialogFlow)<a class="headerlink" href="#googlehome-google-homedialogflow" title="Permanent link">⌁</a></h5>
 <p>Integration with Google Home (via DialogFlow), <a href="https://github.com/nightscout/cgm-remote-monitor/blob/master/docs/plugins/googlehome-plugin.md">detailed setup instructions</a></p>
 <p></br></p>
 <h5 id="speech-speech"><code>speech</code> (Speech)<a class="headerlink" href="#speech-speech" title="Permanent link">⌁</a></h5>
@@ -912,7 +919,7 @@ For testing/development try [localtunnel](http://localtunnel.me/).
 </ul>
 <p></br></p>
 <h3 id="treatment-profile">Treatment Profile<a class="headerlink" href="#treatment-profile" title="Permanent link">⌁</a></h3>
-<p>Some of the <a href="https://github.com/nightscout/cgm-remote-monitor#plugins">plugins</a> make use of a treatment profile that can be edited using the Profile Editor, see the link in the Settings drawer on your site.</p>
+<p>Some of the <a href="./#plugins">plugins</a> make use of a treatment profile that can be edited using the <a href="../../nightscout/profile_editor/">Profile Editor</a>.</p>
 <p>Treatment Profile Fields:</p>
 <ul>
 <li><code>timezone</code> (Time Zone) - time zone local to the patient. <em>Should be set.</em></li>

@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Migrating to Atlas - Nightscout</title>
+        <title>Atlas migration is mandatory for Heroku users with mLab. - Nightscout</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -54,27 +54,6 @@
                             <li class="navitem">
                                 <a href="../../nightscout/new_user/" class="nav-link">Install</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../update/" class="dropdown-item">Updating your site</a>
-</li>
-                                    
-<li>
-    <a href="../redeploy/" class="dropdown-item">Redeploying</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Migrating to Atlas</a>
-</li>
-                                    
-<li>
-    <a href="../migrate_azure/" class="dropdown-item">Migrating from Azure</a>
-</li>
-                                </ul>
-                            </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -85,6 +64,18 @@
                                     
 <li>
     <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/multiadmin/" class="dropdown-item">Multiple sites administration</a>
 </li>
                                     
 <li>
@@ -109,15 +100,24 @@
 </li>
                                     
 <li>
-    <a href="../../nightscout/ifttt/" class="dropdown-item">IF This Then That</a>
+    <a href="../../nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../update/" class="dropdown-item">Updating your site</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pebble/" class="dropdown-item">Pebble</a>
+    <a href="../redeploy/" class="dropdown-item">Redeploying</a>
 </li>
                                     
 <li>
-    <a href="../../nightscout/pushover/" class="dropdown-item">Remote Notifications</a>
+    <a href="../newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
 </li>
                                 </ul>
                             </li>
@@ -146,16 +146,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../redeploy/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../migrate_azure/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -207,7 +197,7 @@
 <p></br></p>
 <div class="admonition warning">
 <p class="admonition-title">You should have migrated your existing mLab MongoDB, where all your Nightscout data are stored, to MongoDB Atlas <strong>before November 10th 2020</strong>.</p>
-<p>This was essential to keep your Nightscout functioning and now you can't access your add-on from Heroku as it's been deleted. If you absolutely need your historical data, you still have a possibility to do so <strong>until December 8th 2020</strong>. mLab will then shut down, migration is <strong>mandatory</strong>.</p>
+<p>This was essential to keep your Nightscout functioning and now you can't access your add-on from Heroku as it's been deleted. If you absolutely need your historical data, you still have a possibility to do so <strong>until mLab will shut down (December 2020). Migration is mandatory</strong>.</p>
 </div>
 <p></br> </p>
 <p>For more information read this:</p>
@@ -215,8 +205,9 @@
 <p>You can also use <a href="https://docs.mlab.com/how-to-migrate-sandbox-heroku-addons-to-atlas/">this guide from mLab</a> else continue reading.</p>
 <p></br></p>
 <div class="admonition warning">
-<p class="admonition-title">If you only need to recover your site (not the data)</p>
-<p>Follow <a href="https://www.youtube.com/watch?v=hXSLBACjYQo">this easy video guide</a> from Katie DiSimone. Make sure to use only letters and numbers in database name and password. </p>
+<p class="admonition-title">If you only need to recover your site (not your data)</p>
+<p>Follow <a href="https://www.youtube.com/watch?v=hXSLBACjYQo">this easy video guide</a>. Make sure to use only letters and numbers in database name and password. 
+Alternatively, follow <a href="../newdatabase/">this guide</a>.</p>
 </div>
 <p></br></p>
 <p>If you absolutely need your data, continue with this guide.</p>
@@ -598,7 +589,7 @@ function Generate()
 <h2 id="step-5-update-nightscout">Step 5: Update Nightscout<a class="headerlink" href="#step-5-update-nightscout" title="Permanent link">⌁</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">If you didn't update Nightscout before migration</p>
-<p><a href=".\update.md"><strong>Update your Nightscout to latest release!</strong></a> 
+<p><a href="../update/"><strong>Update your Nightscout to latest release!</strong></a> 
 Versions older than 13.0.x won't probably run. 
 Versions 13.x are not optimized for the Atlas database.</p>
 </div>
