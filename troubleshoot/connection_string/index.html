@@ -243,7 +243,7 @@
 <p>Common reasons:</p>
 <ul>
 <li>
-<p>The database Heroku is pointing to is not available (like with the mLab Heroku add-on after Nov 10th 2020 or any mLab database after Dec 2020). The reference for documentation was <a href="https://docs.mlab.com/how-to-migrate-nightscout-sandbox-heroku-addons-to-atlas/">here.</a></p>
+<p>The database Heroku is pointing to is not available (mLab services stopped in Dec 2020).</p>
 </li>
 <li>
 <p>Your Atlas connection string is incorrect</p>
@@ -275,7 +275,7 @@
 <p>If you see this message:</p>
 <p><img src="../img/TShoot45.png" style="zoom:80%;" ></p>
 <ul>
-<li>You most probably forgot to <a href="../../update/migrate_heroku/">migrate to Atlas</a> and as the mLab add-on was removed, the connection string was deleted.</li>
+<li>If you forgot to migrate to Atlas you need to <a href="../../update/newdatabase/">attach a new Atlas database</a>.</li>
 <li>If you know you migrated, and your Nightscout was still functional after November 11th, continue <a href="./#bad-connection-string">below</a> to recover:</li>
 </ul>
 <p></br></p>
@@ -456,10 +456,7 @@ function Analyze()
 </div>
 <p><img src="../img/TShoot41.png" style="zoom:80%;" ></p>
 <p></br></p>
-<ul>
-<li>If you've just migrated to Atlas, try to use <a href="../../update/stringhelp.html">this help page</a> to verify or recreate it.</li>
-<li>If you've just created a new site, try to use <a href="../../nightscout/stringhelp.html">this help page</a> to verify or recreate it.</li>
-</ul>
+<p>If you've just created a new site, try to use <a href="../../nightscout/stringhelp.html">this help page</a> to verify or recreate it.</p>
 <p></br></p>
 <p>If you're still in trouble continue below:</p>
 <p></br></p>

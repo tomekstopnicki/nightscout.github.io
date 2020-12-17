@@ -320,13 +320,9 @@
 <p></br></p>
 <h3 id="application-error">Application Error<a class="headerlink" href="#application-error" title="Permanent link">⌁</a></h3>
 <p></br></p>
-<p><img src="../img/TShoot05.png" style="zoom:80%;" ></p>
-<div class="admonition warning">
-<p class="admonition-title">mLab will stop operating in December 2020 and the mLab add-on was removed on Nov 10th</p>
-<p>If you still can access your mLab account and <strong>absolutely</strong> need your historical data you can try to recover with these two guides: <a href="../../update/migrate_azure/">Azure</a> and <a href="../../update/migrate_heroku/">Heroku</a>. </p>
-</div>
+<p><img src="../img/TShoot05.png" style="zoom:80%;" >
+ <a href="../../update/update/">Update Nightscout to latest release</a>. It might not fix your issue but it will help find a solution.</p>
 <ul>
-<li><a href="../../update/update/">Update Nightscout to latest release</a>. It might not fix your issue but it will help find a solution.</li>
 <li>If you didn't migrate your Heroku database from mLab to Atlas <a href="../../update/newdatabase/">create a new Atlas database</a>.</li>
 <li>If you didn't migrate from Azure to Heroku create a new site <a href="../../nightscout/new_user/">create a new Nightscout site with Heroku</a>.</li>
 <li>If you're creating a new Nightscout site, it might have failed because of a wrong connection string. Delete your Heroku app and <a href="../../nightscout/new_user/#step-4-fork-and-deploy-cgm-remote-monitor">deploy</a> again after <a href="../connection_string/#change-your-atlas-database-password">checking</a> the Atlas connection string is correct.</li>
@@ -357,8 +353,8 @@
 <p></br></p>
 <h1 id="no-data-in-nightscout">No data in Nightscout<a class="headerlink" href="#no-data-in-nightscout" title="Permanent link">⌁</a></h1>
 <p></br></p>
-<h3 id="just-after-migrating-from-mlab-to-atlas">Just after migrating from mLab to Atlas<a class="headerlink" href="#just-after-migrating-from-mlab-to-atlas" title="Permanent link">⌁</a></h3>
-<p><a href="../connection_string/#mongodb-in-read-only-mode">Check you database is not read only</a>.</p>
+<p>New Nightscout sites <a href="../connection_string/#mongodb-in-read-only-mode">Check you database is not read only</a>.</p>
+<p>Make sure your Nightscout <a href="../../nightscout/profile_editor/">time zone</a> is correct.</p>
 <p></br></p>
 <h3 id="dexcom-data-not-showing">Dexcom data not showing<a class="headerlink" href="#dexcom-data-not-showing" title="Permanent link">⌁</a></h3>
 <p></br></p>
@@ -419,11 +415,6 @@
 <p>Check your Heroku settings match your new credentials (see above)</p>
 <p></br></p>
 <h3 id="dexcom-or-carelink-data-stopping-after-a-while">Dexcom or CareLink data stopping after a while<a class="headerlink" href="#dexcom-or-carelink-data-stopping-after-a-while" title="Permanent link">⌁</a></h3>
-<p></br></p>
-<div class="admonition note">
-<p class="admonition-title">CareLink</p>
-<p>There are issues with CareLink EU refusing authentication from Heroku. No solution yet.</p>
-</div>
 <p></br></p>
 <p>First verify you can see your BG in Clarity or CareLink.</p>
 <p>If data is present open Heroku and check you app didn't fall asleep.</p>
@@ -500,7 +491,7 @@
 <h3 id="basal-is-shifted-in-time">Basal is shifted in time<a class="headerlink" href="#basal-is-shifted-in-time" title="Permanent link">⌁</a></h3>
 <p></br></p>
 <ul>
-<li>Check the time zone is correct for your currently active profile in your Nightscout <code>Profile editor</code>.</li>
+<li>Check the time zone is correct for your currently active profile in your Nightscout <a href="../../nightscout/profile_editor/"><code>Profile editor</code></a>.</li>
 </ul>
 <p><img src="../img/TShoot30.png" style="zoom:75%;" ></p>
 <p></br></p>
