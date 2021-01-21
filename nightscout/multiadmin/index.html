@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Multiple sites administration - Nightscout</title>
+        <title>Running multiple sites - Nightscout</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -35,24 +35,30 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">What is Nightscout? <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../.." class="dropdown-item">Introduction</a>
+    <a href="../.." class="dropdown-item">What is Nightscout?</a>
 </li>
                                     
 <li>
-    <a href="../insights/" class="dropdown-item">How does it work?</a>
-</li>
-                                    
-<li>
-    <a href="../../uploader/uploaders/" class="dropdown-item">Uploaders</a>
+    <a href="../../uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../new_user/" class="nav-link">Install</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../new_user/" class="dropdown-item">Installation</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
@@ -63,11 +69,11 @@
 </li>
                                     
 <li>
-    <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
+    <a href="../../uploader/setup/" class="dropdown-item">Configure your Uploader</a>
 </li>
                                     
 <li>
-    <a href="../downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+    <a href="../downloaders/" class="dropdown-item">Follower Devices</a>
 </li>
                                     
 <li>
@@ -75,11 +81,11 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Multiple sites administration</a>
+    <a href="./" class="dropdown-item active">Running multiple sites</a>
 </li>
                                     
 <li>
-    <a href="../close_loop/" class="dropdown-item">Close the loop</a>
+    <a href="../close_loop/" class="dropdown-item">Closed-loop Systems</a>
 </li>
                                 </ul>
                             </li>
@@ -176,6 +182,10 @@
             
             <li class="nav-item" data-level="1"><a href="#support-and-administration-of-multiple-sites" class="nav-link">Support and Administration of multiple sites</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#remote-support-and-security" class="nav-link">Remote support and security</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#github" class="nav-link">Github</a>
               <ul class="nav flex-column">
               </ul>
@@ -199,6 +209,8 @@
 <p></br></p>
 <p>Either by necessity or to support others, you might want to have access to multiple accounts without having to juggle between logins and passwords. Below are described some centralizing methods reducing the administrative burden.</p>
 <p></br></p>
+<h2 id="remote-support-and-security">Remote support and security<a class="headerlink" href="#remote-support-and-security" title="Permanent link">⌁</a></h2>
+<p>Giving username and passwords to someone in order to obtain help to fix Nightscout issues raises serious security issues. Malicious code can be added to your Nightscout project by ill-intentioned people. Always make sure the version deployed is a fork of the official project. After receiving help a good practice is to change your account passwords (GitHub, Heroku, mongoDB Atlas, Clarity, CareLink, ...) and your API secret. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Inviting Heroku <a href="./#heroku">collaborators</a> is extremely efficient for remote support.</p>

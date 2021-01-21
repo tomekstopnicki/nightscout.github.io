@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Install - Nightscout</title>
+        <title>Installation - Nightscout</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -35,24 +35,30 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">What is Nightscout? <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../.." class="dropdown-item">Introduction</a>
+    <a href="../.." class="dropdown-item">What is Nightscout?</a>
 </li>
                                     
 <li>
-    <a href="../insights/" class="dropdown-item">How does it work?</a>
-</li>
-                                    
-<li>
-    <a href="../../uploader/uploaders/" class="dropdown-item">Uploaders</a>
+    <a href="../../uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Install</a>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Installation</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
@@ -63,11 +69,11 @@
 </li>
                                     
 <li>
-    <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
+    <a href="../../uploader/setup/" class="dropdown-item">Configure your Uploader</a>
 </li>
                                     
 <li>
-    <a href="../downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+    <a href="../downloaders/" class="dropdown-item">Follower Devices</a>
 </li>
                                     
 <li>
@@ -75,11 +81,11 @@
 </li>
                                     
 <li>
-    <a href="../multiadmin/" class="dropdown-item">Multiple sites administration</a>
+    <a href="../multiadmin/" class="dropdown-item">Running multiple sites</a>
 </li>
                                     
 <li>
-    <a href="../close_loop/" class="dropdown-item">Close the loop</a>
+    <a href="../close_loop/" class="dropdown-item">Closed-loop Systems</a>
 </li>
                                 </ul>
                             </li>
@@ -147,7 +153,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../uploader/uploaders/" class="nav-link">
+                                <a rel="prev" href="../insights/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -208,9 +214,18 @@
 <p>Nightscout is DIY, if you don’t feel confident you’ll have necessary skills, give it a try, you’ll find open heart people ready to help you building it in many Facebook groups. For free. Paying it forward.</p>
 <p>If you want to <a href="https://github.com/nightscout/nightscout.github.io/wiki/Can-I-sell-Nightscout">sell installations</a>, keep in mind you will be legally liable and can easily be sued by your buyers should anything bad happen to them because of Nightscout. Nightscout is not approved by FDA, CE, ... this is the reason why it's DIY.</p>
 <p></br></p>
-<h4 id="here-is-a-step-by-step-guide-for-completing-your-own-nightscout-site-diy-style">Here is a step-by-step guide for completing your own Nightscout site DIY style.<a class="headerlink" href="#here-is-a-step-by-step-guide-for-completing-your-own-nightscout-site-diy-style" title="Permanent link">⌁</a></h4>
+<h3 id="security-and-safekeeping">Security and safekeeping<a class="headerlink" href="#security-and-safekeeping" title="Permanent link">⌁</a></h3>
+<ul>
+<li>Use the same email address for all accounts. Do not use a disposable email address.</li>
+<li>Do not use the same password for all your accounts.</li>
+<li>Do not use the API_SECRET for the Atlas database password.</li>
+<li>Do not use your Dexcom or CareLink user name or password for Nightscout components.</li>
+</ul>
+<p>Print this <a href="../NightscoutDataRecord.pdf">document</a> to record all information. Store it together with your diabetes documentation.</p>
 <p></br></p>
-<p>Create your Heroku, GitHub and Atlas accounts from a computer.</p>
+<h4 id="here-is-a-step-by-step-guide-for-completing-your-own-nightscout-site-diy-style"><strong>Here is a step-by-step guide for completing your own Nightscout site DIY style.</strong><a class="headerlink" href="#here-is-a-step-by-step-guide-for-completing-your-own-nightscout-site-diy-style" title="Permanent link">⌁</a></h4>
+<p></br></p>
+<h3 id="create-your-heroku-github-and-atlas-accounts-from-a-computer">Create your Heroku, GitHub and Atlas accounts from a computer.<a class="headerlink" href="#create-your-heroku-github-and-atlas-accounts-from-a-computer" title="Permanent link">⌁</a></h3>
 <p>Do not change device/computer/browser during the creation process!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -375,12 +390,9 @@
 <li>Add a database username (for example <code>nightscout</code>) and a database password (in the example below <code>soo5ecret</code>).</li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Database credentials</p>
-<p>Do not use your Atlas account credentials. Do not use special characters: only letters and numbers.</p>
+<p class="admonition-title">Database credentials: Do not use your Atlas account credentials. Do not use special characters: only letters and numbers.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Write down these credentials in the boxes below: you’ll need them later.</p>
-</div>
+<p>Write down these credentials in the boxes below (yes, in this browser window you're reading now, unless you're reading a printed version). You’ll need them later.</p>
 <p>Database password: <input type="text" id="myPwd" value="soo5ecret" size="20"></p>
 <p>Database username: <input type="text" id="mydB" value="mycgmic" size="20"></p>
 <p></br></p>
@@ -405,7 +417,7 @@
 <p><img src="..\img\NewNS28.png" style="zoom:100%;" /></p>
 <p></br></p>
 <ul>
-<li>Paste the string in the box below.</li>
+<li>Paste the string in the box below (yes, in this browser window you're reading now, unless you're reading a printed version).</li>
 </ul>
 <p><input type="text" id="myAtlas" value="" size="100"></p>
 <p></br></p>
@@ -415,7 +427,7 @@
 </div>
 <p></br></p>
 <ul>
-<li>Click the <code>Generate</code> button:</li>
+<li>Click the <code>Generate</code> button (just here below this line: in this browser window you're reading):</li>
 </ul>
 <p><button onclick="Generate()">Generate</button></p>
 <p style="font-size:25px" id="result">The connection string will appear here</p>
@@ -523,6 +535,9 @@ function Generate()
 <ul>
 <li><code>API_SECRET</code> will be your Nightscout site password, it needs to be at least 12 characters long and should <strong>NOT use spaces and @ or ! symbols</strong>: it is recommended to use only letters and numbers.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">The API_SECRET is the <strong>main password allowing full access to your Nightscout site</strong>. Make sure it's reasonably secure (mix uppercase and lowercase letters, plus numbers) and <strong>do no not share it publicly</strong>. If you think you exposed it by mistake, it is recommended that you <strong>change it</strong>.</p>
+</div>
 <p><img src="..\img\NewNS34.png" style="zoom:80%;" /></p>
 <p></br></p>
 <ul>
@@ -567,10 +582,6 @@ function Generate()
 <li>Now you need that connection string you defined during the Atlas cluster creation (as the example below, but not the string below). Copy and paste it in the <code>MONGODB_URI</code> variable field.</li>
 </ul>
 <p><code>mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/mycgmic?retryWrites=true&amp;w=majority</code></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is the string generated in the helper page if you decided to use it.</p>
-</div>
 <p><img src="..\img\NewNS39.png" style="zoom:80%;" /></p>
 <p></br></p>
 <ul>
@@ -612,6 +623,11 @@ function Generate()
 <li>If the following pop-up shows up click <code>OK</code>, and check status (upper right of the window).</li>
 </ul>
 <p><img src="..\img\NewNS47.png" style="zoom:80%;" /></p>
+<p></br></p>
+<div class="admonition warning">
+<p class="admonition-title">Privacy warning</p>
+<p>Having the URL of your Nightscout site, anybody can view your BG and run reports of your data. It it strongly recommended that you <a href="../security">secure</a> your site once you're done with setup.  </p>
+</div>
 <p></br></p>
 <ul>
 <li>Dexcom Share and CareLink users should see data flowing in after some minutes, other uploaders like xDrip+, Spike, xDrip4iOS, etc will need to be setup with the Nightscout address and API secret in the app.</li>

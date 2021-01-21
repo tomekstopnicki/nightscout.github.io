@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Introduction - Nightscout</title>
+        <title>What is Nightscout? - Nightscout</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -35,24 +35,30 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">What is Nightscout? <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="." class="dropdown-item active">Introduction</a>
+    <a href="." class="dropdown-item active">What is Nightscout?</a>
 </li>
                                     
 <li>
-    <a href="nightscout/insights/" class="dropdown-item">How does it work?</a>
-</li>
-                                    
-<li>
-    <a href="uploader/uploaders/" class="dropdown-item">Uploaders</a>
+    <a href="uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="nightscout/new_user/" class="nav-link">Install</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="nightscout/insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/new_user/" class="dropdown-item">Installation</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
@@ -63,11 +69,11 @@
 </li>
                                     
 <li>
-    <a href="uploader/setup/" class="dropdown-item">Setup the uploader</a>
+    <a href="uploader/setup/" class="dropdown-item">Configure your Uploader</a>
 </li>
                                     
 <li>
-    <a href="nightscout/downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+    <a href="nightscout/downloaders/" class="dropdown-item">Follower Devices</a>
 </li>
                                     
 <li>
@@ -75,11 +81,11 @@
 </li>
                                     
 <li>
-    <a href="nightscout/multiadmin/" class="dropdown-item">Multiple sites administration</a>
+    <a href="nightscout/multiadmin/" class="dropdown-item">Running multiple sites</a>
 </li>
                                     
 <li>
-    <a href="nightscout/close_loop/" class="dropdown-item">Close the loop</a>
+    <a href="nightscout/close_loop/" class="dropdown-item">Closed-loop Systems</a>
 </li>
                                 </ul>
                             </li>
@@ -152,7 +158,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="nightscout/insights/" class="nav-link">
+                                <a rel="next" href="uploader/uploaders/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -223,15 +229,19 @@
 </br></p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">⌁</a></h2>
 <p><strong>Nightscout</strong> (also known as <strong>"CGM in the Cloud"</strong>) is an open-source cloud application <strong>used by people with diabetes</strong> to visualize, store and share the data from their <strong>Continuous Glucose Monitoring</strong> sensors in real-time. Once setup, Nightscout acts as a central repository of blood glucose and insulin dosing/treatment data for a single person, allowing you to view the CGM graph and treatment data anywhere using just a web browser connected to the internet.</p>
+<p>There are several parts to this system. You need somewhere online to store/process/visualise this data (<strong>a Nightscout Site</strong>), something to upload CGM data to your Nightscout (<strong>a Master/Uploader</strong>), and then optionally you can use other devices to access/view this data (<strong>a Follower or usually several</strong>):</p>
+<h4 id="nightscout-site">Nightscout Site<a class="headerlink" href="#nightscout-site" title="Permanent link">⌁</a></h4>
 <p>The Nightscout cloud application can be installed by yourself using free hosting services from various cloud service providers. </p>
 <p>Although not necessary, you might prefer to use paid hosting services for your database (to avoid future maintenance tasks) or indeed pay to use a fully-managed Nightscout hosting service to avoid having to personally build and maintain your site yourself.</p>
-<p>The CGM data is usually sent to Nightscout by an uploader device (known as a <strong>"Master"</strong>) such as a mobile/cellphone running an app such as xDrip+, Spike, xDrip4iOS or Medtronic Uploader. Alternatively, the CGM data can be pulled directly from your online Dexcom or Medtronic CareLink accounts. The application you'll need for uploading the data depends on which CGM device you're using and what type of mobile device you have.</p>
+<h4 id="masteruploader">Master/Uploader<a class="headerlink" href="#masteruploader" title="Permanent link">⌁</a></h4>
+<p>The CGM data is usually sent to Nightscout by an <strong>uploader device</strong> (often known as a <strong>"Master"</strong>) such as a mobile/cellphone running an app such as xDrip+, Spike, xDrip4iOS or Medtronic Uploader. Alternatively, the CGM data can be pulled directly from your online Dexcom or Medtronic CareLink accounts. The application you'll need for uploading the data depends on which CGM device you're using and what type of mobile device you have. Once you've read this page (yes - all the way to the bottom!), you can find more information here about <a href="uploader/uploaders/">Uploaders</a>.</p>
+<h4 id="followers">Followers<a class="headerlink" href="#followers" title="Permanent link">⌁</a></h4>
 <p>In addition to viewing the data using a web browser, there are also applications available for mobile devices, smartwatches, electronic devices and other cloud-based services which allow you alternative ways to view and interact with the information stored within your Nightscout site (often known as <strong>"Followers"</strong>).</p>
 <p><img src="./img/nscloud.png" width="800px"></p>
 <p></br></p>
 <h2 id="development-history">Development History<a class="headerlink" href="#development-history" title="Permanent link">⌁</a></h2>
-<p>Nightscout was developed by parents of children with Type 1 Diabetes and has continued to be developed, maintained, and supported by volunteers. When first implemented, Nightscout was a solution specifically for remote monitoring of Dexcom G4 CGM data.</p>
-<p>Today, there are Nightscout solutions available for nearly all commercial CGM sensors. The goal of the project is to allow the remote monitoring, sharing and analysis of a T1D's glucose levels using existing monitoring devices.
+<p>Nightscout was developed by parents of children with Type 1 Diabetes and has continued to be developed, maintained, and supported by volunteers. </p>
+<p>When first implemented, Nightscout was a solution specifically for remote monitoring of Dexcom G4 CGM data. Today, there are Nightscout solutions available for nearly all commercial CGM sensors. The goal of the project is to allow the remote monitoring, sharing and analysis of any T1D's glucose levels using existing monitoring devices.
 </br>
 </br></p>
 <h2 id="what-do-i-need">What Do I Need?<a class="headerlink" href="#what-do-i-need" title="Permanent link">⌁</a></h2>
@@ -252,7 +262,7 @@
 <p>1 hour of "quiet" time (a <s>beer</s> nice cup of coffee is optional but highly recommended)</p>
 </li>
 <li>
-<p>Basic computer skills and the ability to <strong><em>carefully</em></strong> follow the installation guides shown on this site</p>
+<p>Basic computer skills and the ability to <strong><em>carefully</em></strong> follow the installation guides shown on this site </p>
 <p><em><strong>"Carefully"</strong> means that you will thoroughly read, follow and complete each step without skipping any and without giving up thinking that it is too difficult - it isn't, you just need to be patient.</em></p>
 </li>
 </ul>

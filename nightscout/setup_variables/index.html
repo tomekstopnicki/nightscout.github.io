@@ -35,24 +35,30 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">What is Nightscout? <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../.." class="dropdown-item">Introduction</a>
+    <a href="../.." class="dropdown-item">What is Nightscout?</a>
 </li>
                                     
 <li>
-    <a href="../insights/" class="dropdown-item">How does it work?</a>
-</li>
-                                    
-<li>
-    <a href="../../uploader/uploaders/" class="dropdown-item">Uploaders</a>
+    <a href="../../uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../new_user/" class="nav-link">Install</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../new_user/" class="dropdown-item">Installation</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
@@ -63,11 +69,11 @@
 </li>
                                     
 <li>
-    <a href="../../uploader/setup/" class="dropdown-item">Setup the uploader</a>
+    <a href="../../uploader/setup/" class="dropdown-item">Configure your Uploader</a>
 </li>
                                     
 <li>
-    <a href="../downloaders/" class="dropdown-item">Nightscout Downloaders</a>
+    <a href="../downloaders/" class="dropdown-item">Follower Devices</a>
 </li>
                                     
 <li>
@@ -75,11 +81,11 @@
 </li>
                                     
 <li>
-    <a href="../multiadmin/" class="dropdown-item">Multiple sites administration</a>
+    <a href="../multiadmin/" class="dropdown-item">Running multiple sites</a>
 </li>
                                     
 <li>
-    <a href="../close_loop/" class="dropdown-item">Close the loop</a>
+    <a href="../close_loop/" class="dropdown-item">Closed-loop Systems</a>
 </li>
                                 </ul>
                             </li>
@@ -473,7 +479,10 @@
 <hr />
 <h3 id="predefined-values-for-your-server-settings-optional">Predefined values for your server settings (optional)<a class="headerlink" href="#predefined-values-for-your-server-settings-optional" title="Permanent link">⌁</a></h3>
 <h5 id="insecure_use_http-false"><strong>INSECURE_USE_HTTP</strong> (<code>false</code>)<a class="headerlink" href="#insecure_use_http-false" title="Permanent link">⌁</a></h5>
-<p>Redirect unsafe http traffic to https. Possible values <code>false</code>, or <code>true</code>. Your site redirects to <code>https</code> by default. If you don't want that from Nightscout, but want to implement that with a Nginx or Apache proxy, set <code>INSECURE_USE_HTTP</code> to <code>true</code>. Note: This will allow (unsafe) http traffic to your Nightscout instance and is not recommended.</p>
+<div class="admonition warning">
+<p class="admonition-title">Setting this variable to <code>true</code> will allow (unsafe) http traffic to your Nightscout instance and is <strong>not recommended</strong>.</p>
+</div>
+<p>Redirect unsafe http traffic to https. Possible values <code>false</code>, or <code>true</code>. Your site redirects to <code>https</code> by default. If you don't want that from Nightscout, but want to implement that with a Nginx or Apache proxy, set <code>INSECURE_USE_HTTP</code> to <code>true</code>. </p>
 <h5 id="secure_hsts_header-true"><strong>SECURE_HSTS_HEADER</strong> (<code>true</code>)<a class="headerlink" href="#secure_hsts_header-true" title="Permanent link">⌁</a></h5>
 <p>Add HTTP Strict Transport Security (HSTS) header. Possible values <code>false</code>, or <code>true</code>.</p>
 <h5 id="secure_hsts_header_includesubdomains-false"><strong>SECURE_HSTS_HEADER_INCLUDESUBDOMAINS</strong> (<code>false</code>)<a class="headerlink" href="#secure_hsts_header_includesubdomains-false" title="Permanent link">⌁</a></h5>
