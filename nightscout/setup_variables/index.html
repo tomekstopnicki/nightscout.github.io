@@ -488,8 +488,11 @@
 <p>Possible values <code>on</code> or <code>off</code>. Enables the icon allowing for editing of treatments in the main view. More about edit <a href="../discover/#edit-mode-edit">here</a>.</p>
 <p><img src="..\img\SetupNS42.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h5 id="bolus_render_over-1"><strong>BOLUS_RENDER_OVER</strong> (<code>1</code>)<a class="headerlink" href="#bolus_render_over-1" title="Permanent link">⌁</a></h5>
-<p>U value over which the bolus values are rendered on the chart if the <code>x U and Over</code> option is selected. This value can be an integer or a float, e.g. <code>0.3</code>, <code>1.5</code>, <code>2</code>, etc...</p>
+<h5 id="bolus_render"><strong>BOLUS_RENDER</strong><a class="headerlink" href="#bolus_render" title="Permanent link">⌁</a></h5>
+<p>Settings to configure Bolus rendering</p>
+<p><code>BOLUS_RENDER_OVER</code> (<code>0</code>) - U value over which the bolus labels use the format defined in <code>BOLUS_RENDER_FORMAT</code>. This value can be an integer or a float, e.g. <code>0.3</code>, <code>1.5</code>, <code>2</code>, etc.</p>
+<p><code>BOLUS_RENDER_FORMAT</code> (<code>default</code>) - Possible values are <code>hidden</code>, <code>default</code> (with leading zero and U), <code>concise</code> (with U, without leading zero), and <code>minimal</code> (without leading zero and U).</p>
+<p><code>BOLUS_RENDER_FORMAT_SMALL</code> (<code>default</code>) - Possible values are <code>hidden</code>, <code>default</code> (with leading zero and U), <code>concise</code> (with U, without leading zero), and <code>minimal</code> (without leading zero and U).</p>
 <p><img src="..\img\SetupNS43.png" style="zoom:80%;" /></p>
 <p></br></p>
 <hr />
