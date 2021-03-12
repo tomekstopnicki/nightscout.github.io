@@ -447,11 +447,11 @@
 <p></br></p>
 <div class="admonition info">
 <p class="admonition-title">It should be similar to this (<code>xxxxx</code> will be different):</p>
-<p><code>mongodb+srv://nightscout:&lt;password&gt;@cluster0.xxxxx.mongodb.net/&lt;dbname&gt;?retryWrites=true&amp;w=majority</code></p>
+<p><code>mongodb+srv://nightscout:&lt;password&gt;@cluster0.xxxxx.mongodb.net/myFirstDatabase?retryWrites=true&amp;w=majority</code></p>
 </div>
 <p></br></p>
 <ul>
-<li>Invent a name for your database, this is not a critical information (for example <code>mycgmic</code>).</li>
+<li>Invent a name for your database, this is not a critical information (for example <code>mycgmic</code>), note that default is <code>myFirstDatabase</code>.</li>
 </ul>
 <p>Database Name: <input type="text" id="mydB" value="mycgmic" size="20"></p>
 <p></br></p>
@@ -483,15 +483,15 @@ function Generate()
     if(iAP==-1) { sString = "Atlas URI should contain &lt;password&gt;"; }
     else
     {
-      var iAD = sAtlas.search("<dbname>");
-      if(iAD==-1) { sString = "Atlas URI should contain &lt;dbname&gt;"; }
+      var iAD = sAtlas.search("myFirstDatabase");
+      if(iAD==-1) { sString = "Atlas URI should contain myFirstDatabase"; }
       else
       {
         bAtlas=1;
         sString = sAtlas.substring(0,iAP);
         sFinalString = sString.concat(sPwd, sAtlas.substring(iAP+10, iAD));
         sString = sAtlas.substring(iAP+10, iAD);
-        sFinalString = sFinalString.concat(sdB, sAtlas.substring(iAD+8));
+        sFinalString = sFinalString.concat(sdB, sAtlas.substring(iAD+15));
       }
     }
   }
