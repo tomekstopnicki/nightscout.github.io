@@ -411,14 +411,14 @@
 <p><img src="..\img\NewNS24.png" style="zoom:80%;" /></p>
 <p></br></p>
 <ul>
-<li>Add a database username (for example <code>nightscout</code>) and a database password (in the example below <code>soo5ecret</code>).</li>
+<li>Add a database username (for example <code>nightscout</code>) and a database password (in the example below <code>soo5ecret</code> but please change it!).</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Database credentials: Do not use your Atlas account credentials. Do not use special characters: only letters and numbers.</p>
 </div>
 <p>Write down these credentials in the boxes below (yes, in this browser window you're reading now, unless you're reading a printed version). You’ll need them later.</p>
-<p>Database password: <input type="text" id="myPwd" value="soo5ecret" size="20"></p>
-<p>Database username: <input type="text" id="myUsr" value="nightscout" size="20"></p>
+<p>Database password: <input type="text" id="myPwd" value="click here, delete and put your own" size="30"></p>
+<p>Database username: <input type="text" id="myUsr" value="click here, delete and put your own" size="30"></p>
 <p></br></p>
 <ul>
 <li>Then click <code>Create Database User</code>.</li>
@@ -443,7 +443,7 @@
 <ul>
 <li>Paste the string in the box below (yes, in this browser window you're reading now, unless you're reading a printed version).</li>
 </ul>
-<p><input type="text" id="myAtlas" value="" size="100"></p>
+<p><input type="text" id="myAtlas" value="click here, delete and paste your Atlas connection string" size="100"></p>
 <p></br></p>
 <div class="admonition info">
 <p class="admonition-title">It should be similar to this (<code>xxxxx</code> will be different):</p>
@@ -453,7 +453,7 @@
 <ul>
 <li>Invent a name for your database, this is not a critical information (for example <code>mycgmic</code>), note that default is <code>myFirstDatabase</code>.</li>
 </ul>
-<p>Database Name: <input type="text" id="mydB" value="mycgmic" size="20"></p>
+<p>Database Name: <input type="text" id="mydB" value="click here, delete and put your own" size="30"></p>
 <p></br></p>
 <ul>
 <li>Click the <code>Generate</code> button (just here below this line: in this browser window you're reading):</li>
@@ -498,6 +498,7 @@ function Generate()
 
   if(bAtlas) document.getElementById("result").innerHTML = sFinalString;
   else document.getElementById("result").innerHTML = sString;
+  if(bAtlas) document.getElementById("resultbis").innerHTML = sFinalString;
 }
 </script>
 
@@ -600,7 +601,7 @@ function Generate()
 <ul>
 <li>In <code>ENABLE</code>, copy and paste the following words (separated by a space) so that won't have to think about which you want now:</li>
 </ul>
-<p><code>careportal basal dbsize rawbg iob maker bridge cob bwp cage iage sage boluscalc pushover treatmentnotify mmconnect loop pump profile food openaps bage alexa override speech cors</code></p>
+<p><code>careportal basal dbsize rawbg iob maker cob bwp cage iage sage boluscalc pushover treatmentnotify loop pump profile food openaps bage alexa override speech cors</code></p>
 <p><img src="..\img\NewNS38.png" style="zoom:80%;" /></p>
 <div class="admonition note">
 <p class="admonition-title"><code>ENABLE</code> words</p>
@@ -610,8 +611,12 @@ function Generate()
 <ul>
 <li>Now you need the connection string you defined during the Atlas cluster creation (as the example below, but not the string below). Copy and paste it in the <code>MONGODB_URI</code> variable field.</li>
 </ul>
-<p><code>mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/mycgmic?retryWrites=true&amp;w=majority</code></p>
+<p>If you compiled all the fields and successfully generated the string this is what you should copy in <code>MONGODB_URI</code>:</p>
+<p style="font-size:18px" id="resultbis">Sorry... something is missing for me to make it automatically...</p>
+
 <p><img src="..\img\NewNS39.png" style="zoom:80%;" /></p>
+<p>If you preferred to make it yourself, make sure it looks like this:</p>
+<p><code>mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/mycgmic?retryWrites=true&amp;w=majority</code></p>
 <p></br></p>
 <ul>
 <li>Scroll down to the end of the list and click <code>Deploy app</code></li>
