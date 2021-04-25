@@ -73,7 +73,7 @@
 </li>
                                     
 <li>
-    <a href="../../nightscout/security/" class="dropdown-item">Secure your site</a>
+    <a href="../../nightscout/security/" class="dropdown-item">Security</a>
 </li>
                                     
 <li>
@@ -90,10 +90,6 @@
                                     
 <li>
     <a href="../../nightscout/close_loop/" class="dropdown-item">Closed-loop Systems</a>
-</li>
-                                    
-<li>
-    <a href="../../nightscout/security/" class="dropdown-item">Security</a>
 </li>
                                 </ul>
                             </li>
@@ -221,6 +217,10 @@
             
             <li class="nav-item" data-level="1"><a href="#nightscout-page-doesnt-open" class="nav-link">Nightscout page doesn't open</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#restart-all-dynos" class="nav-link">Restart all dynos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             
@@ -352,10 +352,12 @@
 <li>If you didn't migrate your Heroku database from mLab to Atlas <a href="../../update/newdatabase/">create a new Atlas database</a>.</li>
 <li>If you didn't migrate from Azure to Heroku create a new site <a href="../../nightscout/new_user/">create a new Nightscout site with Heroku</a>.</li>
 <li>If you're creating a new Nightscout site, it might have failed because of a wrong connection string. Delete your Heroku app and <a href="../../nightscout/new_user/#step-4-fork-and-deploy-cgm-remote-monitor">deploy</a> again after <a href="../connection_string/#change-your-atlas-database-password">checking</a> the Atlas connection string is correct.</li>
+<li>If your site is already up to date:</li>
 </ul>
 <p></br></p>
+<h2 id="restart-all-dynos">Restart all dynos<a class="headerlink" href="#restart-all-dynos" title="Permanent link">⌁</a></h2>
 <ul>
-<li>If your site is already up to date, try to restart your app: log in Heroku, go to <code>Settings</code>, <code>More</code>, <code>Restart all dynos</code>.</li>
+<li>Log in Heroku, go to <code>Settings</code>, <code>More</code>, <code>Restart all dynos</code>.</li>
 </ul>
 <p><img src="../../update/img/MigrateNS57.png" style="zoom:80%;" ></p>
 <p></br></p>
