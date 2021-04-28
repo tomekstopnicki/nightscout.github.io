@@ -217,6 +217,13 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
+<div class="admonition note">
+<p class="admonition-title">DIY Only</p>
+<p>These instructions apply to DIY setup only.  There are Nightscout as a
+service options which include database maintenance and setup as an included
+part of the service.  See <a href="../..#nightscout-as-a-service">Nightscout as a
+service</a>, for more details.</p>
+</div>
 <h1 id="attach-a-new-atlas-database-to-your-heroku-app">Attach a new Atlas database to your Heroku app<a class="headerlink" href="#attach-a-new-atlas-database-to-your-heroku-app" title="Permanent link">⌁</a></h1>
 <p>In December 2020, mLab stopped operations.</p>
 <p>If you didn't migrate your database from mLab to Atlas you need to create a new database for your Nightscout site.</p>
@@ -325,6 +332,7 @@
 var bAtlas;
 var sdB, sPwd;
 var sFinalString = "Not defined yet";
+
 
 function Generate()
 {
