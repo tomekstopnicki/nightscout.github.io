@@ -56,7 +56,7 @@
 </li>
                                     
 <li>
-    <a href="../../nightscout/new_user/" class="dropdown-item">Installation</a>
+    <a href="../../nightscout/new_user/" class="dropdown-item">Classic DIY Installation</a>
 </li>
                                 </ul>
                             </li>
@@ -115,10 +115,6 @@
                                     
 <li>
     <a href="../../nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
-</li>
-                                    
-<li>
-    <a href="../../nightscout/security/" class="dropdown-item">Security</a>
 </li>
                                 </ul>
                             </li>
@@ -277,15 +273,10 @@
 <p><img src="..\img\UploadCFG09.png" style="zoom:60%;" /></p>
 <p></br></p>
 <h2 id="medtronic-carelink">Medtronic CareLink<a class="headerlink" href="#medtronic-carelink" title="Permanent link">⌁</a></h2>
-<p>Log in Heroku.</p>
-<p>From <code>Settings</code>, click on the  <code>Reveal Config Vars</code></p>
-<p><img src="../../nightscout/img/config-vars.png" width="800"></p>
-<p></br></p>
-<p>You need to add <code>mmconnect</code> in the <code>ENABLE</code> variable. Do not delete other entries, just add <code>mmconnect</code> after a space.</p>
-<p><img src="../../nightscout/img/NewNS38.png" style="zoom:80%;" /></p>
-<p>If you want to link your CareLink account as a data source, compile the following lines:</p>
-<p><img src="../../nightscout/img/NewNS36.png" style="zoom:80%;" /></p>
-<p>You might want to setup <a href="https://github.com/nightscout/cgm-remote-monitor/#pump-pump-monitoring">additional fields</a> for your pump.</p>
+<div class="admonition warning">
+<p class="admonition-title">This plugin is <strong>NOT</strong> functional anymore with Heroku.</p>
+</div>
+<p>Plugin setup documented <a href="https://github.com/nightscout/cgm-remote-monitor/#mmconnect-minimed-connect-bridge">here</a> with <a href="https://github.com/nightscout/cgm-remote-monitor/#pump-pump-monitoring">additional fields</a> for your pump.</p>
 <p></br></p>
 <h2 id="medtronic-600-series-with-uploader"><a href="http://pazaan.github.io/600SeriesAndroidUploader/">Medtronic 600 Series with uploader</a><a class="headerlink" href="#medtronic-600-series-with-uploader" title="Permanent link">⌁</a></h2>
 <p><img src="..\img\UploadCFG08.png" style="zoom:60%;" /></p>
