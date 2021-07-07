@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Nightscout on your watch - Nightscout</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
+        <link href="../../css/admonitions.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Nightscout</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">What is Nightscout?</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../new_user/" class="dropdown-item">Classic DIY Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../vendors/T1Pal/new_user/" class="dropdown-item">Nightscout as a service</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../setup_variables/" class="dropdown-item">Configure your Nightscout</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/setup/" class="dropdown-item">Configure your Uploader</a>
+</li>
+                                    
+<li>
+    <a href="../security/" class="dropdown-item">Security</a>
+</li>
+                                    
+<li>
+    <a href="../downloaders/" class="dropdown-item">Follower Devices</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../multiadmin/" class="dropdown-item">Running multiple sites</a>
+</li>
+                                    
+<li>
+    <a href="../close_loop/" class="dropdown-item">Closed-loop Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
+    <a href="../security/" class="dropdown-item">Secure your site</a>
+</li>
+                                    
+<li>
+    <a href="../reports/" class="dropdown-item">Reports</a>
+</li>
+                                    
+<li>
+    <a href="../profile_editor/" class="dropdown-item">Profile Editor</a>
+</li>
+                                    
+<li>
+    <a href="../admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
+</li>
+                                    
+<li>
+    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
+</li>
+                                    
+<li>
+    <a href="../../update/newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
+</li>
+                                    
+<li>
+    <a href="../../update/upd_stack/" class="dropdown-item">Update Heroku Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Troubleshoot <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../troubleshoot/troublehoot/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../../troubleshoot/connection_string/" class="dropdown-item">Connection failure</a>
+</li>
+                                    
+<li>
+    <a href="../../troubleshoot/cleanup/" class="dropdown-item">Cleanup</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../downloaders/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../multiadmin/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#how-to-display-nightscout-data-on-your-watch" class="nav-link">How to display Nightscout data on your watch.</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#pebble-smartwatches" class="nav-link">Pebble Smartwatches</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#android-wear-os-smartwatches" class="nav-link">Android Wear OS smartwatches</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#amazfit-pace-stratos" class="nav-link">Amazfit Pace &amp; Stratos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#xiaomi-miband-4-and-5" class="nav-link">Xiaomi MiBand 4 and 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#amazfit-band-5-bip-bip-lite-bip-s-and-gtr" class="nav-link">Amazfit Band 5, Bip, Bip Lite, Bip S and GTR</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#apple-watch" class="nav-link">Apple Watch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fitbit" class="nav-link">Fitbit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#samsung-gear-smartwatches" class="nav-link">Samsung Gear Smartwatches</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#garmin-smartwatches-and-computers" class="nav-link">Garmin Smartwatches and Computers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="how-to-display-nightscout-data-on-your-watch">How to display Nightscout data on your watch.<a class="headerlink" href="#how-to-display-nightscout-data-on-your-watch" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<h2 id="pebble-smartwatches">Pebble Smartwatches<a class="headerlink" href="#pebble-smartwatches" title="Permanent link">⌁</a></h2>
+<p><img src="..\img\PebbleNSFoundation.jpeg" style="zoom:50%;" /></p>
+<p>Pebble smartwatch use is a historic milestone of CGM in the Cloud. Pebble has been bought by Fitbit in 2016 and necessary resources have moved to archives and <a href="https://rebble.io/">rebble.io</a>. Pebble support is still maintained in Loop, AndroidAPS, FreeAPS and xDrip+.</p>
+<p>You still can find the Pebble app for iOS in the <a href="https://apps.apple.com/us/app/pebble/id957997620">Apple Store</a>. For Android you need to download it from <a href="https://www.apkmirror.com/apk/pebble-technology-corp/pebble/pebble-4-4-2-1405-62d45d7d7-endframe-release/pebble-4-4-2-1405-62d45d7d7-endframe-android-apk-download/">APKMirror</a> or <a href="https://apkpure.com/it/pebble/com.getpebble.android.basalt">APKPure</a>.</p>
+<p>For authentication and getting the watchfaces, the original server closed so you'll need to register with <a href="https://auth.rebble.io/auth/">Rebble</a>.</p>
+<p>You'll find Nightscout watchfaces <a href="https://apps.rebble.io/en_US/search/watchfaces/1">here</a>. Search for Nightscout, CGM, ... </p>
+<p>Configure the watchface with your Nightscout site URL.</p>
+<p></br></p>
+<h5 id="urchin"><a href="https://github.com/mddub/urchin-cgm">urchin</a><a class="headerlink" href="#urchin" title="Permanent link">⌁</a></h5>
+<p>A Pebble watchface to view data from a continuous glucose monitor in graph format.</p>
+<p></br></p>
+<p>If you want to use your Pebble with Loop look <a href="https://loopkit.github.io/loopdocs/nightscout/pebble/">here</a>, for AndroidAPS <a href="https://androidaps.readthedocs.io/en/latest/EN/Configuration/Watchfaces.html#pebble">here</a> and FreeAPS <a href="https://github.com/mddub/pancreabble">here</a>.</p>
+<p></br></p>
+<h4 id="xdrip"><a href="https://github.com/NightscoutFoundation/xDrip/releases">xDrip+</a><a class="headerlink" href="#xdrip" title="Permanent link">⌁</a></h4>
+<p>Enable Pebble Integration in Smartwatch features.</p>
+<p><img src="..\img\Watch02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>You can answer no to default watchface install so that you will be able to select another one. You can then decide to install or not the snooze control.</p>
+<p><img src="..\img\Watch03.png" style="zoom:80%;" /></p>
+<p></br></p>
+<h2 id="android-wear-os-smartwatches"><a href="https://wearos.google.com/#hands-free-help">Android Wear OS smartwatches</a><a class="headerlink" href="#android-wear-os-smartwatches" title="Permanent link">⌁</a></h2>
+<p>With an Android smartphone.</p>
+<h5 id="android-wear-1x">Android Wear 1.x:<a class="headerlink" href="#android-wear-1x" title="Permanent link">⌁</a></h5>
+<ul>
+<li>Recommended: Install an old version of Android Wear on your phone (search APKMirror for example: Android Wear 2.9.0.185084575.gms) and pair your watch. Make sure to allow GPS and Wear OS access to position on the watch. Allow Wear OS to run in background on your phone.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you installed Wear OS, you will need to manually update the watch the Google Play Services see <a href="https://androidaps.readthedocs.io/en/latest/EN/Usage/SonySW3.html">here</a>.</p>
+</div>
+<ul>
+<li>Once your smartwatch Google Play Service has been updated to a version above 9.x you can safely update Android Wear to Wear OS.</li>
+<li>Change the watchface to match your app (in Wear OS or on your watch).</li>
+</ul>
+<h5 id="android-wear-2x">Android Wear 2.x:<a class="headerlink" href="#android-wear-2x" title="Permanent link">⌁</a></h5>
+<ul>
+<li>
+<p>Install <a href="https://play.google.com/store/apps/details?id=com.google.android.wearable.app">Wear OS</a> on your phone and pair your watch. Make sure to allow GPS and Wear OS access to position on the watch. Allow Wear OS to run in background on your phone.</p>
+</li>
+<li>
+<p><a href="https://support.google.com/wearos/answer/7314014?hl=en">Install</a> your app wear extension from the smartwatch Google Play store, selecting the apps installed on your phone.</p>
+</li>
+</ul>
+<p><em>Note: Newer versions of Wear OS do not support this feature anymore, use <a href="https://youtu.be/8HsfWPTFGQI">Wear Installer</a>.</em></p>
+<ul>
+<li>Change the watchface to match your app (in Wear OS or on your watch).</li>
+</ul>
+<h4 id="xdrip_1"><a href="https://github.com/NightscoutFoundation/xDrip/releases">xDrip+</a><a class="headerlink" href="#xdrip_1" title="Permanent link">⌁</a></h4>
+<p>Enable Android Wear Integration to send xDrip+ BG to the smartwatch. Do not enable neither Collection nor Force Collection.</p>
+<p><img src="..\img\Watch00.png" style="zoom:80%;" /></p>
+<p>Full xDrip+ wear documentation <a href="https://github.com/jamorham/xDrip-plus/blob/master/Documentation/WatchGuide.md">here</a>.</p>
+<p><em>NB: you can also use <a href="./#xdrip-with-tasker">Tasker</a>.</em></p>
+<h4 id="androidaps"><a href="https://androidaps.readthedocs.io/en/latest/EN/Installing-AndroidAPS/Building-APK.html">AndroidAPS</a><a class="headerlink" href="#androidaps" title="Permanent link">⌁</a></h4>
+<p>For AndroidAPS <a href="https://androidaps.readthedocs.io/en/latest/EN/Configuration/Watchfaces.html#aaps-on-wear-os-smartwatch">here</a>.</p>
+<h4 id="glimp"><a href="https://play.google.com/store/apps/details?id=it.ct.glicemia">Glimp</a><a class="headerlink" href="#glimp" title="Permanent link">⌁</a></h4>
+<p>Select your Wearable device and enable the Glimp watchface.</p>
+<p><img src="..\img\Watch01.png" style="zoom:75%;" /></p>
+<p></br></p>
+<h2 id="amazfit-pace-stratos">Amazfit Pace &amp; Stratos<a class="headerlink" href="#amazfit-pace-stratos" title="Permanent link">⌁</a></h2>
+<h4 id="xdrip_2"><a href="https://github.com/NightscoutFoundation/xDrip/releases">xDrip+</a><a class="headerlink" href="#xdrip_2" title="Permanent link">⌁</a></h4>
+<ul>
+<li>Install the <a href="https://play.google.com/store/apps/details?id=com.huami.watch.hmwatchmanager">Amazfit watch app</a> on your phone.</li>
+<li>Install the <a href="https://forum.xda-developers.com/t/tool-pace-stratos-verge-tool-all-in-one-drivers-unlock-twrp-factory-image.3874802/">Amazfit tool</a> on a Windows PC.</li>
+<li>Download the <a href="https://github.com/Klaus3d3/XdripWidgetForAmazfit-Klaus/releases">widget</a> from the project author (Klaus3d3) GitHub <a href="https://github.com/Klaus3d3/XdripWidgetForAmazfit-Klaus">repository</a>.</li>
+<li>OEM unlock and enable USB debug on the watch, run TOOL ALL IN ONE and click the APK Installer button, select the widget apk file and INSTALL it. Close the install window and click Reboot System.</li>
+<li>In xDrip+, enable the Amazfit service and select the options you want to enable.</li>
+</ul>
+<p><img src="..\img\Watch04.png" style="zoom:75%;" /></p>
+<p><em>Original instructions <a href="https://crazyinfo.de/2018/07/25/xdrip-smartwatch-widget-fuer-amazfit-pace-stratos">here</a>.</em></p>
+<p></br></p>
+<h2 id="xiaomi-miband-4-and-5">Xiaomi MiBand 4 and 5<a class="headerlink" href="#xiaomi-miband-4-and-5" title="Permanent link">⌁</a></h2>
+<h2 id="amazfit-band-5-bip-bip-lite-bip-s-and-gtr">Amazfit Band 5, Bip, Bip Lite, Bip S and GTR<a class="headerlink" href="#amazfit-band-5-bip-bip-lite-bip-s-and-gtr" title="Permanent link">⌁</a></h2>
+<h4 id="xdrip_3">xDrip+<a class="headerlink" href="#xdrip_3" title="Permanent link">⌁</a></h4>
+<p>Follow Artem's instructions <a href="https://bigdigital.home.blog/">here</a>.</p>
+<p></br></p>
+<h2 id="apple-watch">Apple Watch<a class="headerlink" href="#apple-watch" title="Permanent link">⌁</a></h2>
+<h4 id="nightguard"><a href="https://apps.apple.com/us/app/nightguard/id1116430352#?platform=appleWatch">Nightguard</a><a class="headerlink" href="#nightguard" title="Permanent link">⌁</a></h4>
+<p>Apple Watch series 3 and above.</p>
+<p><a href="https://github.com/nightscout/nightguard">GitHub</a></p>
+<p></br></p>
+<h4 id="sugarmate"><a href="https://sugarmate.io/">sugarmate</a><a class="headerlink" href="#sugarmate" title="Permanent link">⌁</a></h4>
+<p>You can setup sugarmate as a calendar complication to display Nightscout on your Apple watch.</p>
+<p></br></p>
+<h4 id="nsapple"><a href="https://github.com/Perceptus/nsapple">nsapple</a><a class="headerlink" href="#nsapple" title="Permanent link">⌁</a></h4>
+<p>nsapple is an apple watch app for Nightscout / Loop followers.</p>
+<p></br></p>
+<h4 id="loop-follow"><a href="https://sweloop.se/LoopFollow/index.html">Loop Follow</a><a class="headerlink" href="#loop-follow" title="Permanent link">⌁</a></h4>
+<p>You can setup Loop Follow as a calendar complication to display Nightscout on your Apple watch.</p>
+<p></br></p>
+<h2 id="fitbit">Fitbit<a class="headerlink" href="#fitbit" title="Permanent link">⌁</a></h2>
+<h4 id="nightscout-monitor"><a href="https://gallery.fitbit.com/details/eaed806d-9ff5-4aa9-a2c8-518f1f852f5a">Nightscout Monitor</a><a class="headerlink" href="#nightscout-monitor" title="Permanent link">⌁</a></h4>
+<p>Ionic/Sense/Versa/Versa 2/Versa 3/Versa Lite</p>
+<p><a href="https://github.com/sulkaharo/nsfitbit">Repository</a></p>
+<p></br></p>
+<h4 id="glance"><a href="https://gallery.fitbit.com/details/7b5d9822-7e8e-41f9-a2a7-e823548c001c">Glance</a><a class="headerlink" href="#glance" title="Permanent link">⌁</a></h4>
+<p>Ionic/Sense/Versa/Versa 2/Versa 3/Versa Lite</p>
+<p><a href="https://glancewatchface.com/">Web site</a></p>
+<p></br></p>
+<h4 id="sentinel"><a href="https://gallery.fitbit.com/developer/b50ac7f5-b932-441a-be18-e258b17c736b">Sentinel</a><a class="headerlink" href="#sentinel" title="Permanent link">⌁</a></h4>
+<p>Ionic/Sense/Versa/Versa 2/Versa Lite</p>
+<p>Facebook group: <a href="https://www.facebook.com/groups/3185325128159614">Sentinel</a></p>
+<p></br></p>
+<h4 id="marclock"><a href="https://gallery.fitbit.com/details/9eacf714-5b23-40c8-9621-ded74bd9edf9">Marclock</a><a class="headerlink" href="#marclock" title="Permanent link">⌁</a></h4>
+<p>Ionic/Sense/Versa/Versa 2/Versa Lite</p>
+<p><a href="https://github.com/cramis1/Marclock-with-CGM-weather/blob/master/README.md">Instructions</a></p>
+<p></br></p>
+<h2 id="samsung-gear-smartwatches">Samsung Gear Smartwatches<a class="headerlink" href="#samsung-gear-smartwatches" title="Permanent link">⌁</a></h2>
+<h4 id="xdrip-with-tasker">xDrip+ with Tasker<a class="headerlink" href="#xdrip-with-tasker" title="Permanent link">⌁</a></h4>
+<p><em>Note: also available for Android Wear devices</em></p>
+<p><a href="https://github.com/FreDiabetics/xDrip--Tasker-Tizen-Watchface-Integration/blob/master/README.md">Instructions</a></p>
+<p></br></p>
+<h4 id="g-watch-app"><a href="https://play.google.com/store/apps/details?id=sk.trupici.g_watch">G-Watch app</a><a class="headerlink" href="#g-watch-app" title="Permanent link">⌁</a></h4>
+<p>Facebook group: <a href="https://www.facebook.com/gwatchapp">G-Watch App</a></p>
+<p></br></p>
+<h2 id="garmin-smartwatches-and-computers">Garmin Smartwatches and Computers<a class="headerlink" href="#garmin-smartwatches-and-computers" title="Permanent link">⌁</a></h2>
+<p>By <a href="https://apps.garmin.com/en-US/developer/74d80f40-f80a-45c2-b934-321cc86f9dac/apps">Phimby</a></p>
+<p>By <a href="https://apps.garmin.com/en-US/developer/e985e9ec-bcf6-4aef-bfe9-77c1c93fc854/apps">Horsetooth</a></p>
+<p>By <a href="https://apps.garmin.com/en-US/developer/f9420c47-810f-47ac-a7dd-9fa7b8ecd22d/apps">andreas-may</a></p>
+<p>By <a href="https://apps.garmin.com/en-US/developer/c3842ca7-a645-4758-b9ed-4ee6f8e3abec/apps">Fredrik_S</a></p>
+<p>By <a href="https://apps.garmin.com/en-US/developer/b2d30711-2708-4f3a-8e83-009c16d07081/apps">John_</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

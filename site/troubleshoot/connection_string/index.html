@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Connection failure - Nightscout</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
+        <link href="../../css/admonitions.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Nightscout</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">What is Nightscout?</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/new_user/" class="dropdown-item">Classic DIY Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../vendors/T1Pal/new_user/" class="dropdown-item">Nightscout as a service</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/setup_variables/" class="dropdown-item">Configure your Nightscout</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/setup/" class="dropdown-item">Configure your Uploader</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/security/" class="dropdown-item">Security</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/downloaders/" class="dropdown-item">Follower Devices</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/multiadmin/" class="dropdown-item">Running multiple sites</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/close_loop/" class="dropdown-item">Closed-loop Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/security/" class="dropdown-item">Secure your site</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/reports/" class="dropdown-item">Reports</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/profile_editor/" class="dropdown-item">Profile Editor</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
+</li>
+                                    
+<li>
+    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
+</li>
+                                    
+<li>
+    <a href="../../update/newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
+</li>
+                                    
+<li>
+    <a href="../../update/upd_stack/" class="dropdown-item">Update Heroku Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Troubleshoot <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../troublehoot/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Connection failure</a>
+</li>
+                                    
+<li>
+    <a href="../cleanup/" class="dropdown-item">Cleanup</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../troublehoot/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../cleanup/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#meet-your-connection-string" class="nav-link">Meet your connection string</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#unable-to-connect-to-mongo" class="nav-link">Unable to connect to Mongo</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#mongodb-in-read-only-mode" class="nav-link">MongoDB in read only mode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mongodb_uri-missing" class="nav-link">MONGODB_URI missing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#generic-unable-to-connect-to-mongo" class="nav-link">Generic Unable to connect to Mongo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bad-connection-string" class="nav-link">Bad connection string</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#recover-your-connection-string" class="nav-link">Recover your connection string</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#change-your-atlas-database-password" class="nav-link">Change your Atlas database password</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="meet-your-connection-string">Meet your connection string<a class="headerlink" href="#meet-your-connection-string" title="Permanent link">⌁</a></h1>
+<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../vendors/img/Atlas.png" style="zoom:80%;" /></p>
+<p>For technical details look <a href="https://docs.mongodb.com/manual/reference/connection-string/#mongodb-uri">here</a>.</p>
+<p>A typical mLab migrated string will look like this:</p>
+<p><code>mongodb+srv://heroku_0v50k8rf:ddfsjcpfu8fcoj9n6dueabfd5u@cluster0.g03wh.mongodb.net/heroku_0v50k8rf?retryWrites=true&amp;w=majority</code></p>
+<p>A typical new string created with Atlas will look like this:</p>
+<p><code>mongodb+srv://johndoe:V3ry53cr3t@cluster0.a01bc.mongodb.net/myCGMiC?retryWrites=true&amp;w=majority</code></p>
+<ul>
+<li>
+<p>It will start by <code>mongodb+srv://</code> with <code>mongodb</code> a <strong>standard prefix</strong> for a connection string, and <code>+srv</code> adding a security layer.</p>
+</li>
+<li>
+<p>After <code>://</code> you'll find your <strong>database username</strong>, that is not your Atlas account username. In the examples above <code>heroku_0v50k8rf</code> or <code>johndoe</code>.</p>
+</li>
+<li>
+<p>Following the username, a separator <code>:</code> and your <strong>database password</strong> that is not your Atlas account password. In the examples above a typical 26 characters password created automatically with the mLab add-on <code>ddfsjcpfu8fcoj9n6dueabfd5u</code> and a user created password <code>V3ry53cr3t</code>.</p>
+</li>
+<li>
+<p>Following the password, a separator <code>@</code> then the <strong>host name</strong> that was provided by Atlas after you created you cluster. typically it will look like <code>cluster0.</code><em><code>a1b2c3</code></em><code>.mongodb.net</code></p>
+</li>
+<li>
+<p>After the host name and the separator <code>/</code> you'll see your Nightscout <strong>database name</strong>. If you migrated from mLab it will be identical to your database username (unless you modified it). If you created your Atlas cluster it will be the one you decided. In the examples above <code>heroku_0v50k8rf</code> or <code>myCGMiC</code>.</p>
+</li>
+<li>
+<p>Another separator <code>?</code> and you'll see two options: <code>retryWrites=true&amp;w=majority</code> </p>
+</li>
+</ul>
+<p></br></p>
+<h1 id="unable-to-connect-to-mongo">Unable to connect to Mongo<a class="headerlink" href="#unable-to-connect-to-mongo" title="Permanent link">⌁</a></h1>
+<p>Common reasons:</p>
+<ul>
+<li>
+<p>The database Heroku is pointing to is not available (mLab services stopped in Dec 2020).</p>
+</li>
+<li>
+<p>Your Atlas connection string is incorrect</p>
+</li>
+</ul>
+<p></br></p>
+<p>If you see this message</p>
+<p><img src="../img/TShoot06.png" style="zoom:80%;" ></p>
+<ul>
+<li><a href="../../update/redeploy/">Update to latest version</a> and come back after you have a more accurate error message.</li>
+</ul>
+<p></br></p>
+<h2 id="mongodb-in-read-only-mode">MongoDB in read only mode<a class="headerlink" href="#mongodb-in-read-only-mode" title="Permanent link">⌁</a></h2>
+<p>If you see this message:</p>
+<p><img src="../img/TShoot44.png" style="zoom:80%;" ></p>
+<ul>
+<li>Verify your Atlas database is not read only, if migration went well on the first time it should be like this, else click <code>Edit</code></li>
+</ul>
+<p><img src="../img/TShoot15.png" style="zoom:80%;" ></p>
+<ul>
+<li>Change the permissions to <code>Atlas Admin</code> and <code>Update User</code></li>
+</ul>
+<p><img src="../img/TShoot16.png" style="zoom:80%;" ></p>
+<ul>
+<li>Restart all dynos in Heroku</li>
+</ul>
+<p></br></p>
+<h2 id="mongodb_uri-missing"><code>MONGODB_URI</code> missing<a class="headerlink" href="#mongodb_uri-missing" title="Permanent link">⌁</a></h2>
+<p>If you see this message:</p>
+<p><img src="../img/TShoot45.png" style="zoom:80%;" ></p>
+<ul>
+<li>If you forgot to migrate to Atlas you need to <a href="../../update/newdatabase/">attach a new Atlas database</a>.</li>
+<li>If you know you migrated, and your Nightscout was still functional after November 11th 2020, continue <a href="./#bad-connection-string">below</a> to recover:</li>
+</ul>
+<p></br></p>
+<h2 id="generic-unable-to-connect-to-mongo">Generic Unable to connect to Mongo<a class="headerlink" href="#generic-unable-to-connect-to-mongo" title="Permanent link">⌁</a></h2>
+<p>If you see this message:</p>
+<p><img src="../img/TShoot47.png" style="zoom:80%;" ></p>
+<ul>
+<li>Check you authorized all IPs to access your Atlas database:</li>
+<li>Open your Atlas cluster and select your Nightscout project, then <code>Network access</code></li>
+</ul>
+<p><img src="../img/TShoot48.png" style="zoom:80%;" ></p>
+<ul>
+<li>If you see an IP (in red above) instead of 0.0.0.0/0 click <code>Edit</code> select <code>ALLOW ACCESS FROM ANYWHERE</code> then <code>Confirm</code>.</li>
+</ul>
+<p><img src="../img/TShoot49.png" style="zoom:80%;" ></p>
+<ul>
+<li>Restart all dynos in Heroku</li>
+</ul>
+<p></br></p>
+<h2 id="bad-connection-string">Bad connection string<a class="headerlink" href="#bad-connection-string" title="Permanent link">⌁</a></h2>
+<p>If you see this message:</p>
+<p><img src="../img/TShoot46.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Open Heroku and <code>Reveal Config Vars</code> in <code>Settings</code></li>
+</ul>
+<p><img src="../../update/img/MigrateNS03.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Search for a variable called <code>MONGODB_URI</code> or <code>MONGO_CONNECTION</code>. If you find none, go <a href="./#recover-your-connection-string">here</a>.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title"> <code>MONGODB_URI</code> or <code>MONGO_CONNECTION</code></p>
+<p>There should be at least one and only one of them, not both.</p>
+</div>
+<p>If you migrated from mLab Heroku add-on it is usually <code>MONGO_CONNECTION</code></p>
+<p>if you deployed a brand new Nightscout it should be <code>MONGODB_URI</code></p>
+<ul>
+<li>Verify it is looking like this: </li>
+</ul>
+<p><code>mongodb+srv://atlasusername:atlaspassword@cluster0.zzzzz.mongodb.net/dbname?retryWrites=true&amp;w=majority</code></p>
+<p>Note that your <code>atlasusername</code>, <code>atlaspassword</code> and <code>dbname</code> will be different from the example above.</p>
+<ul>
+<li>Paste the string in the box below:</li>
+</ul>
+<p><input type="text" id="myAtlas" value="Yes here. Delete this and paste it here" size="100">
+</br></p>
+<ul>
+<li>Click the <code>Analyze</code> button:</li>
+</ul>
+<p><button onclick="Analyze()">Analyze</button></p>
+<p style="font-size:20px" id="result">Analysis result will appear here.</p>
+
+<p>If the analysis result doesn't show any error, check below the data is what you actually wanted:</p>
+<p><strong>Database Username:</strong> <p id="myUser">...</p>
+<strong>Database Password:</strong> <p id="myPwd">...</p>
+<strong>Database name:</strong> <p id="mydB">...</p></p>
+<script>
+var sUser, sdB, sPwd;
+function Analyze()
+{
+
+  var sString = "Your connection string structure looks good.";
+  var bErr = 0;
+
+  var sAtlas = document.getElementById("myAtlas").value;
+
+  var iAS = sAtlas.search(" ");
+  if(iAS!=-1)
+  { 
+    sString = "There should be no space characters in the string. Remove all spaces";
+    bErr = 1;
+  }
+
+  iAS = sAtlas.search("mongodb://");
+  if(iAS!=-1 && !bErr)
+  { 
+    sString = "This is not an Atlas connection string: it should start with mongodb+srv://";
+    bErr = 1;
+  }
+
+  iAS = sAtlas.search("<password>");
+  if(iAS!=-1 && !bErr)
+  { 
+    sString = "You should replace &lt;password&gt; with your actual Atlas database password in the Atlas string";
+    bErr = 1;
+  }
+
+  iAS = sAtlas.search("<dbname>");
+  if(iAS!=-1 && !bErr)
+  { 
+    sString = "You should replace &lt;dbname&gt; with your actual Atlas database name in the Atlas string";
+    bErr = 1;
+  }
+
+  iAS = sAtlas.search("<");
+  if(iAS!=-1 && !bErr)
+  { 
+    sString = "There should be no &lt; characters in the Atlas string";
+    bErr = 1;
+  }
+
+  iAS = sAtlas.search(">");
+  if(iAS!=-1 && !bErr)
+  { 
+    sString = "There should be no &gt; characters in the Atlas string";
+    bErr = 1;
+  }
+
+  iAS = sAtlas.search("retryWrites=true");
+  if(iAS==-1 && !bErr)
+  { 
+    sString = "Your Atlas string should end with ?retryWrites=true&w=majority";
+    bErr = 1;
+  }
+
+  var iUsr, iAt, iCol, idB, iQM;
+
+  iUsr = sAtlas.search("://");
+  if(iUsr==-1 && !bErr)
+  { 
+    sString = "Your Atlas string should start by mongodb+srv://";
+    bErr = 1;
+  }
+  else
+  {
+    iUsr = iUsr + 3;
+    sAtlas = sAtlas.substr(iUsr);
+  }
+
+  iAt = sAtlas.search("@");
+  if(iAt==-1 && !bErr)
+  { 
+    sString = "Your Atlas string should contain @ after your password";
+    bErr = 1;
+  };
+
+  iCol = sAtlas.search(":");
+  if(iCol==-1 && !bErr)
+  { 
+    sString = "Your Atlas user and password should be separated by :";
+    bErr = 1;
+  };
+
+  iQm = sAtlas.search("\\?");
+  if(iQm==-1 && !bErr)
+  { 
+    sString = "Your Atlas string should end with ?retryWrites=true&w=majority";
+    bErr = 1;
+  };
+
+  idB = sAtlas.search("net/");
+  if(idB==-1 && !bErr)
+  { 
+    sString = "Your Atlas string should be in the mongodb.net domain";
+    bErr = 1;
+  } else idB = idB + 4;
+
+  if(!bErr)
+  {
+    sUser = sAtlas.substring(0, iCol);
+    sPwd = sAtlas.substring(iCol + 1, iAt);
+    sdB = sAtlas.substring(idB, iQm);
+
+    document.getElementById("myUser").innerHTML = sUser;
+    document.getElementById("myPwd").innerHTML = sPwd;
+    document.getElementById("mydB").innerHTML = sdB;
+   }
+
+ document.getElementById("result").innerHTML = sString;
+}
+
+</script>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you migrated from Heroku mLab add-on, your database username and database name should be identical.</p>
+</div>
+<p><img src="../img/TShoot41.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>If you've just created a new site, try to use <a href="../../nightscout/stringhelp.html">this help page</a> to verify or recreate it.</p>
+<p></br></p>
+<p>If you're still in trouble continue below:</p>
+<p></br></p>
+<h2 id="recover-your-connection-string">Recover your connection string<a class="headerlink" href="#recover-your-connection-string" title="Permanent link">⌁</a></h2>
+<p>If you've tried several times to deploy or migrate, you might end-up with too many items to cope with in your different accounts. At this point, you could benefit doing some cleanup in order to identify the correct Atlas database you want to connect to.</p>
+<p><a href="../cleanup/">Cleanup</a> and come back.</p>
+<p></br></p>
+<ul>
+<li>Log into <a href="https://cloud.mongodb.com/">Atlas</a></li>
+<li>Click <code>Connect</code> on your cluster</li>
+</ul>
+<p><img src="../img/TShoot07.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Click <code>Connect your application</code></li>
+</ul>
+<p><img src="../img/TShoot09.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Click <code>Copy</code> then <code>Close</code></li>
+</ul>
+<p><img src="../img/TShoot10.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Paste the connection string in this box below:</li>
+</ul>
+<p><input type="text" id="myAtlas2" value="Yes here. Delete this and paste it here" size="100"></p>
+<ul>
+<li>Modify the database password and database name (not username) in the boxes below (only letters and numbers allowed). Don't use the values below: they are examples. Put those you used when creating your Atlas database.</li>
+</ul>
+<p>Database password: <input type="text" id="myPwd2" value="soo5ecret" size="20"></p>
+<p>Database name: <input type="text" id="mydB2" value="mycgmic" size="20"></p>
+<div class="admonition warning">
+<p class="admonition-title">If you migrated from mLab and Heroku (not Azure)</p>
+<p><strong>Your database name should be identical to your database user name!</strong> (Unless you modified it) "</p>
+</div>
+<ul>
+<li>If you don't remember your Atlas database password (which should not be your mongoDB Atlas account password) invent a new one (only letters and numbers). And proceed to <a href="./#change-your-atlas-database-password">Change your Atlas database password</a> then come back.</li>
+</ul>
+<p><button onclick="Generate2()">Generate</button></p>
+<p style="font-size:25px" id="result2">The connection string will appear here</p>
+
+<script>
+var bAtlas;
+var sdB, sPwd;
+var sFinalString = "Not defined yet";
+
+function Generate2()
+{
+  var sString = sFinalString;
+
+  bAtlas=0;
+  var sString = "Looks good!";
+  var sAtlas = document.getElementById("myAtlas2").value;
+  sPwd = document.getElementById("myPwd2").value;
+  sdB = document.getElementById("mydB2").value;
+  var iAS = sAtlas.search("://");
+  if(iAS!=11) { sString = "Atlas URI should start with mongodb+srv://"; }
+  else
+  {
+    var iAP = sAtlas.search("<password>");
+    if(iAP==-1) { sString = "Atlas URI should contain &lt;password&gt;"; }
+    else
+    {
+      var iAD = sAtlas.search("<dbname>");
+      if(iAD==-1) { sString = "Atlas URI should contain &lt;dbname&gt;"; }
+      else
+      {
+        bAtlas=1;
+        sString = sAtlas.substring(0,iAP);
+        sFinalString = sString.concat(sPwd, sAtlas.substring(iAP+10, iAD));
+        sString = sAtlas.substring(iAP+10, iAD);
+        sFinalString = sFinalString.concat(sdB, sAtlas.substring(iAD+8));
+      }
+    }
+  }
+
+  if(bAtlas) document.getElementById("result2").innerHTML = sFinalString;
+  else document.getElementById("result2").innerHTML = sString;
+}
+</script>
+
+<p></br></p>
+<ul>
+<li>Copy the resulting string into your Heroku variable <code>MONGODB_URI</code> (new Nightscout) or <code>MONGO_CONNECTION</code> (migration). There must be only one of these variables, not both.</li>
+<li>If there is neither one nor the other create a new <code>MONGODB_URI</code> variable and paste the string in the value field.</li>
+<li>Restart all dynos in Heroku</li>
+</ul>
+<p></br></p>
+<h2 id="change-your-atlas-database-password">Change your Atlas database password<a class="headerlink" href="#change-your-atlas-database-password" title="Permanent link">⌁</a></h2>
+<ul>
+<li>
+<p>If you changed the password in the string you will need to change it in the database too:</p>
+</li>
+<li>
+<p>Click <code>Database Access</code></p>
+</li>
+</ul>
+<p><img src="../img/TShoot11.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>At the end of the line, click <code>Edit</code></li>
+</ul>
+<p><img src="../img/TShoot08.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>In <code>Password</code> click <code>Edit Password</code></li>
+</ul>
+<p><img src="../img/TShoot12.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>If you forgot your password invent a new one (use only letters and numbers: no special characters) or better: use <code>Autogenerate Secure Password</code> and click <code>Copy</code></li>
+<li>Else make it the same than the one in your Heroku <code>MONGODB_URI</code> connection string variable</li>
+</ul>
+<p><img src="../img/TShoot13.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Click <code>Update User</code></li>
+</ul>
+<p><img src="../img/TShoot14.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>
+<p>Make sure the password matches in your connection string Heroku variable <code>MONGODB_URI</code> (new Nightscout) or <code>MONGO_CONNECTION</code> (migration)</p>
+</li>
+<li>
+<p>Refresh your Nightscout web page display</p>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

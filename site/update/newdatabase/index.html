@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Attach a new Atlas database - Nightscout</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
+        <link href="../../css/admonitions.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Nightscout</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">What is Nightscout?</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/new_user/" class="dropdown-item">Classic DIY Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../vendors/T1Pal/new_user/" class="dropdown-item">Nightscout as a service</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/setup_variables/" class="dropdown-item">Configure your Nightscout</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/setup/" class="dropdown-item">Configure your Uploader</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/security/" class="dropdown-item">Security</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/downloaders/" class="dropdown-item">Follower Devices</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/multiadmin/" class="dropdown-item">Running multiple sites</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/close_loop/" class="dropdown-item">Closed-loop Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/security/" class="dropdown-item">Secure your site</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/reports/" class="dropdown-item">Reports</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/profile_editor/" class="dropdown-item">Profile Editor</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../update/" class="dropdown-item">Updating your site</a>
+</li>
+                                    
+<li>
+    <a href="../redeploy/" class="dropdown-item">Redeploying</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Attach a new Atlas database</a>
+</li>
+                                    
+<li>
+    <a href="../upd_stack/" class="dropdown-item">Update Heroku Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Troubleshoot <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../troubleshoot/troublehoot/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../../troubleshoot/connection_string/" class="dropdown-item">Connection failure</a>
+</li>
+                                    
+<li>
+    <a href="../../troubleshoot/cleanup/" class="dropdown-item">Cleanup</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../redeploy/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../upd_stack/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#attach-a-new-atlas-database-to-your-heroku-app" class="nav-link">Attach a new Atlas database to your Heroku app</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#step-1-create-an-atlas-account" class="nav-link">Step 1: Create an Atlas account</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-2-add-your-connection-string-to-heroku" class="nav-link">Step 2: Add your connection string to Heroku</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-3-update-nightscout" class="nav-link">Step 3: Update Nightscout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="attach-a-new-atlas-database-to-your-heroku-app">Attach a new Atlas database to your Heroku app<a class="headerlink" href="#attach-a-new-atlas-database-to-your-heroku-app" title="Permanent link">⌁</a></h1>
+<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../vendors/img/Heroku.png" style="zoom:80%;" />+<img src="../../vendors/img/Atlas.png" style="zoom:80%;" /></p>
+<hr />
+<p>In December 2020, mLab stopped operations.</p>
+<p>If you were using Heroku DIY and didn't migrate your database from mLab to Atlas you need to create a new database for your Nightscout site.</p>
+<p></br></p>
+<div class="admonition note">
+<p class="admonition-title">If you prefer to follow a video</p>
+<p>Use <a href="https://www.youtube.com/watch?v=hXSLBACjYQo">this easy guide</a>. Make sure to use only letters and numbers in database name and password. </p>
+</div>
+<p></br></p>
+<h2 id="step-1-create-an-atlas-account">Step 1: Create an Atlas account<a class="headerlink" href="#step-1-create-an-atlas-account" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<ul>
+<li>Click here: <a href="https://www.mongodb.com/cloud/atlas">https://www.mongodb.com/cloud/atlas</a> and click <code>Start Free</code></li>
+</ul>
+<p><img src="../../nightscout/img/NewNS17.png" style="zoom:70%;" /></p>
+<p></br></p>
+<ul>
+<li>Enter information then click <code>Get Started Free</code></li>
+</ul>
+<p><img src="../../nightscout/img/NewNS18.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Select <code>Create a cluster in Shared Clusters (FREE)</code></li>
+</ul>
+<p><img src="../../nightscout/img/NewNS19.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Leave all default values and click <code>Create Cluster</code></li>
+</ul>
+<p><img src="../../nightscout/img/NewNS20.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>Atlas will create your default cluster, wait until completion… (can take more than 3 minutes)</p>
+<p><img src="../../nightscout/img/NewNS21.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Click on <code>CONNECT</code></li>
+</ul>
+<p><img src="../../nightscout/img/NewNS22.png" style="zoom:100%;" /></p>
+<p></br></p>
+<ul>
+<li>Click on <code>Allow Access from Anywhere</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">If you don't allow access from anywhere (IP 0.0.0.0/0) Nightscout will not be able to access your database.</p>
+</div>
+<p><img src="../../nightscout/img/NewNS23.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Click on <code>Add IP Address</code></li>
+</ul>
+<p><img src="../../nightscout/img/NewNS24.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Add a database username (for example <code>nightscout</code>) and a database password (in the example below <code>soo5ecret</code>).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Database credentials</p>
+<p>Do not use your Atlas account credentials. Do not use special characters: only letters and numbers.</p>
+</div>
+<p>Write down these credentials in the boxes below (yes, in this browser window you're reading now, unless you're reading a printed version). You’ll need them later.</p>
+<p>Database password: <input type="text" id="myPwd" value="soo5ecret" size="20"></p>
+<p>Database username: <input type="text" id="myUsr" value="nightscout" size="20"></p>
+<p></br></p>
+<ul>
+<li>Then click <code>Create Database User</code>.</li>
+</ul>
+<p><img src="../../nightscout/img/NewNS25.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Click on <code>Choose a connection method</code></li>
+</ul>
+<p><img src="../../nightscout/img/NewNS26.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Select <code>Connect your application</code></li>
+</ul>
+<p><img src="../../nightscout/img/NewNS27.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Copy the connection string: click <code>Copy</code>.</li>
+</ul>
+<p><img src="../../nightscout/img/NewNS28.png" style="zoom:100%;" /></p>
+<p></br></p>
+<ul>
+<li>Paste the string in the box below.</li>
+</ul>
+<p><input type="text" id="myAtlas" value="" size="100"></p>
+<p></br></p>
+<div class="admonition info">
+<p class="admonition-title">It should be similar to this (<code>xxxxx</code> will be different):</p>
+<p><code>mongodb+srv://nightscout:&lt;password&gt;@cluster0.xxxxx.mongodb.net/myFirstDatabase?retryWrites=true&amp;w=majority</code></p>
+</div>
+<p></br></p>
+<ul>
+<li>Invent a name for your database, this is not a critical information (for example <code>mycgmic</code>), note that default is <code>myFirstDatabase</code>.</li>
+</ul>
+<p>Database Name: <input type="text" id="mydB" value="mycgmic" size="20"></p>
+<p></br></p>
+<ul>
+<li>Click the <code>Generate</code> button (just here below this line: in this browser window you're reading):</li>
+</ul>
+<p><button onclick="Generate()">Generate</button></p>
+<p style="font-size:25px" id="result">The connection string will appear here</p>
+
+<script>
+var bAtlas;
+var sdB, sPwd;
+var sFinalString = "Not defined yet";
+
+function Generate()
+{
+  var sString = sFinalString;
+
+  bAtlas=0;
+  var sString = "Looks good!";
+  var sAtlas = document.getElementById("myAtlas").value;
+  sPwd = document.getElementById("myPwd").value;
+  sdB = document.getElementById("mydB").value;
+  var iAS = sAtlas.search("://");
+  if(iAS!=11) { sString = "Atlas URI should start with mongodb+srv://"; }
+  else
+  {
+    var iAP = sAtlas.search("<password>");
+    if(iAP==-1) { sString = "Atlas URI should contain &lt;password&gt;"; }
+    else
+    {
+      var iAD = sAtlas.search("myFirstDatabase");
+      if(iAD==-1) { sString = "Atlas URI should contain myFirstDatabase"; }
+      else
+      {
+        bAtlas=1;
+        sString = sAtlas.substring(0,iAP);
+        sFinalString = sString.concat(sPwd, sAtlas.substring(iAP+10, iAD));
+        sString = sAtlas.substring(iAP+10, iAD);
+        sFinalString = sFinalString.concat(sdB, sAtlas.substring(iAD+15));
+      }
+    }
+  }
+
+  if(bAtlas) document.getElementById("result").innerHTML = sFinalString;
+  else document.getElementById("result").innerHTML = sString;
+}
+</script>
+
+<p></br></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Keep this string safely aside, it is called your <code>MONGODB_URI</code></p>
+</div>
+<p></br></p>
+<ul>
+<li>If you want to do it manually: replace <code>&lt;password&gt;</code> with your database password as noted previously (in the example below <code>soo5ecret</code>) and <code>&lt;dbname&gt;</code> by any text you want, say <code>mycgmic</code> for example. The result will be like this:</li>
+</ul>
+<p><code>mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/mycgmic?retryWrites=true&amp;w=majority</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are no &lt; and &gt; characters in the final string, neither for password nor for database name.</p>
+</div>
+<p></br></p>
+<h2 id="step-2-add-your-connection-string-to-heroku">Step 2: Add your connection string to Heroku<a class="headerlink" href="#step-2-add-your-connection-string-to-heroku" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<p>Access your variables opening <a href="https://id.heroku.com/login">Heroku</a>.</p>
+<ul>
+<li>Select your app</li>
+</ul>
+<p><img src="../../nightscout/img/SetupNS00.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Click <code>Settings</code></li>
+</ul>
+<p><img src="../../nightscout/img/SetupNS01.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Scroll down and click <code>Reveal Config Vars</code></li>
+</ul>
+<p><img src="../../nightscout/img/SetupNS02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<ul>
+<li>Scroll down Config Vars until you’ll see <code>KEY</code> and <code>VALUE</code></li>
+</ul>
+<p><img src="../../update/img/MigrateNS08.png" style="zoom:80%;" /> </p>
+<p></br></p>
+<ul>
+<li>In <code>KEY</code> write <code>MONGODB_URI</code> and paste in the field <code>VALUE</code> the connection string you obtained above from Atlas. Click Add</li>
+</ul>
+<p><img src="../../update/img/UpdateNS31.png" style="zoom:80%;" /> </p>
+<ul>
+<li>This new key will be inserted at the bottom of the list.</li>
+</ul>
+<p></br></p>
+<h2 id="step-3-update-nightscout">Step 3: Update Nightscout<a class="headerlink" href="#step-3-update-nightscout" title="Permanent link">⌁</a></h2>
+<p></br>
+<a href="../update/"><strong>Update your Nightscout to latest release!</strong></a> </p>
+<p>Versions older than 13.0.x won't probably run. </p>
+<p>Versions 13.x are not optimized for the Atlas database.</p>
+<p></br></p>
+<p>Check your <a href="../../nightscout/profile_editor/#profile-view">profile time zone</a> is correct.</p>
+<p></br></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

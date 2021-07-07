@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>What is Nightscout? - Nightscout</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
+        <link href="css/admonitions.css" rel="stylesheet">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Nightscout</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="." class="dropdown-item active">What is Nightscout?</a>
+</li>
+                                    
+<li>
+    <a href="uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="nightscout/insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/new_user/" class="dropdown-item">Classic DIY Installation</a>
+</li>
+                                    
+<li>
+    <a href="vendors/T1Pal/new_user/" class="dropdown-item">Nightscout as a service</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="nightscout/setup_variables/" class="dropdown-item">Configure your Nightscout</a>
+</li>
+                                    
+<li>
+    <a href="uploader/setup/" class="dropdown-item">Configure your Uploader</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/security/" class="dropdown-item">Security</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/downloaders/" class="dropdown-item">Follower Devices</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/multiadmin/" class="dropdown-item">Running multiple sites</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/close_loop/" class="dropdown-item">Closed-loop Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="nightscout/discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/security/" class="dropdown-item">Secure your site</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/reports/" class="dropdown-item">Reports</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/profile_editor/" class="dropdown-item">Profile Editor</a>
+</li>
+                                    
+<li>
+    <a href="nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="update/update/" class="dropdown-item">Updating your site</a>
+</li>
+                                    
+<li>
+    <a href="update/redeploy/" class="dropdown-item">Redeploying</a>
+</li>
+                                    
+<li>
+    <a href="update/newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
+</li>
+                                    
+<li>
+    <a href="update/upd_stack/" class="dropdown-item">Update Heroku Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Troubleshoot <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="troubleshoot/troublehoot/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="troubleshoot/connection_string/" class="dropdown-item">Connection failure</a>
+</li>
+                                    
+<li>
+    <a href="troubleshoot/cleanup/" class="dropdown-item">Cleanup</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="uploader/uploaders/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#welcome-to-nightscout" class="nav-link">Welcome to Nightscout</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-history" class="nav-link">Development History</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#what-are-the-values-of-nightscout" class="nav-link">What are the values of Nightscout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#what-do-i-need" class="nav-link">What Do I Need?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-much-does-it-cost" class="nav-link">How Much Does It Cost?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nightscout-as-a-service" class="nav-link">Nightscout as a Service</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#who-can-help-me" class="nav-link">Who Can Help Me?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-to-use-these-docs" class="nav-link">How to Use These Docs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-can-i-help" class="nav-link">How Can I Help?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><img alt="" src="img/cropped-Header3.png" /></p>
+<h1 id="welcome-to-nightscout">Welcome to Nightscout<a class="headerlink" href="#welcome-to-nightscout" title="Permanent link">⌁</a></h1>
+<p></br>
+ <img src="./img/nightscout_screenshot_600.png" width="600px">
+</br>
+</br></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">⌁</a></h2>
+<p><strong>Nightscout</strong> (also known as <strong>"CGM in the Cloud"</strong>) is an open-source cloud
+application <strong>used by people with diabetes and parents of kids with diabetes</strong> to visualize, store and share the
+data from their <strong>Continuous Glucose Monitoring</strong> sensors in real-time. Once
+setup, Nightscout acts as a central repository of blood glucose and insulin
+dosing/treatment data for a single person, allowing you to view the CGM graph
+and treatment data anywhere using just a web browser connected to the internet.</p>
+<p>There are several parts to this system. You need somewhere online to
+store/process/visualize this data (<strong>a Nightscout Site</strong>), something to upload
+CGM data to your Nightscout (<strong>an Uploader</strong>), and then optionally you can use
+other devices to access/view this data (<strong>one - or more - Follower</strong>):</p>
+<h4 id="nightscout-site">Nightscout Site<a class="headerlink" href="#nightscout-site" title="Permanent link">⌁</a></h4>
+<p>The Nightscout cloud application can be installed by yourself using hosting
+services from various cloud service providers.</p>
+<p>Although not necessary, you might prefer to use paid hosting services for your database (to avoid future maintenance tasks) or indeed pay to use a fully-managed Nightscout hosting service to avoid having to personally build and maintain your site yourself.</p>
+<h4 id="uploader">Uploader<a class="headerlink" href="#uploader" title="Permanent link">⌁</a></h4>
+<p>The CGM data is usually sent to Nightscout by an <strong>uploader device</strong> (often
+known as an <strong>"Uploader"</strong>) such as a mobile/cellphone running an app such as xDrip+, Spike, xDrip4iOS or Medtronic Uploader. Alternatively, the CGM data can be pulled directly from your online Dexcom or Medtronic CareLink accounts. The application you'll need for uploading the data depends on which CGM device you're using and what type of mobile device you have. Once you've read this page (yes - all the way to the bottom!), you can find more information here about <a href="uploader/uploaders/">Uploaders</a>.</p>
+<h4 id="followers">Followers<a class="headerlink" href="#followers" title="Permanent link">⌁</a></h4>
+<p>In addition to viewing the data using a web browser, there are also
+applications available for mobile devices, smartwatches, electronic devices and
+other cloud-based services which allow you alternative ways to view and
+interact with the information stored within your Nightscout site (often known
+as <strong>"Followers"</strong>).</p>
+<p><img src="./img/nscloud.png" width="800px"></p>
+<p></br></p>
+<h2 id="development-history">Development History<a class="headerlink" href="#development-history" title="Permanent link">⌁</a></h2>
+<p>Nightscout was developed by people with Type 1 Diabetes and parents of kids with T1D and has
+continued to be developed, maintained, and supported by volunteers, clinical
+use, and commercial sponsorship. The web portal known as Nightscout is made by the <a href="https://github.com/nightscout/cgm-remote-monitor/graphs/contributors">CGM
+Remote Monitor
+Contributors</a>
+and the Nightscout community over years.</p>
+<p>When first implemented, Nightscout was a solution specifically for remote monitoring of Dexcom G4 CGM data. Today, there are Nightscout solutions available for nearly all commercial CGM sensors. The goal of the project is to allow the remote monitoring, sharing and analysis of any T1D's glucose levels using existing monitoring devices.
+</br></p>
+<h2 id="what-are-the-values-of-nightscout">What are the values of Nightscout<a class="headerlink" href="#what-are-the-values-of-nightscout" title="Permanent link">⌁</a></h2>
+<p>We are compelled in the pursuit of <strong>humane</strong> and <strong>equitable</strong> application of
+technology to <strong>liberating people from the burden of diabetes</strong>.  We are not
+waiting to deliver the benefits we've found in <strong>sharing <em>all</em> diabetes
+experiences</strong>.  Nightscout is free to contribute, free to access, free to
+criticize, free to try, free to depend on, free to modify, and free to
+distribute.  The Nightscout community demands <strong>respect</strong> and <strong>dignity</strong> for all
+community members.  The reputation of the Nightscout community is affected by
+the <strong>quality</strong> of the source code, the quality of our relationships, the
+quality of our discussions, what we are known for doing: the way we treat each other.
+Users of Nightscout are impacted by <strong>reliability</strong>, <strong>security</strong> and
+<strong>confidentiality</strong> of
+Nightscout.  Therefore, the developers and contributors of Nightscout strive to
+improve the quality of Nightscout while making these opportunities
+<strong>accessible</strong> to all.</p>
+<p>Nightscout's <strong>longevity</strong>, the application, the ecosystem, and the culture demand
+we use all tools at our disposable to achieve the values in a <strong>sustainable</strong> way.
+We are not waiting to do whatever it takes to meet the needs of people affected
+by the inhumane demands of diabetes.  Our active <strong>collaboration</strong> against the
+burden of diabetes creates the results we desire.</p>
+<p></br></p>
+<h2 id="what-do-i-need">What Do I Need?<a class="headerlink" href="#what-do-i-need" title="Permanent link">⌁</a></h2>
+<p>You really don't need too much to get Nightscout up and running but let's start with the basics.</p>
+<p>Are you sitting comfortably? Then let's begin.</p>
+<p>You will need:</p>
+<ul>
+<li>
+<p>A CGM sensor: Dexcom, Medtronic, Libre (plus an additional transmitter) or Eversense</p>
+</li>
+<li>
+<p>A way to <a href="uploader/uploaders/">upload</a> your data (this is generally an internet-connected mobile phone with a matching uploader app)</p>
+</li>
+<li>
+<p>Internet access</p>
+</li>
+<li>
+<p>1 hour of "quiet" time (a <s>beer</s> nice cup of coffee is optional but highly recommended)</p>
+</li>
+<li>
+<p>Basic computer skills and the ability to <strong><em>carefully</em></strong> follow the installation guides shown on this site </p>
+<p><em><strong>"Carefully"</strong> means that you will thoroughly read, follow and complete each step without skipping any and without giving up thinking that it is too difficult - it isn't, you just need to be patient.</em></p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">IMPORTANT</p>
+<p>Before using Nightscout, it is important to understand that this project:</p>
+<ul>
+<li>is an open-source, community-based project and is not supported by any company</li>
+<li>is not officially approved or regulated for diabetes therapy and/or treatment in any way</li>
+</ul>
+<p><strong>You must understand that you take full responsibility for building and running this system and you agree to do so at your own risk.</strong></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">SAFETY</p>
+<ul>
+<li>This project requires a working internet connection and availability of third-party cloud services<ul>
+<li>Do not rely only on Nightscout as the only way you have of knowing your blood glucose values and trends</li>
+<li>Make sure you're ready to cope with an unexpected failure and always have alternative ways to check your blood glucose levels</li>
+</ul>
+</li>
+</ul>
+</div>
+<p></br></p>
+<h2 id="how-much-does-it-cost">How Much Does It Cost?<a class="headerlink" href="#how-much-does-it-cost" title="Permanent link">⌁</a></h2>
+<p>It is possible to run Nightscout for free. Classic DIY Nightscout requires free accounts at
+three companies: GitHub, MongoDB, and Heroku. All three of which will demand
+some sort of maintenance and will generate sales and warning emails over the course of the years. DIY Nightscout is unfortunately not set it and forget it and will require upgrades and even platform changes to follow software evolutions or policies of the companies used when you created your site.</p>
+<div class="admonition info">
+<p class="admonition-title">There ain't no such thing as a free lunch</p>
+<p>You might not pay for service, but also this means you'll be spending a lot of hours on this.</p>
+</div>
+<p>Free databases like the Atlas M0 Sandbox provided by
+<a href="https://www.mongodb.com/">MongoDB</a> will hold a limited amount of data (512MB)
+and you may eventually need to delete old records (maybe every 3-4 years with
+standard Nightscout CGM usage). You can increase even further the database
+capacity to 2GB/5GB ($9/$25 USD/month) by paying for an M2/M5 Shared Cluster if you wish.</p>
+<p>Application servers such as <a href="https://www.heroku.com/">Heroku</a>'s "Free" plan will
+provide enough server hours to run a single Nightscout site without any
+downtime. If you need to run several sites on the same account, have "never sleeping" apps, you can easily
+upgrade to a paid "Hobby" plan ($7 per dyno per month).</p>
+<p></br></p>
+<h2 id="nightscout-as-a-service">Nightscout as a Service<a class="headerlink" href="#nightscout-as-a-service" title="Permanent link">⌁</a></h2>
+<p><img alt="" src="https://t1pal.com/media/t1pal/t1_pal_bear_bw.png" /></p>
+<p>If you prefer to pay and just use Nightscout as a fully managed service and let somebody else worry about installation and maintenance then <a href="https://t1pal.com/">T1Pal</a> could be exactly what you need.</p>
+<p></br>
+   <span style="font-size:larger;">The developers recommend paid support for high quality, reliable service.
+The developers recommend <a href="https://t1pal.com">T1Pal</a> in order to augment the sustainability of the
+Nightscout Project. The monthly subscription for T1Pal is $11.99 USD/month.</span></p>
+<p></br></p>
+<p>The T1Pal hosting service has been developed by <strong>Ben West</strong>, a member of the original CGM in the Cloud team and an original lead core developer for the Nightscout Project.</p>
+<p>Database and server administration is automated and managed automatically as
+part of the service.
+Contact T1Pal support to request specific features or versions.
+File a support ticket by emailing <strong><em>support</em></strong> at <strong><em>t1pal.com</em></strong>, or select "Get
+Support" from <a href="https://www.t1pal.com/account/">My Account</a>.</p>
+<p></br></p>
+<h2 id="who-can-help-me">Who Can Help Me?<a class="headerlink" href="#who-can-help-me" title="Permanent link">⌁</a></h2>
+<p>You will find many willing and open-hearted people in the Facebook groups. </p>
+<p>The main group for all Nightscout support is the "<a href="https://www.facebook.com/groups/cgminthecloud/">CGM in the Cloud</a>" Facebook group.</p>
+<p>There are also many local Nightscout communities and you'll probably be able to find one in your own country and language if this helps.</p>
+<div class="admonition warning">
+<p class="admonition-title">Technical Support</p>
+<p>This project is often considered "<strong>Do It Yourself</strong>" (DIY) and supported by volunteers. Whilst you will almost certainly always will find someone ready to help you for free, building your own Nightscout site <strong>doesn't entitle you to any form of support</strong> from anybody.</p>
+<p>The open-source diabetes movement is founded on the idea of <strong>paying it forward</strong> and helping others to learn things that others took their time to help teach you about.</p>
+<p><em>Ask nicely, and nice people will always do nice things and help you.</em></p>
+<p>Nightscout developers are busy people and we'd like them to concentrate on maintaining and improving Nightscout, not only supporting users. (This means <strong>do not</strong> send them private messages or friend requests just to help fix something that is already clearly documented or for help that can be easily requested in the CGM in the Cloud group)</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Facebook Privacy</p>
+<p>You'll find a lot of useful and friendly diabetes-oriented groups on Facebook and it's probably the best place to find online support. Some people express concerns about using Facebook: if you're worried about your privacy just remember Facebook will only share the information that you <strong>allow</strong> it to share.</p>
+</div>
+<p></br></p>
+<h2 id="how-to-use-these-docs">How to Use These Docs<a class="headerlink" href="#how-to-use-these-docs" title="Permanent link">⌁</a></h2>
+<ul>
+<li>
+<p>Use the navigation menu at the top of the screen to find the section that you are looking for.</p>
+</li>
+<li>
+<p>A Table of Contents for the current page is always displayed on the left side of the screen.</p>
+</li>
+<li>
+<p>You can search the Nightscout Docs site by clicking the Search icon at the top of every page:</p>
+<p><img src="img/search_icon_screenshot.png" width="254px"> </p>
+</li>
+</ul>
+<p></br></p>
+<h2 id="how-can-i-help">How Can I Help?<a class="headerlink" href="#how-can-i-help" title="Permanent link">⌁</a></h2>
+<p>You'll find the source repository for this documentation <a href="https://github.com/nightscout/nightscout.github.io">here</a>. Please don't hesitate to improve or correct anything you see and create a pull request!</p>
+<p>You're also welcome to contribute or report any error, unclear explanation, typo, broken link etc by going to Github and opening an <a href="https://github.com/nightscout/nightscout.github.io/issues">issue</a>.</p>
+<p>Finally, to help on the development of Nightscout itself, feel free to join in at our <a href="https://discord.gg/zg7CvCQ">Discord Channel</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

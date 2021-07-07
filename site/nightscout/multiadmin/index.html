@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Running multiple sites - Nightscout</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
+        <link href="../../css/admonitions.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Nightscout</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">What is Nightscout?</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../new_user/" class="dropdown-item">Classic DIY Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../vendors/T1Pal/new_user/" class="dropdown-item">Nightscout as a service</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../setup_variables/" class="dropdown-item">Configure your Nightscout</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/setup/" class="dropdown-item">Configure your Uploader</a>
+</li>
+                                    
+<li>
+    <a href="../security/" class="dropdown-item">Security</a>
+</li>
+                                    
+<li>
+    <a href="../downloaders/" class="dropdown-item">Follower Devices</a>
+</li>
+                                    
+<li>
+    <a href="../wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Running multiple sites</a>
+</li>
+                                    
+<li>
+    <a href="../close_loop/" class="dropdown-item">Closed-loop Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
+    <a href="../security/" class="dropdown-item">Secure your site</a>
+</li>
+                                    
+<li>
+    <a href="../reports/" class="dropdown-item">Reports</a>
+</li>
+                                    
+<li>
+    <a href="../profile_editor/" class="dropdown-item">Profile Editor</a>
+</li>
+                                    
+<li>
+    <a href="../admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
+</li>
+                                    
+<li>
+    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
+</li>
+                                    
+<li>
+    <a href="../../update/newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
+</li>
+                                    
+<li>
+    <a href="../../update/upd_stack/" class="dropdown-item">Update Heroku Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Troubleshoot <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../troubleshoot/troublehoot/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../../troubleshoot/connection_string/" class="dropdown-item">Connection failure</a>
+</li>
+                                    
+<li>
+    <a href="../../troubleshoot/cleanup/" class="dropdown-item">Cleanup</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../wearable/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../close_loop/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#support-and-administration-of-multiple-sites" class="nav-link">Support and Administration of multiple sites</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#remote-support-and-security" class="nav-link">Remote support and security</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#github" class="nav-link">Github</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#heroku" class="nav-link">Heroku</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#atlas" class="nav-link">Atlas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="support-and-administration-of-multiple-sites">Support and Administration of multiple sites<a class="headerlink" href="#support-and-administration-of-multiple-sites" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<p>Either by necessity or to support others, you might want to have access to multiple accounts without having to juggle between logins and passwords. Below are described some centralizing methods reducing the administrative burden.</p>
+<p></br></p>
+<h2 id="remote-support-and-security">Remote support and security<a class="headerlink" href="#remote-support-and-security" title="Permanent link">⌁</a></h2>
+<p>Giving username and passwords to someone in order to obtain help to fix Nightscout issues raises serious security issues. Malicious code can be added to your Nightscout project by ill-intentioned people. Always make sure the version deployed is a fork of the official project. After receiving help a good practice is to change your account passwords (GitHub, Heroku, mongoDB Atlas, Clarity, CareLink, ...) and your API secret. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Inviting Heroku <a href="./#heroku">collaborators</a> is extremely efficient for remote support.</p>
+</div>
+<p></br></p>
+<h2 id="github">Github<a class="headerlink" href="#github" title="Permanent link">⌁</a></h2>
+<p>You need only one Github account since you can connect multiple Heroku apps and accounts to the same GitHub account.</p>
+<p>Using this strategy you only need to update one GitHub account when a new Nightscout version is released and you will be able to deploy it in all your Heroku accounts and apps.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must use the <a href="../../update/update/">standard update method</a>. Not redeploy.</p>
+</div>
+<p></br></p>
+<h4 id="enable-automatic-deploys-in-heroku">Enable Automatic Deploys in Heroku<a class="headerlink" href="#enable-automatic-deploys-in-heroku" title="Permanent link">⌁</a></h4>
+<p>Automatic deploys will allow you to update automatically your Heroku apps when you update the GitHub repository: you will not need to login into Heroku and perform Manual Deploy, as soon as a new version will be merged into GitHub an automated deploy will trigger in all enabled Heroku apps.</p>
+<ul>
+<li>To enable automatic deploy, <a href="https://dashboard.heroku.com/apps/">log in Heroku</a> and select your app, then <code>Deploy</code>. Verify GitHub and your <code>cgm-remote-monitor</code> app are connected.</li>
+</ul>
+<p><img src="../img/MultiNS06.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Verify the <code>master</code> branch is selected and click <code>Enable Automatic Deploys</code>.</li>
+</ul>
+<p><img src="../img/MultiNS04.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Your Heroku site will update automatically every time you update the GitHub repository.</li>
+</ul>
+<p><img src="../img/MultiNS05.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h2 id="heroku">Heroku<a class="headerlink" href="#heroku" title="Permanent link">⌁</a></h2>
+<p>For free dynos purposes (1000 dynos hours per month with a credit card information present in your Heroku account) you should setup only one Nightscout site per Heroku account. This requires you to log out and in every time you need to work on an app.</p>
+<p>You can setup collaborators in Heroku to avoid having to switch accounts. First decide on which will be your main Heroku account. Then add the email address you used to register as collaborator to the other(s) one(s).</p>
+<p></br></p>
+<ul>
+<li>Log into your other Heroku account and select your app.  </li>
+</ul>
+<p><img src="../img/MultiNS00.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Select <code>Access</code>.</li>
+</ul>
+<p><img src="../img/MultiNS01.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Click <code>Add collaborator</code> and enter the email address you used to create your main Heroku account.</li>
+</ul>
+<p><img src="../img/MultiNS02.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>You will now see it as a collaborator. Using the pen icon you can modify it or delete it.</li>
+</ul>
+<p><img src="../img/MultiNS03.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Log in your main Heroku account. You will see the apps you are collaborating to in the same list than your primary app. You can now perform most tasks directly in that one Heroku account (deploys, change variables, ...).</li>
+</ul>
+<p><img src="../img/MultiNS07.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h2 id="atlas">Atlas<a class="headerlink" href="#atlas" title="Permanent link">⌁</a></h2>
+<p>You can invite another user in your organization in order to manage several organizations from the same Atlas account.</p>
+<p><a href="https://account.mongodb.com/account/login">Log into</a> your <strong>secondary</strong> Atlas account: that is the other account you want to administer from your first (main) Atlas account.</p>
+<p></br></p>
+<ul>
+<li>Top menu, click <code>Access Manager</code> and select <code>Organization Access</code> from the drop down menu</li>
+</ul>
+<p><img src="../img/MultiNS08.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Click <code>Invite Users</code></li>
+</ul>
+<p><img src="../img/MultiNS09.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Enter the email address you used to create your <strong>main</strong> Atlas account.</li>
+</ul>
+<p><img src="../img/MultiNS10.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Select <code>Organization Owner</code> then click <code>Invite to Organization</code>.</li>
+<li>Make sure you enable <code>Organization Owner</code> for the invited user.</li>
+</ul>
+<p><img src="../img/MultiNS11.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>
+<p>Log out of your <strong>secondary</strong> Atlas account and log in your <strong>main</strong> Atlas account.</p>
+</li>
+<li>
+<p>Top left, from the drop down menu click the caret and select <code>View all Organizations</code></p>
+</li>
+</ul>
+<p><img src="../img/MultiNS12.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>In the left menu, click <code>Invitations</code> then click <code>ACCEPT</code> the invitation you performed from your <strong>secondary</strong> Atlas account.</li>
+</ul>
+<p><img src="../img/MultiNS13.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Going back to all your organizations you can now see and administer both of them from this account. In the example below <code>Nightscout</code> is the <strong>main</strong> organization and <code>My Org 2020-09-20</code> is a <strong>secondary</strong> organization.</li>
+</ul>
+<p><img src="../img/MultiNS14.png" style="zoom:80%;" ></p>
+<p></br></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can rename your organizations from the top left cog (Settings) then clicking the pen icon.</p>
+</div>
+<p><img src="../img/MultiNS15.png" style="zoom:80%;" ></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

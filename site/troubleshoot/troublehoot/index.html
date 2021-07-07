@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Troubleshooting - Nightscout</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
+        <link href="../../css/admonitions.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Nightscout</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">What is Nightscout?</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/uploaders/" class="dropdown-item">How do I upload my data?</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/insights/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/new_user/" class="dropdown-item">Classic DIY Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../vendors/T1Pal/new_user/" class="dropdown-item">Nightscout as a service</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/setup_variables/" class="dropdown-item">Configure your Nightscout</a>
+</li>
+                                    
+<li>
+    <a href="../../uploader/setup/" class="dropdown-item">Configure your Uploader</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/security/" class="dropdown-item">Security</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/downloaders/" class="dropdown-item">Follower Devices</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/wearable/" class="dropdown-item">Nightscout on your watch</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/multiadmin/" class="dropdown-item">Running multiple sites</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/close_loop/" class="dropdown-item">Closed-loop Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../nightscout/discover/" class="dropdown-item">Discover your site</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/security/" class="dropdown-item">Secure your site</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/reports/" class="dropdown-item">Reports</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/profile_editor/" class="dropdown-item">Profile Editor</a>
+</li>
+                                    
+<li>
+    <a href="../../nightscout/admin_tools/" class="dropdown-item">Admin Tools</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update/" class="dropdown-item">Updating your site</a>
+</li>
+                                    
+<li>
+    <a href="../../update/redeploy/" class="dropdown-item">Redeploying</a>
+</li>
+                                    
+<li>
+    <a href="../../update/newdatabase/" class="dropdown-item">Attach a new Atlas database</a>
+</li>
+                                    
+<li>
+    <a href="../../update/upd_stack/" class="dropdown-item">Update Heroku Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Troubleshoot <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../connection_string/" class="dropdown-item">Connection failure</a>
+</li>
+                                    
+<li>
+    <a href="../cleanup/" class="dropdown-item">Cleanup</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../update/upd_stack/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../connection_string/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#overall-third-party-services" class="nav-link">Overall third party services</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#before-troubleshooting" class="nav-link">Before troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#github-and-heroku" class="nav-link">GitHub and Heroku</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#atlas" class="nav-link">Atlas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#nightscout-page-doesnt-open" class="nav-link">Nightscout page doesn't open</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#restart-all-dynos" class="nav-link">Restart all dynos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#no-data-in-nightscout" class="nav-link">No data in Nightscout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#data-timing-issues" class="nav-link">Data timing issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#database-full" class="nav-link">Database full</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#reports-slow-loading-or-timeout" class="nav-link">Reports slow loading or timeout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="overall-third-party-services">Overall third party services<a class="headerlink" href="#overall-third-party-services" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> DIY Nightscout</p>
+<p>For <a href="../../index#nightscout-as-a-service">Nightscout as a service</a> contact directly <strong><em>support</em></strong> at <strong><em>t1pal.com</em></strong> or use the <code>Get Support</code> links.</p>
+<p></br></p>
+<h2 id="before-troubleshooting">Before troubleshooting<a class="headerlink" href="#before-troubleshooting" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<p>Check the services you're using.</p>
+<p>Dexcom: <a href="https://status.dexcom.com/">https://status.dexcom.com/</a></p>
+<p>Carelink US: <a href="https://carelink.minimed.com/">https://carelink.minimed.com/</a></p>
+<p>Carelink non-US: <a href="https://carelink.minimed.eu/app/login">https://carelink.minimed.eu/app/login</a></p>
+<p>GitHub: <a href="https://www.githubstatus.com/">https://www.githubstatus.com/</a></p>
+<p>Heroku: <a href="https://status.heroku.com/">https://status.heroku.com/</a></p>
+<p>Atlas: <a href="https://status.cloud.mongodb.com/">https://status.cloud.mongodb.com/</a></p>
+<p></br></p>
+<h1 id="github-and-heroku">GitHub and Heroku<a class="headerlink" href="#github-and-heroku" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<h3 id="a-valid-github-directory-could-not-be-found">A valid GitHub Directory could not be found.<a class="headerlink" href="#a-valid-github-directory-could-not-be-found" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>When trying to deploy a new Nightscout site, this message appears when clicking <code>Deploy to Heroku</code>.</p>
+<p><img src="../img/TShoot00.png" style="zoom:70%;" ></p>
+<ul>
+<li>Change browser and retry.</li>
+</ul>
+<p></br></p>
+<h3 id="cannot-find-cgm-remote-monitor-in-heroku-no-github-source-visible">Cannot find cgm-remote-monitor in Heroku / No GitHub source visible<a class="headerlink" href="#cannot-find-cgm-remote-monitor-in-heroku-no-github-source-visible" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>When updating Nightscout, <code>cgm-remote-monitor</code> doesn't appear automatically in Heroku under your repository name.</p>
+<p><img src="../img/TShoot01.png" style="zoom:80%;" ></p>
+<p>When updating Nightscout, your repository name doesn't appear in <code>Manual Deploy</code> so that you can't select the <code>master</code> branch.</p>
+<p><img src="../img/TShoot04.png" style="zoom:80%;" ></p>
+<ul>
+<li><code>Disconnect</code> and re-<code>Connect</code> like this:</li>
+</ul>
+<p><img src="../../update/img/UpdateNS22.png" style="zoom:80%;" ></p>
+<p><img src="../../update/img/UpdateNS21.png" style="zoom:80%;" ></p>
+<ul>
+<li>If it doesn't help try to re-authorize as explained below:</li>
+</ul>
+<p></br></p>
+<h3 id="cannot-find-cgm-remote-monitor-in-heroku-item-cannot-be-retrieved">Cannot find cgm-remote-monitor in Heroku: Item cannot be retrieved<a class="headerlink" href="#cannot-find-cgm-remote-monitor-in-heroku-item-cannot-be-retrieved" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>When updating Nightscout, <code>cgm-remote-monitor</code> doesn't appear automatically in Heroku under your repository name and an error message appears when you try to connect to GitHub.</p>
+<p><img src="../img/TShoot02.png" style="zoom:80%;" ></p>
+<ul>
+<li>In Heroku, go to <code>Account Settings</code></li>
+</ul>
+<p><img src="../../nightscout/img/NewNS13.png" style="zoom:80%;" ></p>
+<ul>
+<li>Select <code>Applications</code> and click <code>Re-authorize</code></li>
+</ul>
+<p><img src="../img/TShoot03.png" style="zoom:80%;" ></p>
+<ul>
+<li>Click <code>Authorize GitHub</code> in the pop-up.</li>
+<li>If it doesn't help, you can also try to <code>Revoke access</code>... before going back to Re-<code>Connect</code> your GitHub account. This is necessary if someone else did setup Nightscout for you and left his own GitHub connected to your Heroku account.</li>
+</ul>
+<p></br></p>
+<h1 id="atlas">Atlas<a class="headerlink" href="#atlas" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<h3 id="limit-of-one-free-cluster">Limit of one free cluster.<a class="headerlink" href="#limit-of-one-free-cluster" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>When creating a new site or migrating (usually not the first attempt), when reaching <code>Target Cluster</code>.</p>
+<p><img src="../img/TShoot17.png" style="zoom:80%;" ></p>
+<ul>
+<li>Click the leaf top left in your Atlas account. Look at the <code>Project Name</code> you wanted to use when creating your new cluster, it shouldn't contain a cluster yet (like the example below, I tried to create a new Nightscout site but there is already a cluster inside the project I wanted to use). You can't have two clusters in a free project. Click your <code>Project Name</code>.</li>
+<li>This should not happen in normal conditions. Before deleting a cluster, check it doesn't contain your data!</li>
+</ul>
+<p><img src="../img/TShoot18.png" style="zoom:80%;" ></p>
+<ul>
+<li>Click on <code>Collections</code> in the cluster you selected.</li>
+</ul>
+<p><img src="../img/TShoot19.png" style="zoom:80%;" ></p>
+<ul>
+<li>Click on <code>entries</code></li>
+</ul>
+<p><img src="../img/TShoot20.png" style="zoom:80%;" ></p>
+<ul>
+<li>In the case there is data, like in the example below, <strong>don't use this cluster</strong>. Leave it like this and create a new one.</li>
+</ul>
+<p><img src="../img/TShoot21.png" style="zoom:80%;" ></p>
+<ul>
+<li><strong>If there no data</strong>, you can safely delete it.</li>
+</ul>
+<p><img src="../img/TShoot22.png" style="zoom:80%;" ></p>
+<ul>
+<li>In this cluster you want to delete click <code>...</code> then <code>Terminate</code></li>
+</ul>
+<p><img src="../img/TShoot23.png" style="zoom:80%;" ></p>
+<ul>
+<li>Copy the cluster name to confirm then click <code>Terminate</code></li>
+</ul>
+<p><img src="../img/TShoot24.png" style="zoom:80%;" ></p>
+<ul>
+<li>Wait until the operation completes.</li>
+<li>You can now use this project name to create a new site.</li>
+</ul>
+<p></br></p>
+<h1 id="nightscout-page-doesnt-open">Nightscout page doesn't open<a class="headerlink" href="#nightscout-page-doesnt-open" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<h3 id="application-error">Application Error<a class="headerlink" href="#application-error" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p><img src="../img/TShoot05.png" style="zoom:80%;" ></p>
+<p><a href="../../update/update/">Update Nightscout to latest release</a>. It might not fix your issue but it will help find a solution.</p>
+<ul>
+<li>If you didn't migrate your Heroku database from mLab to Atlas <a href="../../update/newdatabase/">create a new Atlas database</a>.</li>
+<li>If you didn't migrate from Azure to Heroku create a new site <a href="../../nightscout/new_user/">create a new Nightscout site with Heroku</a>.</li>
+<li>If you're creating a new Nightscout site, it might have failed because of a wrong connection string. Delete your Heroku app and <a href="../../nightscout/new_user/#step-4-fork-and-deploy-cgm-remote-monitor">deploy</a> again after <a href="../connection_string/#change-your-atlas-database-password">checking</a> the Atlas connection string is correct.</li>
+<li>If your site is already up to date:</li>
+</ul>
+<p></br></p>
+<h2 id="restart-all-dynos">Restart all dynos<a class="headerlink" href="#restart-all-dynos" title="Permanent link">⌁</a></h2>
+<ul>
+<li>Log in Heroku, go to <code>Settings</code>, <code>More</code>, <code>Restart all dynos</code>.</li>
+</ul>
+<p><img src="../../update/img/MigrateNS57.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h3 id="nightscout-stopped-working-after-a-few-weeks">Nightscout stopped working after a few weeks<a class="headerlink" href="#nightscout-stopped-working-after-a-few-weeks" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>Same screen than above but you received a mail from Heroku telling you you're out of dyno hours...</p>
+<ul>
+<li>
+<p>Check your remaining dyno hours in Heroku, click on your profile picture top right and select <code>Account Settings</code>, then <code>Billing</code>.</p>
+</li>
+<li>
+<p>An account without credit card information has 550 free dyno hours, with credit card information 1000.</p>
+</li>
+</ul>
+<p><img src="../img/TShoot42.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h3 id="boot-error-unable-to-connect-to-mongo">Boot Error - Unable to connect to Mongo<a class="headerlink" href="#boot-error-unable-to-connect-to-mongo" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>Look at this <a href="../connection_string/">dedicated page</a>.</p>
+<p><img src="../img/TShoot43.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h1 id="no-data-in-nightscout">No data in Nightscout<a class="headerlink" href="#no-data-in-nightscout" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<p>New Nightscout sites <a href="../connection_string/#mongodb-in-read-only-mode">Check you database is not read only</a>.</p>
+<p>Make sure your Nightscout <a href="../../nightscout/profile_editor/">time zone</a> is correct.</p>
+<p></br></p>
+<h3 id="dexcom-data-not-showing">Dexcom data not showing<a class="headerlink" href="#dexcom-data-not-showing" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<h4 id="dexcom-share">Dexcom Share<a class="headerlink" href="#dexcom-share" title="Permanent link">⌁</a></h4>
+<p>Make sure you have Dexcom Share turned ON in your Dexcom app. In the Dexcom app's main screen, find the triangle made of dots. If the dots are grey, you do not have Share turned on. Tap the triangle, and follow the directions to add a follower (yourself if you don't have someone else you'd like to invite) and turn on Share.</p>
+<p><img src="../../nightscout/img/sharing.jpg" width="250"></p>
+<p></br></p>
+<p>If you are using a Dexcom system, and your data is not appearing in Nightscout, there are only a limited number of reasons for that. You should check your (1) Heroku settings and (2) Dexcom Share.</p>
+<p>NOTE: The #1 reason why BGs aren't showing is that you have mismatched password and user names in Heroku settings and Dexcom.</p>
+<h4 id="heroku-settings">Heroku Settings<a class="headerlink" href="#heroku-settings" title="Permanent link">⌁</a></h4>
+<p>Login to your <a href="https://www.heroku.com/">Heroku</a> account and from within Heroku <code>Settings</code>, click on the  <code>Reveal Config Vars</code></p>
+<p><img src="../../nightscout/img/config-vars.png" width="800"></p>
+<p></br></p>
+<p>Now from the <code>Config Vars</code> area, check the following (see screenshot below for reference):</p>
+<ol>
+<li>You must use the same <code>BRIDGE_PASSWORD</code> or <code>BRIDGE_USER_NAME</code> that your Dexcom mobile app is using.</li>
+<li>You must have <code>bridge</code> and <code>careportal</code> on the <code>ENABLE</code> line (you can have other values there...but don't forget these two).</li>
+<li>If you are outside the USA, you must add <code>BRIDGE_SERVER</code> set to <code>EU</code> in Heroku settings.</li>
+<li>Your <code>careportal</code> must be one word in the <code>ENABLE</code> line, sometimes autocorrect makes it two words.</li>
+<li>If using <code>mmol</code>, make sure you have spelled that value correctly in the <code>DISPLAY_UNITS</code>.</li>
+</ol>
+<p><img src="../../nightscout/img/bridge-settings.jpg" width="600"></p>
+<p></br></p>
+<p>One thing that can happen if you have an incorrect Dexcom login/password in your Share account settings and/or in your Nightscout BRIDGE settings is that Dexcom will lock your account...and you won't see CGM data in Nightscout. If you notice your CGM readings disappeared, but everything else is flowing...check your Heroku logs that are viewable by selecting "View Logs" from the drop-down menu underneath the "More" option. </p>
+<p><img src="../../nightscout/img/heroku-logs.png"></p>
+<p></br></p>
+<p>Do your logs have "SSO authentication errors" like in the red box highlighted above? If you do, then:</p>
+<ol>
+<li>Delete your BRIDGE entries within Heroku settings.  Don't delete the variables, just delete the values of BRIDGE_PASSWORD and BRIDGE_USER_NAME.</li>
+<li>Wait 15 minutes and then follow the directions below. It is important to wait 15 minutes: the reason you can't log in right now is that your Dexcom account has a temporary lock from the passwords in the step above being incorrect. The temporary lock will expire after 10-15 minutes of giving the account login a break from the incorrect logins. So, definitely wait or else you'll just keep prolonging the issue.</li>
+</ol>
+<p>When you change these variables, Heroku restarts Nightscout. So now everything should work.</p>
+<div class="admonition info">
+<p class="admonition-title">About your Bridge password and user name</p>
+<p>The <code>BRIDGE_PASSWORD</code> and <code>BRIDGE_USER_NAME</code> are NOT visible from within your Dexcom mobile app or online account. The values of them are what you entered into your Dexcom mobile app when you VERY FIRST logged into that app however long ago. If you have double-checked everything else that could be incorrect and BGs still aren't showing in Nightscout, then you likely have those Bridge values incorrect. To fix that, delete your Dexcom app (don't stop the session before deleting the app...just keep it going). Download the app again from the iPhone's App Store and login to the freshly-downloaded Dexcom app. <strong>Take note</strong> that deleting the app will not stop your session, your session will pick right back up once the transmitter pairs again. The <code>BRIDGE_USER_NAME</code> is not an email address. Use that exact same login now in your Heroku settings. You can leave your Loop's Share account info blank...you just need the transmitter ID going forward.</p>
+</div>
+<h3 id="dexcom-username-issue">Dexcom username issue<a class="headerlink" href="#dexcom-username-issue" title="Permanent link">⌁</a></h3>
+<p>It seems that Dexcom share somewhere in its systems is not capable of using the username other than ordinary letters.</p>
+<p>By changing the username, this has been solved for everyone who has tried so far. If that doesn't work for you, please report it at <a href="https://github.com/nightscout/cgm-remote-monitor/issues/5608">https://github.com/nightscout/cgm-remote-monitor/issues/5608</a> or if you can comment on any Facebook post that linked to this site.</p>
+<h4 id="change-username">Change username<a class="headerlink" href="#change-username" title="Permanent link">⌁</a></h4>
+<p>Unfortunately, it is not possible to change the username of a Dexcom account. You have to create a whole new account.</p>
+<h4 id="create-new-account">Create new account<a class="headerlink" href="#create-new-account" title="Permanent link">⌁</a></h4>
+<p>You can only associate one email address with a Dexcom account, so it might be a good idea to create a new email address and associate it to your current account so that you can use your current email with the new account. Go to <a href="https://www.dexcom.com/">https://www.dexcom.com</a> and look for where to create accounts. Follow the instructions to create a new account.  The alternative is to delete the old account. But do <strong>not</strong> do that. It may be good to be able to go back and retrieve historical data. Make sure the new username contains only letters. It is better to stick to a-z. We know that the period <code>.</code> underscore <code>_</code> and at <code>@</code> characters creates problems, but we do not know which other characters can create problems.</p>
+<h4 id="reinstall-dexcom-transmitter-app">Reinstall Dexcom Transmitter app<a class="headerlink" href="#reinstall-dexcom-transmitter-app" title="Permanent link">⌁</a></h4>
+<p>When you install the Dexcom app, it is linked to a Dexcom account. Unfortunately, there is no way to switch accounts. What you have to do is simply uninstall the app and reinstall it. In principle, it is the same procedure as changing phone. Of course, this time you should log in with the new account.</p>
+<ul>
+<li>Write down the current Transmitter ID. You can find the ID if you look in settings in the Dexcom app.</li>
+<li>Uninstall the Dexcom app</li>
+<li>Reinstall the Dexcom app</li>
+<li>Log in with your new account</li>
+<li>Follow the instructions in the app.</li>
+<li>For G6 do not select sensor code. The sensor code is already saved on your old transmitter.</li>
+<li>Enter the transmitter ID and wait for pairing</li>
+<li>Answer yes to the question "have you inserted sensor"</li>
+</ul>
+<p>You then have to re-invite your followers.</p>
+<h4 id="nightscout">Nightscout<a class="headerlink" href="#nightscout" title="Permanent link">⌁</a></h4>
+<p>Check your Heroku settings match your new credentials (see above)</p>
+<p></br></p>
+<h3 id="dexcom-or-carelink-data-stopping-after-a-while">Dexcom or CareLink data stopping after a while<a class="headerlink" href="#dexcom-or-carelink-data-stopping-after-a-while" title="Permanent link">⌁</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CareLink with mmconnect data source stopped functioning for most . <strong>Remove the <code>mmconnect</code> plugin from <code>ENABLE</code> if you use Heroku</strong>.</p>
+</div>
+<p></br></br></p>
+<p>First verify you can see your BG in Clarity.</p>
+<p>If data is present open Heroku and check you app didn't fall asleep.</p>
+<p><img src="../img/TShoot25.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>A sleeping app might be due to your Heroku free plan: a Hobby plan makes the app never sleep. <a href="https://www.heroku.com/pricing">https://www.heroku.com/pricing</a> </p>
+<p>Another reason for a sleeping app can be due to a failure to obtain data from Dexcom Share, check the logs to understand the reasons.</p>
+<p></br></p>
+<div class="admonition warning">
+<p class="admonition-title">UpTime Robot</p>
+<p>Using an uptime robot with a bad password, or other issues originating from Nightscout can lead to a locked account (Dexcom) or Heroku addresses ban. This is not a recommended solution as it might generate a global Heroku IP blacklist lock that could propagate to all other users. If you use Nightscout, uploading data in the cloud or even just having a browser or an app downloading data should be enough to keep your app awake.</p>
+</div>
+<p></br></p>
+<h3 id="error-code-instead-of-a-bg-value">Error code instead of a BG value<a class="headerlink" href="#error-code-instead-of-a-bg-value" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<p>Nightscout implements Dexcom error codes as listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Corresponding error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>?SN</code></td>
+<td>Sensor not active</td>
+</tr>
+<tr>
+<td><code>?MD</code></td>
+<td>Minimal deviation</td>
+</tr>
+<tr>
+<td><code>?NA</code></td>
+<td>No antenna</td>
+</tr>
+<tr>
+<td><code>?NC</code></td>
+<td>Sensor not calibrated</td>
+</tr>
+<tr>
+<td><code>?CD</code></td>
+<td>Counts deviation</td>
+</tr>
+<tr>
+<td><code>?AD</code></td>
+<td>Absolute deviation</td>
+</tr>
+<tr>
+<td><code>???</code></td>
+<td>Power deviation</td>
+</tr>
+<tr>
+<td><code>?RF</code></td>
+<td>Bad RF</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h1 id="data-timing-issues">Data timing issues<a class="headerlink" href="#data-timing-issues" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<h3 id="basal-is-shifted-in-time">Basal is shifted in time<a class="headerlink" href="#basal-is-shifted-in-time" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<ul>
+<li>Check the time zone is correct for your currently active profile in your Nightscout <a href="../../nightscout/profile_editor/"><code>Profile editor</code></a>.</li>
+</ul>
+<p><img src="../img/TShoot30.png" style="zoom:75%;" ></p>
+<p></br></p>
+<h3 id="data-in-the-future">Data in the future<a class="headerlink" href="#data-in-the-future" title="Permanent link">⌁</a></h3>
+<p></br></p>
+<ul>
+<li>Check you don't have data in the future with the <code>Admin tools</code>. Remove them if existing.</li>
+</ul>
+<p><img src="../img/TShoot31.png" style="zoom:75%;" ></p>
+<p></br></p>
+<ul>
+<li>If this isn't working, or shows no future data, check in <a href="https://account.mongodb.com/account/login">Atlas</a></li>
+<li>Open your Nightscout cluster and select <code>Collections</code></li>
+</ul>
+<p><img src="../img/TShoot32.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>In <code>Entries</code> type <code>{date:-1}</code> and click <code>Find</code></li>
+</ul>
+<p><img src="../img/TShoot33.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Delete the entries in the future (manually) with the bin icon</li>
+</ul>
+<p><img src="../img/TShoot34.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h1 id="database-full">Database full<a class="headerlink" href="#database-full" title="Permanent link">⌁</a></h1>
+<p></br></p>
+<p>Free databases like M0 Sandbox provided by Atlas will only hold a limited amount of data (512MB) and you will eventually need to manually cleanup. You can extend the capacity to 2 and 5GB paying an M2 or M5 Shared cluster.</p>
+<ul>
+<li>Make sure your Nightscout site has <code>Database Size</code> enabled to monitor database capacity. Look <a href="../../nightscout/setup_variables/#dbsize-database-size">here</a> for more information on this plugin.</li>
+</ul>
+<p><img src="../img/TShoot35.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Check in <a href="https://account.mongodb.com/account/login">Atlas</a></li>
+<li>Open your Nightscout cluster and select <code>Collections</code></li>
+</ul>
+<p><img src="../img/TShoot32.png" style="zoom:80%;" ></p>
+<p></br></p>
+<ul>
+<li>Click your database name (hidden left). Check the<code>DATABASE SIZE</code> is indeed close to or at the limit then look at these three collections <code>Documents size</code>: <code>devicestatus</code>, <code>entries</code> and <code>treatments</code>.</li>
+</ul>
+<p><img src="../img/TShoot36.png" style="zoom:80%;" ></p>
+<ul>
+<li>Open Nightscout  <code>Admin tools</code>.</li>
+<li>Depending on the collection you identified above, choose which of the following you want to cleanup:</li>
+</ul>
+<h5 id="cleanup">Cleanup:<a class="headerlink" href="#cleanup" title="Permanent link">⌁</a></h5>
+<p>You can cleanup (enter the number of days to keep) or delete your devices status:</p>
+<p><img src="../img/TShoot37.png" style="zoom:80%;" ></p>
+<p>Same for <code>Treatments</code>:</p>
+<p><img src="../img/TShoot38.png" style="zoom:80%;" ></p>
+<p>And <code>Glucose entries</code>. If you are reluctant to lose historical data you should consider opting for a paid database solution.</p>
+<p><img src="../img/TShoot39.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h1 id="reports-slow-loading-or-timeout">Reports slow loading or timeout<a class="headerlink" href="#reports-slow-loading-or-timeout" title="Permanent link">⌁</a></h1>
+<p>Loopers might experience Nightscout taking an extremely long time or even timing out when creating reports due to the profiles collection database growing too big.</p>
+<p>Two solutions are available:</p>
+<ol>
+<li>Follow this video (set it full screen in 720p) to selectively delete profiles <a href="https://www.youtube.com/watch?v=iipp0MfPKNQ">https://www.youtube.com/watch?v=iipp0MfPKNQ</a></li>
+<li>Delete all profiles in Atlas</li>
+</ol>
+<p>Log in to Atlas <a href="https://account.mongodb.com/account/login">https://account.mongodb.com/account/login</a></p>
+<p>Select your cluster then <code>COLLECTIONS</code></p>
+<p><img src="../img/TShoot50.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>Select the <code>profile</code> collection and click the bin icon to delete all profiles.</p>
+<p><img src="../img/TShoot51.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>Write <code>profile</code> in the box then click <code>Drop</code></p>
+<p><img src="../img/TShoot52.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>Open your Nightscout and create a new profile (mind the time zone!), authenticate and save it.</p>
+<p>If you are using Loop, temporarily change a basal rate in Loop, and confirm your profiles now show up in Nightscout.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
