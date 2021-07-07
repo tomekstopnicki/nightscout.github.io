@@ -58,6 +58,10 @@
 <li>
     <a href="../new_user/" class="dropdown-item">Classic DIY Installation</a>
 </li>
+                                    
+<li>
+    <a href="../../vendors/T1Pal/new_user/" class="dropdown-item">Nightscout as a service</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown active">
@@ -165,7 +169,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../new_user/" class="nav-link">
+                                <a rel="prev" href="../../vendors/T1Pal/new_user/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -216,10 +220,15 @@
 <h1 id="nightscout-configuration">Nightscout Configuration<a class="headerlink" href="#nightscout-configuration" title="Permanent link">⌁</a></h1>
 <p>Nightscout configuration is held in variables , their content can be modified to change and customize the behavior (data source, security, alarms, ...) and appearance (language, colors, visible items, ...). When deploying your Nightscout, most are left with default values and with time you might want to tune your site.</p>
 <p></br></p>
+<hr />
+<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../vendors/img/Heroku.png" style="zoom:80%;" /></p>
 <h5 id="editing-config-vars-in-heroku">Editing Config Vars in Heroku<a class="headerlink" href="#editing-config-vars-in-heroku" title="Permanent link">⌁</a></h5>
 <p>See <a href="../../nightscout/new_user#editing-config-vars-in-heroku">here</a> where and how to change your variables.</p>
-<p></br></p>
 <hr />
+<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../vendors/img/T1Pal.png" style="zoom:80%;" /></p>
+<p>You can change your settings in the Control Panel see <a href="../../../vendors/T1Pal/control_panel">here</a> for available variables and plugins.</p>
+<hr />
+<p></br></p>
 <h2 id="nightscout-config-vars">Nightscout Config Vars<a class="headerlink" href="#nightscout-config-vars" title="Permanent link">⌁</a></h2>
 <p></br></p>
 <h3 id="required-variables">Required variables<a class="headerlink" href="#required-variables" title="Permanent link">⌁</a></h3>
@@ -655,7 +664,7 @@
 <li><code>CAGE_INFO</code> (<code>44</code>) - If time since last <code>Site Change</code> matches <code>CAGE_INFO</code>, user will be warned of upcoming cannula change</li>
 <li><code>CAGE_WARN</code> (<code>48</code>) - If time since last <code>Site Change</code> matches <code>CAGE_WARN</code>, user will be alarmed to to change the cannula</li>
 <li><code>CAGE_URGENT</code> (<code>72</code>) - If time since last <code>Site Change</code> matches <code>CAGE_URGENT</code>, user will be issued a persistent warning of overdue change.</li>
-<li><code>CAGE_DISPLAY</code> (<code>hours</code>) - Possible values are 'hours' or 'days'. If 'days' is selected and age of canula is greater than 24h number is displayed in days and hours</li>
+<li><code>CAGE_DISPLAY</code> (<code>hours</code>) - Possible values are <code>hours</code> or <code>days</code>. If <code>days</code> is selected and age of canula is greater than 24h number is displayed in days and hours</li>
 </ul>
 <h5 id="sage-sensor-age"><code>sage</code> (Sensor Age)<a class="headerlink" href="#sage-sensor-age" title="Permanent link">⌁</a></h5>
 <p>Calculates the number of days and hours since the last <code>Sensor Start</code> and <code>Sensor Change</code> treatment that was recorded.</p>

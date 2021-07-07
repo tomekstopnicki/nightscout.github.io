@@ -58,6 +58,10 @@
 <li>
     <a href="./" class="dropdown-item active">Classic DIY Installation</a>
 </li>
+                                    
+<li>
+    <a href="../../vendors/T1Pal/new_user/" class="dropdown-item">Nightscout as a service</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -170,7 +174,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../setup_variables/" class="nav-link">
+                                <a rel="next" href="../../vendors/T1Pal/new_user/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -484,6 +488,10 @@ function Generate()
 <p><img src="..\img\NewNS34.png" style="zoom:80%;" /></p>
 <p></br></p>
 <p>h) If you want to link your Dexcom Share account as a data source, complete the following lines:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you use a DIY closed loop system it is recommended that you let it upload to Nightscout instead of importing using Dexcom Share and the <code>bridge</code> plugin.</p>
+</div>
 <p><img src="..\img\NewNS35.png" style="zoom:80%;" /></p>
 <p></br></p>
 <div class="admonition info">
@@ -499,7 +507,7 @@ function Generate()
 <p>You need to have at least one follower to use Dexcom Share. See <a href="../../uploader/setup/#dexcom">here</a>.</p>
 </div>
 <p></br></p>
-<p>i) Linking your CareLink account as a data source is <strong>not functional anymore with Heroku</strong>. Do not use the plugin below. There are alternative solutions with an Android phone and a private xDrip+ version or a bridge running on a computer or a Raspberry Pi.</p>
+<p>i) Linking your CareLink account as a data source is <strong>not functional anymore with Heroku</strong>. Do not use the plugin below. There are alternative solutions with an Android phone with a <a href="https://github.com/benceszasz/xDripCareLinkFollower">private version of xDrip+</a>, a <a href="https://github.com/FredMK/minimed-connect-to-nightscout-wrapper">computer</a> or a <a href="https://github.com/psonnera/minimed-connect-to-nightscout-wrapper/wiki">Raspberry Pi</a> to bridge CareLink to Nightscout.</p>
 <p><img src="..\img\NewNS36.png" style="zoom:60%;" /></p>
 <p></br></p>
 <p>j) Select the units you’re using in <code>DISPLAY_UNITS</code> acceptable choices are <code>mg/dl</code> or <code>mmol/L</code> (or just <code>mmol</code>).</p>
