@@ -484,90 +484,33 @@ function Analyze()
 <p>If you're still in trouble continue below:</p>
 <p></br></p>
 <h2 id="recover-your-connection-string">Recover your connection string<a class="headerlink" href="#recover-your-connection-string" title="Permanent link">⌁</a></h2>
-<p>If you've tried several times to deploy or migrate, you might end-up with too many items to cope with in your different accounts. At this point, you could benefit doing some cleanup in order to identify the correct Atlas database you want to connect to.</p>
-<p><a href="../cleanup/">Cleanup</a> and come back.</p>
+<p>If you've tried several times to deploy or migrate, you might end-up with many useless items in your accounts. At this point, you could benefit doing some cleanup in order to identify the correct Atlas database you want to connect to. Consider <a href="../cleanup/">cleanup</a> before continuing.</p>
 <p></br></p>
-<ul>
-<li>Log into <a href="https://cloud.mongodb.com/">Atlas</a></li>
-<li>Click <code>Connect</code> on your cluster</li>
-</ul>
+<p>a) Go to your MongDB account. Log in if necessary <a href="https://cloud.mongodb.com/">https://cloud.mongodb.com/</a></p>
+<p>b) Click <code>Connect</code> below your cluster name (in the example below <code>Cluster0</code>, but it might have another name)</p>
 <p><img src="../img/TShoot07.png" style="zoom:80%;" ></p>
 <p></br></p>
-<ul>
-<li>Click <code>Connect your application</code></li>
-</ul>
+<p>c) Click <code>Connect your application</code></p>
 <p><img src="../img/TShoot09.png" style="zoom:80%;" ></p>
 <p></br></p>
-<ul>
-<li>Click <code>Copy</code> then <code>Close</code></li>
-</ul>
+<p>d) A new view opens, in  <code>(2) Add your connection string into your application code</code> you will find your MONGODB_URI or MONGO_CONNECTION string.</p>
+<p>Click <code>Copy</code> then <code>Close</code></p>
 <p><img src="../img/TShoot10.png" style="zoom:80%;" ></p>
 <p></br></p>
-<ul>
-<li>Paste the connection string in this box below:</li>
-</ul>
-<p><input type="text" id="myAtlas2" value="Yes here. Delete this and paste it here" size="100"></p>
-<ul>
-<li>Modify the database password and database name (not username) in the boxes below (only letters and numbers allowed). Don't use the values below: they are examples. Put those you used when creating your Atlas database.</li>
-</ul>
-<p>Database password: <input type="text" id="myPwd2" value="soo5ecret" size="20"></p>
-<p>Database name: <input type="text" id="mydB2" value="mycgmic" size="20"></p>
-<div class="admonition warning">
-<p class="admonition-title">If you migrated from mLab and Heroku (not Azure)</p>
-<p><strong>Your database name should be identical to your database user name!</strong> (Unless you modified it) "</p>
-</div>
-<ul>
-<li>If you don't remember your Atlas database password (which should not be your mongoDB Atlas account password) invent a new one (only letters and numbers). And proceed to <a href="./#change-your-atlas-database-password">Change your Atlas database password</a> then come back.</li>
-</ul>
-<p><button onclick="Generate2()">Generate</button></p>
-<p style="font-size:25px" id="result2">The connection string will appear here</p>
-
-<script>
-var bAtlas;
-var sdB, sPwd;
-var sFinalString = "Not defined yet";
-
-function Generate2()
-{
-  var sString = sFinalString;
-
-  bAtlas=0;
-  var sString = "Looks good!";
-  var sAtlas = document.getElementById("myAtlas2").value;
-  sPwd = document.getElementById("myPwd2").value;
-  sdB = document.getElementById("mydB2").value;
-  var iAS = sAtlas.search("://");
-  if(iAS!=11) { sString = "Atlas URI should start with mongodb+srv://"; }
-  else
-  {
-    var iAP = sAtlas.search("<password>");
-    if(iAP==-1) { sString = "Atlas URI should contain &lt;password&gt;"; }
-    else
-    {
-      var iAD = sAtlas.search("<dbname>");
-      if(iAD==-1) { sString = "Atlas URI should contain &lt;dbname&gt;"; }
-      else
-      {
-        bAtlas=1;
-        sString = sAtlas.substring(0,iAP);
-        sFinalString = sString.concat(sPwd, sAtlas.substring(iAP+10, iAD));
-        sString = sAtlas.substring(iAP+10, iAD);
-        sFinalString = sFinalString.concat(sdB, sAtlas.substring(iAD+8));
-      }
-    }
-  }
-
-  if(bAtlas) document.getElementById("result2").innerHTML = sFinalString;
-  else document.getElementById("result2").innerHTML = sString;
-}
-</script>
-
+<p>e) Paste it into a place where you can edit the text (i.e. a Word or a Notepad document).</p>
+<p>Edit your string so that you add the database user password after the database user info. You defined them during your MongoDB Atlas database creation, when you reached <a href="../../nightscout/new_user/#h-add-a-database-username-for-example-nightscout-and-a-database-password-in-the-example-below-soo5ecret-but-please-change-it">this step</a>.</p>
+<p>Here’s an example of how the string is built up:</p>
+<p><code>mongodb+srv://</code> <code>nightscout</code> <code>:</code><strong><code>&lt;password&gt;</code></strong><code>@cluster0.xxxxx.mongodb.net/</code><strong><code>myFirstDatabase</code></strong><code>?retryWrites=true&amp;w=majority</code></p>
 <p></br></p>
-<ul>
-<li>Copy the resulting string into your Heroku variable <code>MONGODB_URI</code> (new Nightscout) or <code>MONGO_CONNECTION</code> (migration). There must be only one of these variables, not both.</li>
-<li>If there is neither one nor the other create a new <code>MONGODB_URI</code> variable and paste the string in the value field.</li>
-<li>Restart all dynos in Heroku</li>
-</ul>
+<p>f) Edit your string in order to replace <code>&lt;password&gt;</code> with your database password.</p>
+<p>g) If you don't remember your Atlas database password (which should not be your mongoDB Atlas account password) invent a new one (only letters and numbers).</p>
+<p>Your string will now look like this: (do not use the same password as the example). Note there are no remaining <code>&lt;</code> and <code>&gt;</code>.</p>
+<p><code>mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/myFirstDatabase?retryWrites=true&amp;w=majority</code></p>
+<p></br></p>
+<p>h) Copy this resulting string above into your Heroku variable <code>MONGODB_URI</code> (new Nightscout) or <code>MONGO_CONNECTION</code> (migration). There must be only one of these variables, not both. Open <a href="../../nightscout/new_user/#editing-config-vars-in-heroku">this link</a> in another tab to see how to edit your Heroku variables.</p>
+<p>i) If there is neither one nor the other create a new <code>MONGODB_URI</code> variable and paste the string in the value field.</p>
+<p>j) If you remembered your password restart all dynos in Heroku, and you should be done.</p>
+<p>k) If you changed your password or your Nightscout page still fails to open continue.</p>
 <p></br></p>
 <h2 id="change-your-atlas-database-password">Change your Atlas database password<a class="headerlink" href="#change-your-atlas-database-password" title="Permanent link">⌁</a></h2>
 <ul>
@@ -588,6 +531,7 @@ function Generate2()
 <ul>
 <li>In <code>Password</code> click <code>Edit Password</code></li>
 </ul>
+<p><strong><em>Note:</em></strong> <em>take a look at the top of this view, after <code>Edit User</code> you can see your database user name before <code>@</code>. Check it's matching the one in your connection string.</em> </p>
 <p><img src="../img/TShoot12.png" style="zoom:80%;" ></p>
 <p></br></p>
 <ul>
@@ -606,7 +550,7 @@ function Generate2()
 <p>Make sure the password matches in your connection string Heroku variable <code>MONGODB_URI</code> (new Nightscout) or <code>MONGO_CONNECTION</code> (migration)</p>
 </li>
 <li>
-<p>Refresh your Nightscout web page display</p>
+<p>Refreshing your Nightscout web page display should be enough, but you can also <a href="../../troubleshoot/troublehoot/#restart-all-dynos">restart Heroku dynos</a>.</p>
 </li>
 </ul></div>
             </div>
